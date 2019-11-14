@@ -9,6 +9,48 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/homeTab/yh_icon_home_home.png",
+        "selectedIconPath": "images/homeTab/yh_icon_home_home_selected.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "images/homeTab/yh_icon_home_my.png",
+        "selectedIconPath": "images/homeTab/yh_icon_home_my_selected.png"
+      }
+    ],
+    "color": "#555555",
+    "selectedColor": "#D8433B"
+  },
+    "preloadRule": {
+      "pages/index/index": {
+        "network": "all",
+        "packages": [
+        ]
+      }
+    },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 60000,
+    "connectSocket": 60000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "debug": false,
+  "navigateToMiniProgramAppIdList": [
+    
+  ]
+
 }
