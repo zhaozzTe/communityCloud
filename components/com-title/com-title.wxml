@@ -1,0 +1,2 @@
+<!--components/com-title.wxml-->
+<view class="com-title">{{title}}</view>

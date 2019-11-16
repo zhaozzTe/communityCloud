@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "icon-menu": "/components/icon-menu/index"
+    "icon-menu": "/components/icon-menu/index",
+    "com-title": "/components/com-title/com-title",
+    "entry-item": "/components/entry-item/index"
   }
 }

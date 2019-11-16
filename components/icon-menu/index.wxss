@@ -1,6 +1,6 @@
 /* components/iconMenu/index.wxml.wxss */
 
-.menu-item .images {
+.icon-menu-item .images {
   width: 100rpx;
   height: 100rpx;
   border-radius: 100rpx;
@@ -8,11 +8,11 @@
   margin: 0 auto;
 }
 
-.menu-item .images image {
+.icon-menu-item .images image {
   width: 100%;
   height: 100%;
 }
 
-.menu-item text {
+.icon-menu-item text {
   font-size: 28rpx;
 }

@@ -22,6 +22,13 @@ Page({
         label: '风采展示'
       },
     ],
+    entryList:[
+      {
+        image:'/images/fczs.png',
+        title:'社区居务',
+        text:'为社区群众，指引社区居民办事流程'
+      }
+    ],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),

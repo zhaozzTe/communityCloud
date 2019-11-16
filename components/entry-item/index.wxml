@@ -1,0 +1,11 @@
+<!--components/entry-item/index.wxml-->
+<view class="entry-wrap">
+  <view class="entry-item">
+    <image src="{{data.image}}"></image>
+    <view class="entry-item-ctx">
+      <text class="entry-item-ctx-title">{{data.title}}</text>
+      <text class="entry-item-ctx-text">{{data.text}}</text>
+    </view>
+    <text>></text>         
+  </view>
+</view>

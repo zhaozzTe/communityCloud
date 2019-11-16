@@ -2,18 +2,30 @@
 <view class="container">
   <view class="header">
     <view class="bgblock defaultBg"></view>
-    <view class="menu">
-      <view class="menu-title">
-        <text class="title">我的社区</text>
-        <text class="defaultColor detail">详情 ></text>
-      </view>
-      <view class="menu-con">
-        <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" item="{{item}}"></icon-menu>
-      </view>
+    <view class="ctx">
+      <view class="menu">
+        <view class="menu-title">
+          <text class="title">我的社区</text>
+          <text class="defaultColor detail">详情 ></text>
+        </view>
+        <view class="menu-con">
+          <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}"></icon-menu>
+        </view>
         <view class="menu-foot">
           <image src="/images/lb.png"></image>
           <text>社区居民免费体检活动，8月28日起即可开始预</text>
         </view>
       </view>
+
+      <view class="mr20">
+        <com-title title="便捷菜单入口"></com-title>
+        <view class="entry">
+          <entry-item wx:for="{{entryList}}" wx:key="{{index}}" data="{{item}}"></entry-item>
+        </view>
+      </view>
+    
+    </view>
+
   </view>
+
 </view>

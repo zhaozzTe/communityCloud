@@ -1,19 +1,12 @@
-// components/iconMenu/index.js
+// components/entry-item/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
     data:{
-      type: Object,
-    },
-    src:{
-      type:String,
-    },
-    label:{
-      type:String,
-    },
-    
+      type:Object
+    }
   },
 
   /**

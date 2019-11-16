@@ -1,0 +1,6 @@
+/* components/com-title.wxss */
+.com-title{
+  padding:30rpx 20rpx;
+  font-size: 32rpx;
+  font-weight: 555;
+}
