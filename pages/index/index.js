@@ -27,7 +27,17 @@ Page({
         image:'/images/sqfw.png',
         title:'社区居务',
         text:'为社区群众，指引社区居民办事流程'
-      }
+      },
+      {
+        image:'/images/flag.png',
+        title:'志愿招募',
+        text:'文明交通、环境卫生、平安巡逻、垃圾分类'
+      },
+      {
+        image:'/images/sqss.png',
+        title:'社区说事',
+        text:'为社区群众提供协商议论的交流区域'
+      },
     ],
     userInfo: {},
     hasUserInfo: false,
