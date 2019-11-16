@@ -27,13 +27,12 @@
     "color": "#555555",
     "selectedColor": "#D8433B"
   },
-    "preloadRule": {
-      "pages/index/index": {
-        "network": "all",
-        "packages": [
-        ]
-      }
-    },
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": []
+    }
+  },
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序"
@@ -47,10 +46,6 @@
     "downloadFile": 60000
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json",
   "debug": false,
-  "navigateToMiniProgramAppIdList": [
-    
-  ]
-
+  "navigateToMiniProgramAppIdList": []
 }

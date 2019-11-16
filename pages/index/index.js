@@ -4,10 +4,27 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    menuList:[
+      {
+        src: '/images/sqfw.png',
+        label: '社区发布'
+      },
+      {
+        src: '/images/jmss.png',
+        label: '居民说事'
+      },
+      {
+        src: '/images/msfw.png',
+        label: '民生服务'
+      },
+      {
+        src: '/images/fczs.png',
+        label: '风采展示'
+      },
+    ],
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   //事件处理函数
   bindViewTap: function() {

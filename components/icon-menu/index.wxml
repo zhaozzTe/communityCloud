@@ -1,0 +1,7 @@
+<!--components/iconMenu/index.wxml.wxml-->
+<view class="menu-item">
+  <view class="images">
+    <image src="{{item.src}}"></image>
+  </view>
+  <text>{{item.label}}</text>
+</view>

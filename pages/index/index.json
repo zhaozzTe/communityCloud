@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "icon-menu": "/components/icon-menu/index"
+  }
 }

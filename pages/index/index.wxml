@@ -4,14 +4,16 @@
     <view class="bgblock defaultBg"></view>
     <view class="menu">
       <view class="menu-title">
-        <text>我的社区</text>
-        <text class="defaultColor">详情 ></text>
+        <text class="title">我的社区</text>
+        <text class="defaultColor detail">详情 ></text>
       </view>
       <view class="menu-con">
+        <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" item="{{item}}"></icon-menu>
       </view>
-      </view>
-      <view class="menu-foot">
-      
+        <view class="menu-foot">
+          <image src="/images/lb.png"></image>
+          <text>社区居民免费体检活动，8月28日起即可开始预</text>
+        </view>
       </view>
   </view>
 </view>
