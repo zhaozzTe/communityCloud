@@ -2,16 +2,47 @@
 <view class="container">
   <view class="header">
     <view class="bgblock defaultBg"></view>
-    <view class="menu">
-      <view class="menu-title">
-        <text>我的社区</text>
-        <text class="defaultColor">详情 ></text>
+    <view class="menu-box">
+    <view class="menu-box-content">
+      <view class="menu-box-item">
+        <view  class="menu-item-img">
+          <image src="/images/tab1.png"></image>
+        </view>
+        <text class="menu-item-text">发布规则</text>
       </view>
-      <view class="menu-con">
+       <view class="menu-box-item">
+        <view  class="menu-item-img">
+          <image src="/images/tab2.png"></image>
+        </view>
+        <text class="menu-item-text">社区堂务</text>
+      </view>
+       <view class="menu-box-item">
+        <view  class="menu-item-img">
+          <image src="/images/tab3.png"></image>
+        </view>
+        <text class="menu-item-text">社区居务</text>
       </view>
       </view>
-      <view class="menu-foot">
-      
+<view class="menu-box-content">
+       <view class="menu-box-item">
+        <view  class="menu-item-img">
+          <image src="/images/tab1.png"></image>
+        </view>
+        <text class="menu-item-text">社区财务</text>
       </view>
+       <view class="menu-box-item">
+        <view  class="menu-item-img">
+          <image src="/images/tab2.png"></image>
+        </view>
+        <text class="menu-item-text">社区动态</text>
+      </view>
+       <view class="menu-box-item">
+        <view  class="menu-item-img">
+          <image src="/images/tab3.png"></image>
+        </view>
+        <text class="menu-item-text">科普教育</text>
+      </view>
+       </view>
+    </view>
   </view>
 </view>
