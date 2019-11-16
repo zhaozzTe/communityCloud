@@ -24,7 +24,7 @@ Page({
     ],
     entryList:[
       {
-        image:'/images/fczs.png',
+        image:'/images/sqfw.png',
         title:'社区居务',
         text:'为社区群众，指引社区居民办事流程'
       }
