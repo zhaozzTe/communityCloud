@@ -1,0 +1,4 @@
+<view class="title-more">
+  <view class="title-more-text">{{title}}</view>
+   <view class="title-more-more" bindlongtap="goMorePage">查看更多 ></view>
+</view>

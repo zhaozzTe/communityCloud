@@ -16,7 +16,9 @@
   left: 20rpx;
   padding: 20rpx 40rpx;
   box-sizing: border-box;
- 
+ border-radius: 8rpx;
+ box-shadow:  0 0 24rpx 4rpx rgba(0,0,0,0.08);
+
 }
 .menu-box-content{
   display: flex;
@@ -35,4 +37,10 @@
 }
 .menu-item-text{
   font-size: 24rpx;
+}
+.publishHall-content{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 360rpx;
 }

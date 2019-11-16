@@ -1,0 +1,21 @@
+/* components/com-title.wxss */
+.title-more{
+  width: 100%;
+  display: flex;
+  font-size: 32rpx;
+  color: #333;
+  align-items: center;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  margin: 40rpx 0 32rpx 0;
+}
+
+.title-more-more{
+  width: 160rpx;
+  color: #2ABF77;
+  font-size: 24rpx;
+  text-align: right;
+}
+.title-more-text{
+  flex: 1;
+}
