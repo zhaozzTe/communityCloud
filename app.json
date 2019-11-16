@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/publichHall/publichHall",
+    "pages/publichHall-liveService/publichHall-liveService",
+    "pages/publichHal-liveDetail/publichHal-liveDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="bgblock defaultBg"></view>
+    <view class="menu">
+      <view class="menu-title">
+        <text>我的社区</text>
+        <text class="defaultColor">详情 ></text>
+      </view>
+      <view class="menu-con">
+      </view>
+      </view>
+      <view class="menu-foot">
+      
+      </view>
+  </view>
+</view>
