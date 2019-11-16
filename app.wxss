@@ -1,6 +1,6 @@
 /**app.wxss**/
 page{
-background: #eee;
+background: #fff;
 }
 .container {
   display: flex;
