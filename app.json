@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/publichHall/publichHall",
+    "pages/publishHall/publishHall",
     "pages/publichHall-liveService/publichHall-liveService",
     "pages/publichHal-liveDetail/publichHal-liveDetail"
   ],
@@ -10,7 +10,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2ABF77",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "backgroundColor":"#eeeeee"
   },
   "preloadRule": {
     "pages/index/index": {
