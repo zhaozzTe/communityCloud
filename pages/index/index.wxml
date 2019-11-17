@@ -20,7 +20,7 @@
       <view class="mr20">
         <com-title title="便捷菜单入口"></com-title>
         <view class="entry">
-          <entry-item wx:for="{{entryList}}" wx:key="{{index}}" data="{{item}}"></entry-item>
+          <entry-item data="{{entryList}}"></entry-item>
         </view>
         <com-title title="二维码快速入口"></com-title>
         <view class="ewm-wrap">
