@@ -5,6 +5,9 @@ Component({
   properties: {
     title:{
       type:String
+    },
+    isHasMore:{
+      type:Boolean
     }
   },
 

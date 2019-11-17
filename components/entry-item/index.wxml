@@ -1,6 +1,6 @@
 <!--components/entry-item/index.wxml-->
 <view class="entry-wrap">
-  <view class="entry-item" wx:for="{{data}}" wx:for-item="item">
+  <view class="entry-item" wx:for="{{data}}" wx:for-item="item" wx:key="index">
     <image src="{{item.image}}"></image>
     <view class="entry-item-ctx">
       <text class="entry-item-ctx-title">{{item.title}}</text>
