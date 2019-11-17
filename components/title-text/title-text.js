@@ -6,8 +6,8 @@ Component({
     title:{
       type:String
     },
-    isHasMore:{
-      type:Boolean
+    text:{
+      type: String
     }
   },
 

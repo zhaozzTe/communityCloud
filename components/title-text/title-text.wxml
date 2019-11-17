@@ -1,0 +1,4 @@
+<view class="title-text">
+  <view class="title-text-title">{{title}}</view>
+ <view class="title-text-content">{{text}}</view>
+</view>

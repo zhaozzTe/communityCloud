@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+      "TitleMore": "/components/title-more/title-more",
+      "EntryItem": "/components/entry-item/index"
+  },
+  "navigationBarTitleText": "社区居务"
 }

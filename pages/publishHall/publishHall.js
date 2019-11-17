@@ -6,6 +6,7 @@ Page({
   data: {
     infos:[{
       titleText: '发布规则',
+      isHasMore: true,
       entData: [{
         image: '/images/smrz.png',
         title: '社区党务发布规则',
@@ -19,6 +20,7 @@ Page({
     },
       {
         titleText: '社区党务',
+        isHasMore: true,
         entData: [{
           image: '/images/smrz.png',
           title: '红山社区党支部被评选为优…',

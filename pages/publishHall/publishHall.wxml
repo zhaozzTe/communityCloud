@@ -47,7 +47,7 @@
   </view>
   <view class="publishHall-content">
     <view  wx:for="{{infos}}" wx:for-item="item">
-        <TitleMore title='{{item.titleText}}'/>
+        <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
         <EntryItem data="{{item.entData}}"/>
     </view>
   </view>
