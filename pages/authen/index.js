@@ -1,10 +1,15 @@
-// pages/authen/index.js
+import WxTools from "../../utils/wxTools.js";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    sexFontName:'icongender',
+    nameFontName:'iconname',
+    locationFontName:'iconlocation',
+    phoneFontName:'iconcellnumber',
+    yzmFontName: 'iconverification-code',
     sex:0,
     isCheck:0,
     sexArr:[
@@ -27,7 +32,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -41,7 +45,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    WxTools.userInfo();
   },
 
   /**

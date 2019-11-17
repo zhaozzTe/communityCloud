@@ -1,10 +1,15 @@
 // components/form-item/index.js
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
+  externalClasses: ['custom-class'],
   /**
    * 组件的属性列表
    */
   properties: {
-    icon:{
+    fontClassName:{
       type:String
     },
     label:{

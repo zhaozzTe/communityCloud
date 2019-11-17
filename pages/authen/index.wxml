@@ -10,23 +10,24 @@
         <view class="authen-info-title">
           <com-title title="填写实名认证信息"></com-title>
         </view>
-        <form-item icon="success" label="性别:">
+        <!-- <view style="color:red" class="iconfont icongender"></view> -->
+        <form-item fontClassName="iconfont {{sexFontName}}"  label="性别:">
           <picker bindchange="bindPickerChange" range-key="name" value="{{sex}}" range="{{sexArr}}">
             <view class="picker">
               {{sexArr[sex].name}}
             </view>
           </picker>
         </form-item>
-        <form-item icon="success" label="姓名:">
+        <form-item fontClassName="iconfont {{nameFontName}}" label="姓名:">
           <input class="weui-input" placeholder="请输入您的姓名"/>
         </form-item>
-        <form-item icon="success" label="常住地址:">
+        <form-item fontClassName="iconfont {{locationFontName}}" label="常住地址:">
           <input class="weui-input" placeholder="请输入市/县/镇(村)"/>
         </form-item>
-        <form-item icon="success" label="手机号码:">
-          <input class="weui-input" placeholder="请输入您的手机号码"/>
+        <form-item fontClassName="iconfont {{phoneFontName}}" label="手机号码:">
+          <input fontClassName="iconfont {{sexFontName}}" placeholder="请输入您的手机号码"/>
         </form-item>
-        <form-item icon="success" label="验证码:">
+        <form-item fontClassName="iconfont {{yzmFontName}}" label="验证码:">
           <view class="yzm">
             <input class="weui-input" auto-focus placeholder="请输入验证码"/>
             <button type="primary" size="mini" plain>获取验证码</button>
@@ -34,11 +35,11 @@
         </form-item>
         <view style="padding-top:20rpx;margin-left:30rpx">
           <label class="checkbox">
-            <checkbox value="{{isCheck}}"/>我已阅读并同意《实名认证协议》
+            <checkbox  value="{{isCheck}}"/>我已阅读并同意《实名认证协议》
           </label>
         </view>
-        <view>
-          <button type="primary" size="default" style="width:90%;margin-top:40rpx">确定</button>
+        <view style="margin:40rpx 0  40rpx 0">
+          <button  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
         </view>
       </form>
     </view>
