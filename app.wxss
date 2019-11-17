@@ -15,3 +15,10 @@ background: #fff;
 .defaultBg{
   background: #2ABF77
 }
+.bgblock{
+  height: 100rpx;
+  width: 100%;
+}
+.mr20{
+  margin: 0 20rpx;
+}

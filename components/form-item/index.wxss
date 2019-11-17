@@ -1,0 +1,17 @@
+/* components/form-item/index.wxss */
+.form-item{
+  display: flex;
+  margin:30rpx 30rpx 0 30rpx;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #eee;
+  font-size: 28rpx;
+}
+.form-item .icon{
+  margin-right:10rpx;
+}
+.form-item .label{
+  font-size: 28rpx;
+  font-weight: 555;
+  margin-right:10rpx;
+}

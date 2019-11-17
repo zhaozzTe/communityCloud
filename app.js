@@ -39,7 +39,7 @@ App({
     this.globalData.systemInfo.deviceInfo = `${_systemInfo.brand}_${_systemInfo.model}`; // 设备品牌加型号
     this.globalData.systemInfo.plateform = _systemInfo.platform; // 平台 Android/iOS
     this.globalData.systemInfo.deviceVersion = _systemInfo.system; // 操作系统及版本
-    console.log(this.globalData);
+    // console.log(this.globalData);
     // 获取定位
     wx.getLocation({
       type: 'wgs84',
@@ -50,6 +50,18 @@ App({
         }
       },
     });
+    wx.login({
+      success(res) {
+        if (res.code) {
+          console.log(res.code)
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      },
+      fail(res){
+        console.log('登录失败！' + res.errMsg)
+      }
+    })
   },
 
   onShow: function () {

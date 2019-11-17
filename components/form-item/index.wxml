@@ -1,0 +1,6 @@
+<!--components/form-item/index.wxml-->
+<view class="form-item">
+  <icon class="icon" type="success"/>
+  <text class="label">{{label}}</text>
+  <slot></slot>
+</view>

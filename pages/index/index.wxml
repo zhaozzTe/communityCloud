@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container home">
   <view class="header">
     <view class="bgblock defaultBg"></view>
     <view class="ctx">
