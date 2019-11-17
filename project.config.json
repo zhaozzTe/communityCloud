@@ -49,12 +49,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/publishHall/publishHall",
 					"pathName": "pages/publishHall/publishHall",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publichHall-liveService/publichHall-liveService",
+					"pathName": "pages/publichHall-liveService/publichHall-liveService",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publichHal-liveDetail/publichHal-liveDetail",
+					"pathName": "pages/publichHal-liveDetail/publichHal-liveDetail",
 					"scene": null
 				}
 			]

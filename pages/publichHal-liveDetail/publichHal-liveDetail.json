@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "TitleText": "/components/title-text/title-text"
+  },
+  "navigationBarTitleText": "灵活就业补贴"
 }

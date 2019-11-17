@@ -1,0 +1,12 @@
+.title-text{
+  margin-top: 32rpx;
+}
+.title-text-title{
+  font-size: 32rpx;
+  color: #666666;
+}
+.title-text-content{
+  font-size: 24rpx;
+   margin-top: 16rpx;
+  color: #666666;
+}
