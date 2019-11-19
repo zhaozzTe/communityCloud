@@ -11,24 +11,28 @@ Page({
       titleText: '全部社区居务',
       isHasMore:false,
       entData: [{
-        image: '/images/smrz.png',
+        image: '/images/flag.png',
         title: '被征地人员缴费补贴初审',
-        text: '2019年10月20日'
+        text: '2019年10月20日',
+        url: '/pages/compage/compage'
       },
       {
-        image: '/images/smrz.png',
+        image: '/images/sqss.png',
         title: '城乡居民养老保险经办',
-        text: '2019年10月18日'
+        text: '2019年10月18日',
+        url: '/pages/compage/compage'
       },
         {
-          image: '/images/smrz.png',
+          image: '/images/jmss.png',
           title: '灵活就业补贴申请',
-          text: '2019年10月18日'
+          text: '2019年10月18日',
+          url: '/pages/publichHal-liveDetail/publichHal-liveDetail'
         },
           {
-          image: '/images/smrz.png',
+          image: '/images/msfw.png',
             title: '退休人员信息管理',
-          text: '2019年10月18日'
+          text: '2019年10月18日',
+            url: '/pages/compage/compage'
         }],
     }]
   },

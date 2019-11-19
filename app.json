@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/login-wx/login-wx",
+    "pages/authen/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/publishHall/publishHall",
     "pages/publichHall-liveService/publichHall-liveService",
     "pages/publichHal-liveDetail/publichHal-liveDetail",
-    "pages/authen/index"
+    "pages/compage/compage",
+    "pages/login-wx/login-wx"
     
   ],
   "window": {

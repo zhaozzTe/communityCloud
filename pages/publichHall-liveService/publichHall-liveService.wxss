@@ -11,7 +11,7 @@
 .liveService-banner{
   width: 710rpx;
   height: 360rpx;
-  background: hotpink;
+  background: #07c160;
   margin: 0 auto;
   position: relative;
   border-radius: 8rpx;

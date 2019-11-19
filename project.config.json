@@ -48,6 +48,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 2,
 			"list": [
@@ -69,6 +73,13 @@
 					"id": -1,
 					"name": "pages/publichHal-liveDetail/publichHal-liveDetail",
 					"pathName": "pages/publichHal-liveDetail/publichHal-liveDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/compage/compage",
+					"pathName": "pages/compage/compage",
 					"scene": null
 				}
 			]

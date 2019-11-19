@@ -1,0 +1,13 @@
+/* pages/compage/compage.wxss */
+.compage {
+  width: 100%;
+  height: 100%;
+  color: #07c160;
+  font-size: 30rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.compage-text{
+  margin-top: 50%;
+}
