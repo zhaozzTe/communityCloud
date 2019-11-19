@@ -136,7 +136,7 @@
 /*checkbox 选项框大小  */
 checkbox .wx-checkbox-input {
   width: 30rpx;
-  height: 35rpx;
+  height: 30rpx;
 }
 /*checkbox选中后样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked {
