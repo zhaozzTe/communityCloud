@@ -1,0 +1,12 @@
+.wx_login {
+  height: 90rpx;
+  margin-top: 200rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 62rpx;
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(90deg, rgba(216, 67, 59, 1) 0%, rgba(255, 118, 111, 1) 100%);
+  border-radius: 45px;
+  padding: 0;
+}

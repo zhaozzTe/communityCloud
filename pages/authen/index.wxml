@@ -39,7 +39,7 @@
           </label>
         </view>
         <view style="margin:40rpx 0  40rpx 0">
-          <button  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
+          <button   type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
         </view>
       </form>
     </view>

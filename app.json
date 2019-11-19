@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/login-wx/login-wx",
     "pages/index/index",
     "pages/logs/logs",
     "pages/publishHall/publishHall",
     "pages/publichHall-liveService/publichHall-liveService",
     "pages/publichHal-liveDetail/publichHal-liveDetail",
     "pages/authen/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -54,6 +54,14 @@ App({
       success(res) {
         if (res.code) {
           console.log(res.code)
+          wx.getUserInfo({
+            success(info){
+              console.log(1112222,info);
+            },
+            fail(err){
+              console.log(43334444, err);
+            }
+          })
         } else {
           console.log('登录失败！' + res.errMsg)
         }
