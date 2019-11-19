@@ -1,5 +1,5 @@
 <!--components/iconMenu/index.wxml.wxml-->
-<view class="icon-menu-item">
+<view class="icon-menu-item" bindtap="gotoPage" data-url="{{data.url}}">
   <view class="images">
     <image src="{{data.src}}"></image>
   </view>

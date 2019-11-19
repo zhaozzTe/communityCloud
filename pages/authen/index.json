@@ -2,6 +2,6 @@
   "usingComponents": {
     "com-title": "/components/com-title/com-title",
     "form-item": "/components/form-item/index"
-  }
-  
+  },
+  "navigationBarTitleText": "实名认证"
 }

@@ -2,7 +2,7 @@
 <view class="entry-wrap">
   <view class="entry-item" wx:for="{{data}}" wx:key="{{key}}" wx:for-item="item">
     <image src="{{item.image}}"></image>
-    <view class="entry-item-ctx">
+    <view class="entry-item-ctx" bindtap="gotoPage" data-url="{{item.url}}">
       <text class="entry-item-ctx-title">{{item.title}}</text>
       <text class="entry-item-ctx-text">{{item.text}}</text>
     </view>

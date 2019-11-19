@@ -7,7 +7,8 @@ Page({
     menuList:[
       {
         src: '/images/sqfw.png',
-        label: '社区发布'
+        label: '社区发布',
+        url: '/pages/publishHall/publishHall'
       },
       {
         src: '/images/jmss.png',
@@ -26,7 +27,8 @@ Page({
       {
         image:'/images/sqfw.png',
         title:'社区居务',
-        text:'为社区群众，指引社区居民办事流程'
+        text:'为社区群众，指引社区居民办事流程',
+        url: '/pages/publichHall-liveService/publichHall-liveService'
       },
       {
         image:'/images/flag.png',
@@ -50,9 +52,9 @@ Page({
     })
   },
   onLoad: function () {
-    wx.navigateTo({
-      url: '/pages/authen/index'
-    })
+    // wx.navigateTo({
+    //   url: '/pages/authen/index'
+    // })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
