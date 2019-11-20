@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -69,6 +69,20 @@
 					"id": -1,
 					"name": "pages/publichHal-liveDetail/publichHal-liveDetail",
 					"pathName": "pages/publichHal-liveDetail/publichHal-liveDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/authen/index",
+					"pathName": "pages/authen/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login-wx/login-wx",
+					"pathName": "pages/login-wx/login-wx",
 					"scene": null
 				}
 			]

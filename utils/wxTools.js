@@ -21,19 +21,20 @@ const userInfo = () => {
   wx.getSetting({
     success(res) {
 
-      console.log(7777777777777, res)
+      console.log('6666getSetting值', res)
       if (res.authSetting['scope.userInfo']) {
         // 已经授权,先获取用户登录凭证（有效期五分钟）
         wx.login({
           success(res) {
            
             if (res.code) {
-              console.log(8888, res.code)
+              console.log('77777code值', res)
               //设置缓存数据(用户登录凭证)
               getApp().globalData.wxCode = res.code;
               //调用 getUserInfo ,获取用户信息
               wx.getUserInfo({
                 success(res) {
+                  console.log('8888getUserInfo值', res)
                   //设置缓存数据(微信用户信息)
                   getApp().globalData.wxUserInfo = res;
                 }

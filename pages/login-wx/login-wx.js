@@ -23,12 +23,12 @@ Page({
    */
   onShow: function() {
     //获取定位
-    WxTools.location();
+    // WxTools.location();
     //获取用户信息
     WxTools.userInfo();
   },
   //微信登录
-  getPhoneNumber: function(e) {
+  bindgetuserinfo: function(e) {
     console.log(e.detail)
     wx.login({
       success(res){
