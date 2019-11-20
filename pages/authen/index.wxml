@@ -12,9 +12,9 @@
         </view>
         <!-- <view style="color:red" class="iconfont icongender"></view> -->
         <form-item fontClassName="iconfont {{sexFontName}}"  label="性别:">
-          <picker bindchange="bindPickerChange" range-key="name" value="{{sex}}" range="{{sexArr}}">
+          <picker bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{sexArr}}">
             <view class="picker">
-              {{sexArr[sex].name}}
+              {{sexArr[index].name}}
             </view>
           </picker>
         </form-item>
@@ -29,7 +29,7 @@
         </form-item>
         <form-item fontClassName="iconfont {{yzmFontName}}" label="验证码:">
           <view class="yzm">
-            <input class="weui-input" auto-focus placeholder="请输入验证码"/>
+            <input class="weui-input"  placeholder="请输入验证码"/>
             <button type="primary" size="mini" plain>获取验证码</button>
           </view>
         </form-item>
@@ -39,7 +39,7 @@
           </label>
         </view>
         <view style="margin:40rpx 0  40rpx 0">
-          <button   type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
+          <button bindtap="submit"  type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
         </view>
       </form>
     </view>

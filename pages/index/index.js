@@ -12,15 +12,18 @@ Page({
       },
       {
         src: '/images/jmss.png',
-        label: '居民说事'
+        label: '居民说事',
+        url: '/pages/compage/compage'
       },
       {
         src: '/images/msfw.png',
-        label: '民生服务'
+        label: '民生服务',
+        url: '/pages/compage/compage'
       },
       {
         src: '/images/fczs.png',
-        label: '风采展示'
+        label: '风采展示',
+        url: '/pages/compage/compage'
       },
     ],
     entryList:[
@@ -33,12 +36,14 @@ Page({
       {
         image:'/images/flag.png',
         title:'志愿招募',
-        text:'文明交通、环境卫生、平安巡逻、垃圾分类'
+        text:'文明交通、环境卫生、平安巡逻、垃圾分类',
+        url: '/pages/compage/compage'
       },
       {
         image:'/images/sqss.png',
         title:'社区说事',
-        text:'为社区群众提供协商议论的交流区域'
+        text:'为社区群众提供协商议论的交流区域',
+        url: '/pages/compage/compage'
       },
     ],
     userInfo: {},

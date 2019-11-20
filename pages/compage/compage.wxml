@@ -1,0 +1,7 @@
+<!--pages/compage/compage.wxml-->
+<view class="compage">
+<text class="compage-text">
+程序员正在努力开发中，请尽情期待...
+</text>
+
+</view>

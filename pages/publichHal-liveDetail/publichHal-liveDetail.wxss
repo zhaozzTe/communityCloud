@@ -8,7 +8,7 @@
 .detail-banner{
   height: 360rpx;
   margin-top: 20rpx;
-  background: hotpink;
+  background: #07c160;
   border-radius: 8rpx;
 }
 .detail-content{

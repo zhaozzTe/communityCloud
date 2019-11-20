@@ -10,19 +10,19 @@ Page({
     locationFontName:'iconlocation',
     phoneFontName:'iconcellnumber',
     yzmFontName: 'iconverification-code',
-    sex:0,
+    index:0,
     isCheck:0,
     sexArr:[
       {
-        id:"",
+        id:0,
         name:'请选择'
       },
       {
-        id:0,
+        id:1,
         name:'男'
       },
       {
-        id:1,
+        id:2,
         name:'女'
       },
     ]
@@ -48,38 +48,22 @@ Page({
     WxTools.userInfo();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  bindPickerChange(e)
+  {
+    console.log(e.detail.value)  
+    this.setData(
+      {
+        index: e.detail.value
+      })
+  
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  submit() {
+    wx.navigateTo({
+      url: '/pages/index/index',
+    })
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+    
 
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
