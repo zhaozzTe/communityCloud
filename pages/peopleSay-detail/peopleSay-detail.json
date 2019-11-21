@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "TitleText": "/components/title-text/title-text"
+  },
+  "navigationBarTitleText": "说事规则详情"
+}

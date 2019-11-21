@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "TitleMore": "/components/title-more/title-more",
+    "EntryItem": "/components/entry-item/index",
+    "HomeMeunIcon": "/components/home-meun-icon/home-meun-icon"
+  },
+  "navigationBarTitleText": "居民说事厅"
+}

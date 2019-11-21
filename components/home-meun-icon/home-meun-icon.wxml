@@ -1,0 +1,10 @@
+<view class="home-menu-icon">
+ <view class="menu-box-content">
+       <view class="menu-box-item" wx:for="{{meuns}}" wx:for-item="item" wx:key="{{index}}" data-url="{{url}}" bindtap="gotoPage">
+        <view  class="menu-item-img">
+          <image src="{{item.imgUrl}}"></image>
+        </view>
+        <text class="menu-item-text">{{item.meunText}}</text>
+      </view>
+  </view>
+</view>

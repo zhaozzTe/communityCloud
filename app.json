@@ -8,13 +8,16 @@
     "pages/publichHall-liveService/publichHall-liveService",
     "pages/publichHal-liveDetail/publichHal-liveDetail",
     "pages/authen/index",
+    "pages/peopleSay/peopleSay",
+    "pages/peopleSay-rule/peopleSay-rule",
+    "pages/peopleSay-detail/peopleSay-detail",
     "pages/compage/compage"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2ABF77",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "码上参与",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "#eeeeee"
   },
   "preloadRule": {
