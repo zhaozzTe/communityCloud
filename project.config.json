@@ -87,6 +87,27 @@
 					"id": -1,
 					"name": "pages/login-wx/login-wx",
 					"pathName": "pages/login-wx/login-wx",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/peopleSay/peopleSay",
+					"pathName": "pages/peopleSay/peopleSay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/peopleSay-story/peopleSay-story",
+					"pathName": "pages/peopleSay-story/peopleSay-story",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/story-detail/story-detail",
+					"pathName": "pages/story-detail/story-detail",
 					"scene": null
 				}
 			]

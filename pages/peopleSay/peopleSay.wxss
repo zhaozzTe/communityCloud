@@ -44,3 +44,6 @@
   box-sizing: border-box;
   margin-top: 360rpx;
 }
+.adviceBoxs{
+  margin-bottom: 50rpx;
+}

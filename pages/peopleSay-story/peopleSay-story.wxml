@@ -1,0 +1,16 @@
+<view class="people-story">
+  <view class="container">
+      <view class="header">
+        <view class="bgblock defaultBg">
+          <view class="live-search">
+            <icon wx:if="{{!searchV}}" class="search-icon" type="search"></icon>
+            <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="story-adviceBoxs" >
+      <AdviceSay datas="{{advices}}" />
+    </view>
+    <view class="my-say">我要说事</view>
+</view>

@@ -7,9 +7,13 @@
     </view>
   </view>
   <view class="publishHall-content">
-    <view  wx:for="{{infos}}" wx:for-item="item">
+    <view  wx:for="{{infos}}" wx:for-item="item" wx:key='index'>
         <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
         <EntryItem data="{{item.entData}}"/>
     </view>
+  </view>
+  <view class="adviceBoxs" wx:for="{{adviceBoxs}}" wx:for-item="adviceBox" wx:key='index'>
+    <TitleMore title='{{adviceBox.titleText}}' isHasMore="{{adviceBox.isHasMore}}"/>
+    <AdviceSay datas="{{adviceBox.advices}}" />
   </view>
 </view>

@@ -11,6 +11,8 @@
     "pages/peopleSay/peopleSay",
     "pages/peopleSay-rule/peopleSay-rule",
     "pages/peopleSay-detail/peopleSay-detail",
+    "pages/peopleSay-story/peopleSay-story",
+    "pages/story-detail/story-detail",
     "pages/compage/compage"
   ],
   "window": {

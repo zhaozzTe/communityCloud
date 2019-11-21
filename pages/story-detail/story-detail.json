@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SayDetail": "/components/say-item/say-item"
+  },
+  "navigationBarTitleText": "楼宇说事详情"
+}

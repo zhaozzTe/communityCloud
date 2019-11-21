@@ -1,0 +1,15 @@
+<view class="advice-box">
+  <view class="advice-item" wx:for="{{datas}}" wx:for-item="item" wx:key='index'>
+  <view class="item-left">
+    <view class="item-left-title">{{item.title}}</view>
+    <view class="item-left-people">
+      已参与人数： <text class="item-left-nums">{{item.joinPeoples}}</text>
+      回复意见数：<text class="item-left-nums">{{item.replyPeoples}}</text>
+    </view>
+  </view>
+  <view bindtap="join" data-item='{{item}}' class="item-right">
+     参与
+    </view>
+</view>
+</view>
+
