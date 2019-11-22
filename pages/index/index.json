@@ -2,7 +2,8 @@
   "usingComponents": {
     "icon-menu": "/components/icon-menu/index",
     "com-title": "/components/com-title/com-title",
-    "entry-item": "/components/entry-item/index"
+    "entry-item": "/components/entry-item/index",
+    "inform": "/components/inform/index"
   },
   "navigationBarTitleText": "码上参与"
 }
