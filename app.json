@@ -1,19 +1,20 @@
 {
   "pages": [
-
-    "pages/login-wx/login-wx",
+    "pages/authen/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/publishHall/publishHall",
     "pages/publichHall-liveService/publichHall-liveService",
     "pages/publichHal-liveDetail/publichHal-liveDetail",
-    "pages/authen/index",
     "pages/peopleSay/peopleSay",
     "pages/peopleSay-rule/peopleSay-rule",
     "pages/peopleSay-detail/peopleSay-detail",
     "pages/peopleSay-story/peopleSay-story",
     "pages/story-detail/story-detail",
-    "pages/compage/compage"
+    "pages/my-say/my-say",
+    "pages/mySay-success/mySay-success",
+     "pages/login-wx/login-wx",
+      "pages/compage/compage"
   ],
   "window": {
     "backgroundTextStyle": "light",

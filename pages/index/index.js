@@ -13,7 +13,7 @@ Page({
       {
         src: '/images/jmss.png',
         label: '居民说事',
-        url: '/pages/compage/compage'
+        url: '/pages/peopleSay/peopleSay'
       },
       {
         src: '/images/msfw.png',

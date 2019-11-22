@@ -6,10 +6,12 @@ Page({
   data: {
     meuns:[{
       imgUrl:'/images/tab1.png',
-      meunText:'说事规则'
+      meunText:'说事规则',
+      url: '/pages/peopleSay-rule/peopleSay-rule'
     }, {
         imgUrl: '/images/tab2.png',
-        meunText: '楼宇说事'
+        meunText: '楼宇说事',
+        url: '/pages/peopleSay-story/peopleSay-story'
       },
       {
         imgUrl: '/images/tab3.png',

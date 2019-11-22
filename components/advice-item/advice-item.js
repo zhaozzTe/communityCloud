@@ -20,6 +20,10 @@ Component({
    */
   methods: {
     join(e) {
+      const url = e.currentTarget.dataset.item.url;
+      wx.navigateTo({
+        url,
+      })
       console.log(e.currentTarget.dataset.item);
     }
   }

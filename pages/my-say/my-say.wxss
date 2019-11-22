@@ -1,0 +1,53 @@
+/* pages/my-say/my-say.wxss */
+.my-say{
+  width: 710rpx;
+  margin: 20rpx auto;
+  padding: 0 32rpx 32px 32rpx;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  box-shadow: 0 0 24rpx 4rpx rgba(0,0,0,0.08);
+  border-radius: 8rpx;
+}
+.form-item{
+  padding: 36rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #F3F3F3;
+}
+.form-item-name{
+  font-size: 28rpx;
+  color: #3C3C3C;
+  letter-spacing: 0;
+  line-height: 28rpx;
+  margin-bottom: 20rpx;
+}
+.form-item-xx{
+  color: #FF2626;
+}
+.placeStyle{
+  color:#C0C0C0;
+  font-size: 28rpx;
+}
+.form-upFile{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.upFile-img{
+  width: 176rpx;
+  height: 176rpx;
+  margin-right: 60rpx;
+}
+.upFile-img:nth-child(1){
+  margin-left: 20rpx;
+}
+.btn{
+  background: #2ABF77;
+  border-radius: 8rpx;
+  width: 646rpx;
+  height: 80rpx;
+  color: #fff;
+  font-size: 36rpx;
+  margin: 40rpx 0  36rpx 0;
+  text-align: center;
+  line-height: 80rpx;
+}

@@ -1,0 +1,10 @@
+<view class="mysay-success">
+  <image src="/images/smrz.png" class="success-img"></image>
+  <view class="mysay-success-img">
+   <icon type="success" size="20" color="green"/>
+    您的议题已发布成功！
+  </view>
+  <view bindtap="goback" class="mysay-success-back">
+    返回到楼宇说事
+  </view> 
+</view>

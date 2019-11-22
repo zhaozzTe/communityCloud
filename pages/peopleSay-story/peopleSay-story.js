@@ -8,37 +8,45 @@ Page({
       advices: [{
           title: '关于高空抛物处罚的意见征集',
           joinPeoples: 156,
-          replyPeoples: 35
+          replyPeoples: 35,
+          url: '/pages/story-detail/story-detail'
         },
         {
           title: '关于楼道流浪猫的问题讨论',
           joinPeoples: 126,
-          replyPeoples: 37
+          replyPeoples: 37,
+          url: '/pages/story-detail/story-detail'
         },
         {
           title: '关于楼道垃圾分类工作的意见采集',
           joinPeoples: 156,
-          replyPeoples: 35
+          replyPeoples: 35,
+          url: '/pages/story-detail/story-detail'
+          
         },
         {
           title: '电梯安全问题的意见征集',
           joinPeoples: 156,
-          replyPeoples: 30
+          replyPeoples: 30,
+          url: '/pages/story-detail/story-detail'
         },
         {
           title: '16栋电动汽车充电桩的问题',
           joinPeoples: 126,
-          replyPeoples: 37
+          replyPeoples: 37,
+          url: '/pages/story-detail/story-detail'
         },
         {
           title: '关于7栋噪音扰民的处理意见征集',
           joinPeoples: 156,
-          replyPeoples: 35
+          replyPeoples: 35,
+          url: '/pages/story-detail/story-detail'
         },
         {
           title: '关于10栋花木被破坏的问题讨论',
           joinPeoples: 156,
-          replyPeoples: 30
+          replyPeoples: 30,
+          url: '/pages/story-detail/story-detail'
         }
       ],
    
@@ -98,5 +106,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  gotoMySay(){
+    console.log(11111)
+    wx.navigateTo({
+      url: '/pages/my-say/my-say',
+    })
   }
 })

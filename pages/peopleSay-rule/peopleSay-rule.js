@@ -14,7 +14,7 @@ Page({
         image: '/images/flag.png',
         title: '社区说事流程详细说明',
         text: '2019年10月20日',
-        url: '/pages/compage/compage'
+        url: '/pages/peopleSay-detail/peopleSay-detail'
       },
       {
         image: '/images/sqss.png',

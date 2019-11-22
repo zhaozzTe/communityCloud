@@ -1,0 +1,34 @@
+.mysay-success{
+  background: #FFFFFF;
+  box-shadow: 0 0 24rpx 4rpx rgba(0,0,0,0.06);
+  border-radius: 8rpx;
+  margin: 20rpx auto;
+  width: 710rpx;
+  height: 720rpx;
+ text-align: center;
+}
+.success-img{
+  height: 440rpx;
+  width: 710rpx;
+  margin-bottom: 48rpx;
+}
+.success-icon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+.mysay-success-img{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.mysay-success-back{
+  width: 646rpx;
+  height: 80rpx;
+  color: #ffff;
+  background: #2ABF77;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 80rpx auto 32rpx;
+}

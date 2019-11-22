@@ -1,0 +1,37 @@
+<view class="my-say">
+  <form bindsubmit="formSubmit">
+      <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text> 议题名称:
+        </view>
+        <view>
+            <textarea placeholder-class="placeStyle"  auto-height placeholder="请输入议题名称"/>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text>  议题详细内容:
+        </view>
+        <view>
+            <textarea placeholder-class="placeStyle"  auto-height placeholder="请输入议题详细内容，100字以内"/>
+        </view>
+      </view>
+       <view class="form-item">
+        <view class="form-item-name">
+            上传图片 (最多3张):
+        </view>
+        <view class="form-upFile">
+           <view class="upFile-img">
+              <image class="upFile-img" src="/images/upfile.png"></image>
+           </view>
+           <view class="upFile-img">
+            <image class="upFile-img" src="/images/upfile.png"></image>
+           </view>
+           <view class="upFile-img">
+            <image class="upFile-img" src="/images/upfile.png"></image>
+           </view>
+        </view>
+      </view>
+      <view bindtap="submit" class="btn">提交</view>
+  </form>
+</view>

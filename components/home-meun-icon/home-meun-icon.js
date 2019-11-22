@@ -20,6 +20,7 @@ Component({
    */
   methods: {
     gotoPage(e) {
+      console.log(77777,e.currentTarget.dataset.url)
       const url = e.currentTarget.dataset.url;
       wx.navigateTo({
         url: url

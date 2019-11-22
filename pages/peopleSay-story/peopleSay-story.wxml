@@ -12,5 +12,5 @@
     <view class="story-adviceBoxs" >
       <AdviceSay datas="{{advices}}" />
     </view>
-    <view class="my-say">我要说事</view>
+    <view bindtap="gotoMySay" class="my-say">我要说事</view>
 </view>
