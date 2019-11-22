@@ -15,7 +15,8 @@ Page({
       },
       {
         imgUrl: '/images/tab3.png',
-        meunText: '小区说事'
+        meunText: '小区说事',
+        url: '/pages/house-story/house-story'
       },
       {
         imgUrl: '/images/tab4.png',

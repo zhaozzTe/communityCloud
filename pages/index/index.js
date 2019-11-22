@@ -18,7 +18,7 @@ Page({
       {
         src: '/images/msfw.png',
         label: '民生服务',
-        url: '/pages/compage/compage'
+        url: "/pages/Livelihood-service-hall/Livelihood-service-hall"
       },
       {
         src: '/images/fczs.png',

@@ -1,0 +1,52 @@
+/**index.wxss**/
+.container{
+  padding-bottom:40rpx; 
+}
+.header{
+  width: 100%;
+  position: relative;
+}
+.header .bgblock{
+  height: 100rpx;
+  width: 100%;
+}
+.menu-box{
+  width:710rpx;
+  height: 440rpx;
+  background: #fff;
+  position: absolute;
+  top:20rpx;
+  left: 20rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+ border-radius: 8rpx;
+ box-shadow:  0 0 24rpx 4rpx rgba(0,0,0,0.08);
+
+}
+.menu-box-content{
+  display: flex;
+ flex-wrap:wrap;
+ justify-content: space-around;
+}
+.menu-box-item{
+  
+ margin-bottom: 20rpx;
+}
+.menu-item-img image
+{
+   width: 112rpx;
+  height: 112rpx;
+  margin-bottom: 24rpx;
+}
+.menu-item-text{
+  font-size: 24rpx;
+}
+.publishHall-content{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 360rpx;
+}
+.adviceBoxs{
+  margin-bottom: 50rpx;
+}

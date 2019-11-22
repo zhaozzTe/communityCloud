@@ -1,0 +1,29 @@
+<view class="story-detail">
+  <view class="detail-banner">
+      <image></image>
+  </view>
+  <view class="detail-content">
+    <view class="detail-content-title">
+    <text class="stoty-ht">话题</text>
+      小区流浪猫问题讨论
+    </view>
+    <view class="detail-content-text">小区内的流浪猫数量逐渐增多，究竟该如何对待流浪猫？
+是放任在小区内流窜？还是将其收为家养？广大小区业
+主们发言讨论吧！
+    </view>
+    <view class="all-says-box">
+      <view class="all-says-l">全部评论</view>
+      <view class="all-says-r">
+       <text class="all-says-num">35</text>条
+      </view>
+    </view>
+    <SayDetail info='{{info}}'/>
+     <SayDetail info='{{info}}'/>
+      <SayDetail info='{{info}}'/>
+  </view>
+  <view class="story-detail-floot">
+    <input class="story-detail-input" placeholder="说点什么吧"></input>
+    <!-- <image class="input-icon" src="/images/tab2.png"></image> -->
+    <view class="input-icon1"></view>
+  </view>
+</view>
