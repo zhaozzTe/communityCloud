@@ -158,7 +158,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   width: 300rpx
   }
   .get-yzm{
-    width: 200rpx;
+    width: 150rpx;
     height: 60rpx;
     text-align: center;
     line-height: 60rpx;
@@ -167,3 +167,6 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     font-size: 24rpx;
     border-radius: 4rpx;
   }
+  /* .weui-input{
+    flex: 1;
+  } */
