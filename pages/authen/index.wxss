@@ -157,3 +157,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 .picker{
   width: 300rpx
   }
+  .get-yzm{
+    width: 200rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    background: #2ABF77;
+    color: #fff;
+    font-size: 24rpx;
+    border-radius: 4rpx;
+  }
