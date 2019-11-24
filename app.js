@@ -41,6 +41,7 @@ App({
     this.globalData.systemInfo.plateform = _systemInfo.platform; // 平台 Android/iOS
     this.globalData.systemInfo.deviceVersion = _systemInfo.system; // 操作系统及版本
     // console.log(this.globalData);
+    console.log(wx.getStorageSync('needAuth'));
     // 获取定位
     wx.getLocation({
       type: 'wgs84',
@@ -55,21 +56,35 @@ App({
       success(res) {
         if (res.code) {
           console.log(res)
-          _that.globalData.hasUserInfo = true;
           wx.getUserInfo({
             success(info){
               console.log(1112222,info);
+              wx.setStorage({
+                key: "needAuth",
+                data: false
+              })
             },
             fail(err){
               console.log(33, err);
-              _that.globalData.hasUserInfo=false;
+              wx.setStorage({
+                key: "needAuth",
+                data: true
+              })
             }
           })
         } else {
+          wx.setStorage({
+            key: "needAuth",
+            data: true
+          })
           console.log('登录失败！' + res.errMsg)
         }
       },
       fail(res){
+        wx.setStorage({
+          key: "needAuth",
+          data: true
+        })
         console.log('登录失败！' + res.errMsg)
       }
     })

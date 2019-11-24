@@ -6,15 +6,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    hasUserInfo:{
+    needAuth:{
       type: Boolean
     }
   },
-
   /**
    * 组件的初始数据
    */
   data: {
+    needAuth:false
   },
 
   /**
@@ -41,7 +41,6 @@ Component({
               console.log(res)
               if (res.code == 0) {
                 wx.setStorageSync("token",res.data.token)
-                console.log('t0', wx.getStorageSync('token'))
                   wx.navigateTo({ url:'/page/login-wx/login-wx'})
               }else{
                 wx.navigateTo({ url: '/page/authen/index' })

@@ -53,7 +53,7 @@ Page({
       },
     ],
     userInfo: {},
-    hasUserInfo: false,
+    needAuth: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   //事件处理函数
@@ -63,9 +63,16 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(111,app.globalData)
     // 页面显示
     var that = this;
+    wx.getStorage({
+      key: 'needAuth',
+      success(res) {
+        that.setData({
+          needAuth: res.data
+        })
+      }
+    })
     var length = that.data.text.length * that.data.size;//文字长度
     var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
     that.setData({
