@@ -48,5 +48,5 @@
     </view>
 
   </view>
-
+  <auth-dialog hasUserInfo='{{!globalData.hasUserInfo}}' ></auth-dialog>
 </view>

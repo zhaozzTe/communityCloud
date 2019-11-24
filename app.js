@@ -5,6 +5,7 @@ const Def_Key_UserInfo = "Key_UserInfo";
 App({
 
   globalData: {
+    hasUserInfo:true,
     userInfo: {
       loginStatus: "", // 0-未登录，1-已登录
       userToken: "", //  
@@ -53,13 +54,15 @@ App({
     wx.login({
       success(res) {
         if (res.code) {
-          console.log(res.code)
+          console.log(res)
+          _that.globalData.hasUserInfo = true;
           wx.getUserInfo({
             success(info){
               console.log(1112222,info);
             },
             fail(err){
-              console.log(43334444, err);
+              console.log(33, err);
+              _that.globalData.hasUserInfo=false;
             }
           })
         } else {

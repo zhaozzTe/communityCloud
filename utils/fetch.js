@@ -4,48 +4,47 @@ import Utils from "./util.js"
 /**
  * post 数据请求
  */
-var nPost = function (data) {
+var http = function (data) {
   var _header = {}
-  let promise = new Promise(function (resolve, reject) {
+  let promise = new Promise(async function (resolve, reject) {
     wx.showNavigationBarLoading();
+    let method = data.method.toLowerCase() || 'GET'
     wx.request({
       url: data.url,
       data: data.params,
-      method: "POST",
+      method: method,
       dataType: "json",
       header: {
         "content-type": 'application/json',
-        "Auth-Header": JSON.stringify(_header),
+        "Authorization": wx.getStorageSync('token'),
       },
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) {
-        let _sData = res.data;
-        if (_sData && _sData.code == '0') { // 成功时的标记
-          resolve(_sData); // 成功时的回调
+      success: function (res) {
+        console.log(66, res)
+        let { data, statusCode} = res;
+        if (data && data.code == '0') { // 成功时的标记
+          resolve(data); // 成功时的回调
+        } else if (statusCode==401){ // 状态失效
+          
         } else {
           console.log('--- error ---');
-          if (_sData && _sData.code == '99999') { // 登录超时退出
-            reLogin();
-            reject(_sData || "");
-            Utils.showMsg(_sData.message || "系统异常");
-          } else if (res.errMsg != "request:ok") { // 网络请求超时
-            _sData = objOutTime;
-          } else if (_sData.code == '60032') {
-            //身份认证提示
-            wx.showModal({
-              title: '提示',
-              content: _sData.message,
-              showCancel: false,
-              confirmText: '知道了',
-            });
-            reject(_sData || "");
-          } else {
-            reject(_sData || "");
-            Utils.showMsg(_sData.message || "系统异常");
-          }
+          wx.showToast({
+            title: data.msg||'连接错误',
+            icon: 'warn',
+            duration: 2000
+          })
+          // wx.showModal({
+          //   title: '提示',
+          //   content: data.message,
+          //   showCancel: false,
+          //   confirmText: '知道了',
+          // });
+          reject(data || "");
         }
-      }
+      },
+      fail: function (res) {
+        console.log(99,res)
+      },
+      complete: function (res) {}
     });
   });
   return promise;
@@ -55,28 +54,28 @@ var nPost = function (data) {
 /**
  * get 数据请求
  */
-var nGet = function (data) {
-  return new Promise(function (resolve, reject) {
-    wx.request({
-      url: data.url,
-      method: "GET",
-      header: {
-        "content-type": 'application/json'
-      },
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) {
-        wx.hideLoading();
-        if (res.errMsg != "request:ok") { // 网络请求超时
-          _sData = objOutTime;
-          Utils.showMsg(_sData.message || "系统异常");
-        } else {
-          resolve(res.data);
-        }
-      }
-    });
-  });
-}
+// var nGet = function (data) {
+//   return new Promise(function (resolve, reject) {
+//     wx.request({
+//       url: data.url,
+//       method: "GET",
+//       header: {
+//         "content-type": 'application/json'
+//       },
+//       success: function (res) { },
+//       fail: function (res) { },
+//       complete: function (res) {
+//         wx.hideLoading();
+//         if (res.errMsg != "request:ok") { // 网络请求超时
+//           _sData = objOutTime;
+//           Utils.showMsg(_sData.message || "系统异常");
+//         } else {
+//           resolve(res.data);
+//         }
+//       }
+//     });
+//   });
+// }
 
 /**
  * 上传文件
@@ -90,7 +89,7 @@ var nUplaod = function (data) {
       filePath: data.imgPath,
       header: {
         'content-type': 'multipart/form-data',
-        "Auth-Header": JSON.stringify(_header),
+        "Authorization": wx.getStorageSync('token'),
       },
       name: 'file',
       formData: data.params,
@@ -123,7 +122,7 @@ var myUploadFile = function (data) {
       filePath: data.filePath,
       header: {
         'content-type': 'multipart/form-data',
-        "Auth-Header": JSON.stringify(_header),
+        "Authorization": wx.getStorageSync('token'),
       },
       name: 'img',
       formData: data.formData,
@@ -157,8 +156,7 @@ var objOutTime = {
 }
 
 module.exports = {
-  nPost,
-  nGet,
+  http,
   nUplaod,
   myUploadFile,
 }

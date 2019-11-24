@@ -1,0 +1,43 @@
+/* components/auth-dialog/index.wxss */
+.blackBg{
+  background: rgba(33,49,47,0.40);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+.auth-dialog{
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  padding: 40rpx;
+  background: #FFFFFF;
+  border-radius: 4px;
+  margin: auto;
+  width: 75%;
+}
+.auth-dialog .auth-dialog-title{
+  font-size: 40rpx;
+  color: #333333;
+  font-weight: 555;
+  letter-spacing: 0;
+  text-align: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #F3F3F3;
+}
+.auth-dialog .auth-dialog-ctx{
+  font-size: 32rpx;
+  color: #3C3C3C;
+  letter-spacing: 0;
+  text-align: center;
+  padding:40rpx 50rpx;
+}
+.auth-dialog .auth-dialog-login{
+  background-image: linear-gradient(-90deg, #4EDCB0 0%, #2ABF77 100%);
+border-radius: 4px;
+width: 100%;
+color: #fff;
+}

@@ -63,6 +63,7 @@ Page({
     })
   },
   onLoad: function () {
+    console.log(111,app.globalData)
     // 页面显示
     var that = this;
     var length = that.data.text.length * that.data.size;//文字长度
