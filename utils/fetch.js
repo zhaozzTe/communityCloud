@@ -19,12 +19,14 @@ var http = function (data) {
         "Authorization": wx.getStorageSync('token'),
       },
       success: function (res) {
-        console.log(66, res)
+        console.log(res)
         let { data, statusCode} = res;
-        if (data && data.code == '0' || data && data.code == '2') { // 成功时的标记
+        if ((data.code == 0 && data.data && data.data.status == 0) || (data.code == 0 && data.data && data.data.status == 2)) { // 成功时的标记
           resolve(data); // 成功时的回调
+          // reLogin()
         } else if (statusCode==401){ // 状态失效
           wx.removeStorageSync('token')
+          // reLogin()
         } else {
           console.log('--- error ---');
           wx.showToast({
@@ -32,12 +34,6 @@ var http = function (data) {
             icon: 'warn',
             duration: 2000
           })
-          // wx.showModal({
-          //   title: '提示',
-          //   content: data.message,
-          //   showCancel: false,
-          //   confirmText: '知道了',
-          // });
           reject(data || "");
         }
       },
@@ -144,9 +140,21 @@ var myUploadFile = function (data) {
  */
 var reLogin = function () {
   getApp().clearUserInfo();
-  wx.switchTab({
-    url: '/pages/tab-home/tab-home'  
-  });
+  wx.getUserInfo({
+    async success(info) {
+      console.log(1112222, info);
+      let params = {
+        "code": res.code,
+        "encryptedData": e.detail.encryptedData,
+        "iv": e.detail.iv
+      }
+      let res=await http({ url: 'http://one-tech.cn:88/zh/api/v1/wx/wxAppLogin', params, method: 'post' })
+      
+    },
+    fail(err) {
+      console.log(33, err);
+    }
+  })
 }
 
 //该数据用于在无网络环境下，模拟报文，不再请求网络

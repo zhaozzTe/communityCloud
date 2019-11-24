@@ -40,17 +40,6 @@ App({
     this.globalData.systemInfo.plateform = _systemInfo.platform; // 平台 Android/iOS
     this.globalData.systemInfo.deviceVersion = _systemInfo.system; // 操作系统及版本
     // console.log(this.globalData);
-    let b
-    if (wx.getStorageSync('token')){
-      b=false
-    }else{
-      b = true
-    }
-    wx.setStorage({
-      key: "needAuth",
-      data: b
-    })
-    console.log(wx.getStorageSync('needAuth'));
     // 获取定位
     wx.getLocation({
       type: 'wgs84',
@@ -64,11 +53,9 @@ App({
     wx.login({
       success(res) {
         if (res.code) {
-          console.log(res)
           wx.getUserInfo({
             success(info){
               console.log(1112222,info);
-              
             },
             fail(err){
               console.log(33, err);

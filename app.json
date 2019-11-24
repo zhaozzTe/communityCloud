@@ -16,8 +16,8 @@
     "pages/house-story/house-story",
     "pages/house-story-detail/house-story-detail",
     "pages/Livelihood-service-hall/Livelihood-service-hall",
-     "pages/login-wx/login-wx",
-      "pages/compage/compage"
+    "pages/login-wx/login-wx",
+    "pages/compage/compage"
   ],
   "window": {
     "backgroundTextStyle": "light",

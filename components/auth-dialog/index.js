@@ -39,11 +39,14 @@ Component({
             try{
               let res = await wxAppLogin(params)
               console.log(res)
-              if (res.code == 0) {
-                wx.setStorageSync("token",res.data.token)
-                  wx.navigateTo({ url:'/page/login-wx/login-wx'})
-              } else if (res.code == -1){
-                wx.navigateTo({ url: '/page/authen/index' })
+              if (res.data.status == 0) {
+                  wx.setStorageSync("token",res.data.token)
+                wx.navigateTo({ url:'/pages/login-wx/login-wx'})
+              } else if (res.data.status == -1){
+                wx.navigateTo({ url: '/pages/authen/index' })
+              }else{
+                wx.setStorageSync("token", res.data.token)
+                wx.redirectTo({ url: '/pages/index/index' })
               }
             }catch(e){}
           }

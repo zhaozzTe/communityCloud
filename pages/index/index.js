@@ -65,14 +65,15 @@ Page({
   onLoad: function () {
     // 页面显示
     var that = this;
-    wx.getStorage({
-      key: 'needAuth',
-      success(res) {
-        that.setData({
-          needAuth: res.data
-        })
-      }
-    })
+    if (wx.getStorageSync('token')){
+      that.setData({
+        needAuth: false
+      })
+    }else{
+      that.setData({
+        needAuth: true
+      })
+    }
     var length = that.data.text.length * that.data.size;//文字长度
     var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
     that.setData({
@@ -81,6 +82,7 @@ Page({
     });
     that.runMarquee();// 水平一行字滚动完了再按照原来的方向滚动
     if (app.globalData.userInfo) {
+      console.log(444,app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
