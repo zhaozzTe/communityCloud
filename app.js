@@ -3,7 +3,6 @@ const UpdateManager = wx.getUpdateManager();
 const Def_Key_UserInfo = "Key_UserInfo";
 
 App({
-
   globalData: {
     hasUserInfo:true,
     userInfo: {
@@ -41,6 +40,16 @@ App({
     this.globalData.systemInfo.plateform = _systemInfo.platform; // 平台 Android/iOS
     this.globalData.systemInfo.deviceVersion = _systemInfo.system; // 操作系统及版本
     // console.log(this.globalData);
+    let b
+    if (wx.getStorageSync('token')){
+      b=false
+    }else{
+      b = true
+    }
+    wx.setStorage({
+      key: "needAuth",
+      data: b
+    })
     console.log(wx.getStorageSync('needAuth'));
     // 获取定位
     wx.getLocation({
@@ -59,32 +68,17 @@ App({
           wx.getUserInfo({
             success(info){
               console.log(1112222,info);
-              wx.setStorage({
-                key: "needAuth",
-                data: false
-              })
+              
             },
             fail(err){
               console.log(33, err);
-              wx.setStorage({
-                key: "needAuth",
-                data: true
-              })
             }
           })
         } else {
-          wx.setStorage({
-            key: "needAuth",
-            data: true
-          })
           console.log('登录失败！' + res.errMsg)
         }
       },
       fail(res){
-        wx.setStorage({
-          key: "needAuth",
-          data: true
-        })
         console.log('登录失败！' + res.errMsg)
       }
     })

@@ -21,10 +21,10 @@ var http = function (data) {
       success: function (res) {
         console.log(66, res)
         let { data, statusCode} = res;
-        if (data && data.code == '0') { // 成功时的标记
+        if (data && data.code == '0' || data && data.code == '2') { // 成功时的标记
           resolve(data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
-          
+          wx.removeStorageSync('token')
         } else {
           console.log('--- error ---');
           wx.showToast({

@@ -42,7 +42,7 @@ Component({
               if (res.code == 0) {
                 wx.setStorageSync("token",res.data.token)
                   wx.navigateTo({ url:'/page/login-wx/login-wx'})
-              }else{
+              } else if (res.code == -1){
                 wx.navigateTo({ url: '/page/authen/index' })
               }
             }catch(e){}
