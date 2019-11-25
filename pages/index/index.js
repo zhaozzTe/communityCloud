@@ -4,6 +4,12 @@ const app = getApp()
 
 Page({
   data: {
+    text: '社区居民免费体检活动，8月28日起即可开始预约',
+    marqueePace: 1,//滚动速度
+    marqueeDistance: 0,//初始滚动距离
+    size: 14,
+    orientation: 'left',//滚动方向
+    interval: 30, // 时间间隔
     menuList:[
       {
         src: '/images/sqfw.png',
@@ -47,7 +53,7 @@ Page({
       },
     ],
     userInfo: {},
-    hasUserInfo: false,
+    needAuth: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   //事件处理函数
@@ -57,10 +63,26 @@ Page({
     })
   },
   onLoad: function () {
-    // wx.navigateTo({
-    //   url: '/pages/authen/index'
-    // })
+    // 页面显示
+    var that = this;
+    if (wx.getStorageSync('token')){
+      that.setData({
+        needAuth: false
+      })
+    }else{
+      that.setData({
+        needAuth: true
+      })
+    }
+    var length = that.data.text.length * that.data.size;//文字长度
+    var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
+    that.setData({
+      length: length,
+      windowWidth: windowWidth,
+    });
+    that.runMarquee();// 水平一行字滚动完了再按照原来的方向滚动
     if (app.globalData.userInfo) {
+      console.log(444,app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -95,5 +117,22 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  runMarquee: function () {
+    var that = this;
+    var interval = setInterval(function () {
+      //文字一直移动到末端
+      if (-that.data.marqueeDistance < that.data.length) {
+        that.setData({
+          marqueeDistance: that.data.marqueeDistance - that.data.marqueePace,
+        });
+      } else {
+        clearInterval(interval);
+        that.setData({
+          marqueeDistance: that.data.windowWidth
+        });
+        that.runMarquee();
+      }
+    }, that.data.interval);
   }
 })

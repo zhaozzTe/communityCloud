@@ -1,0 +1,11 @@
+<!--components/auth-dialog/index.wxml-->
+<view wx:if='{{needAuth}}' class="blackBg">
+  <view class="auth-dialog">
+    <view class="auth-dialog-title">社区云管家小程序</view>
+    <view class="auth-dialog-ctx">
+      登录前请先授权用户信息,以便为您提供更好的服务
+    </view>
+    <button class='auth-dialog-login' open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">去授权用户信息</button>
+  </view>
+
+</view>

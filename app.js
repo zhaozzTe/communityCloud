@@ -3,8 +3,8 @@ const UpdateManager = wx.getUpdateManager();
 const Def_Key_UserInfo = "Key_UserInfo";
 
 App({
-
   globalData: {
+    hasUserInfo:true,
     userInfo: {
       loginStatus: "", // 0-未登录，1-已登录
       userToken: "", //  
@@ -53,13 +53,16 @@ App({
     wx.login({
       success(res) {
         if (res.code) {
-          console.log(res.code)
           wx.getUserInfo({
             success(info){
               console.log('getUserInfo成功信息',info);
             },
             fail(err){
+<<<<<<< HEAD
               console.log('getUserInfoc错误信息', err);
+=======
+              console.log(33, err);
+>>>>>>> 06a7d2409bd0b24eeb2d629a8c272e25f2e09106
             }
           })
         } else {
@@ -92,7 +95,7 @@ App({
     })
   },
 
-  Toast: function (msg, duration) {
+  Toast: function (msg, duration=2) {
     wx.showToast({
       title: msg || '',
       icon: 'none',

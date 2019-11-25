@@ -12,8 +12,15 @@
           <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}"></icon-menu>
         </view>
         <view class="menu-foot">
+          <!-- 跑马灯效果  -->
           <image src="/images/lb.png"></image>
-          <text>社区居民免费体检活动，8月28日起即可开始预</text>
+          <view class="example">
+            <view class="marquee_box">
+              <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
+                {{text}}
+              </view>
+            </view>
+          </view>
         </view>
       </view>
 
@@ -41,5 +48,5 @@
     </view>
 
   </view>
-
+  <auth-dialog needAuth='{{needAuth}}' ></auth-dialog>
 </view>
