@@ -21,12 +21,18 @@ var http = function (data) {
       success: function (res) {
         console.log(res)
         let { data, statusCode} = res;
-        if ((data.code == 0 && data.data && data.data.status == 0) || (data.code == 0 && data.data && data.data.status == 2)) { // 成功时的标记
+        let isLoginReq = data.url.toLowerCase().includes('LOGIN');// 登录请求
+        if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
           resolve(data); // 成功时的回调
-          // reLogin()
         } else if (statusCode==401){ // 状态失效
           wx.removeStorageSync('token')
-          // reLogin()
+        } else if (statusCode == 403) { // 未实名
+          wx.showToast({
+            title: '请您先实名认证',
+            icon: 'warn',
+            duration: 2000
+          })
+          wx.redirectTo({ url: '/pages/authen/index' })
         } else {
           console.log('--- error ---');
           wx.showToast({

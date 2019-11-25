@@ -58,12 +58,12 @@ Page({
               "iv": e.detail.iv
             }
             let res = await wxAppMobileLogin(params)
+            if (res.data && res.data.token) wx.setStorageSync("token", res.data.token)
             if (res.data.status == 0) {
-              wx.setStorageSync("token", res.data.token)
-              wx.navigateTo({ url: '/pages/login-wx/login-wx' })
+              wx.navigateTo({ url: '/pages/authen/index' })
             } else if (res.data.status == -1) {
               wx.navigateTo({ url: '/pages/authen/index' })
-            }else{
+            } else if (res.data.status == 2){
               wx.redirectTo({ url: '/pages/index/index' })
             }
           }catch(e){}

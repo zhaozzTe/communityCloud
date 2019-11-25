@@ -25,12 +25,12 @@
           <input class="weui-input" placeholder="请输入市/县/镇(村)"/>
         </form-item>
         <form-item fontClassName="iconfont {{phoneFontName}}" label="手机号码:">
-          <input fontClassName="iconfont {{sexFontName}}" placeholder="请输入您的手机号码"/>
+          <input fontClassName="iconfont {{sexFontName}}" bindblur="telInput" type="number" maxlength='11' placeholder="请输入您的手机号码"/>
         </form-item>
         <form-item fontClassName="iconfont {{yzmFontName}}" label="验证码:">
           <view class="yzm">
-            <input class="weui-input"  placeholder="请输入验证码"/>
-            <view  class="get-yzm" >获取验证码</view>
+            <input class="weui-input"  type="number" placeholder="请输入验证码"/>
+            <view  class="get-yzm" bindtap="getYZM" maxlength='6'>获取验证码</view>
           </view>
         </form-item>
         <view style="padding-top:20rpx;margin-left:30rpx">

@@ -91,7 +91,7 @@ App({
     })
   },
 
-  Toast: function (msg, duration) {
+  Toast: function (msg, duration=2) {
     wx.showToast({
       title: msg || '',
       icon: 'none',
