@@ -56,10 +56,10 @@ App({
           console.log(res.code)
           wx.getUserInfo({
             success(info){
-              console.log(1112222,info);
+              console.log('getUserInfo成功信息',info);
             },
             fail(err){
-              console.log(43334444, err);
+              console.log('getUserInfoc错误信息', err);
             }
           })
         } else {

@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+      "TitleMore": "/components/title-more/title-more",
+      "EntryItem": "/components/entry-item/index",
+      "HomeMeunIcon": "/components/home-meun-icon/home-meun-icon",
+      "AdviceSay": "/components/advice-item/advice-item"
+    },
+  "navigationBarTitleText": "风采展示厅"
+}
