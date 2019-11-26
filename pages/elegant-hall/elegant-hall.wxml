@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="header">
+      <view class="bgblock defaultBg"></view>
+      <view class="menu-box">
+        <HomeMeunIcon meuns="{{meuns}}"/>
+      </view>
+    </view>
+
+  <view class="publishHall-content">
+    <view  wx:for="{{infos}}" wx:for-item="item">
+        <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
+        <EntryItem data="{{item.entData}}"/>
+    </view>
+  </view>
+</view>

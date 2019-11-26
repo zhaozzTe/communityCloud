@@ -55,10 +55,9 @@ App({
         if (res.code) {
           wx.getUserInfo({
             success(info){
-              console.log(1112222,info);
+              console.log('getUserInfo成功信息',info);
             },
             fail(err){
-              console.log(33, err);
             }
           })
         } else {
