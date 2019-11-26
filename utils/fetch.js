@@ -9,6 +9,7 @@ var http = function (data) {
   let promise = new Promise(async function (resolve, reject) {
     wx.showNavigationBarLoading();
     let method = data.method.toLowerCase() || 'GET'
+    let isLoginReq = data.url.toLowerCase().includes('LOGIN');// 登录请求
     wx.request({
       url: data.url,
       data: data.params,
@@ -21,7 +22,6 @@ var http = function (data) {
       success: function (res) {
         console.log(res)
         let { data, statusCode} = res;
-        let isLoginReq = data.url.toLowerCase().includes('LOGIN');// 登录请求
         if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
           resolve(data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
