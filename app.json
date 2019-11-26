@@ -16,16 +16,11 @@
     "pages/house-story/house-story",
     "pages/house-story-detail/house-story-detail",
     "pages/Livelihood-service-hall/Livelihood-service-hall",
-<<<<<<< HEAD
     "pages/issue-success/issue-success",
     "pages/social-worker/social-worker",
     "pages/elegant-hall/elegant-hall",
      "pages/login-wx/login-wx",
       "pages/compage/compage"
-=======
-    "pages/login-wx/login-wx",
-    "pages/compage/compage"
->>>>>>> 06a7d2409bd0b24eeb2d629a8c272e25f2e09106
   ],
   "window": {
     "backgroundTextStyle": "light",

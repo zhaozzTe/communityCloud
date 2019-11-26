@@ -58,11 +58,6 @@ App({
               console.log('getUserInfo成功信息',info);
             },
             fail(err){
-<<<<<<< HEAD
-              console.log('getUserInfoc错误信息', err);
-=======
-              console.log(33, err);
->>>>>>> 06a7d2409bd0b24eeb2d629a8c272e25f2e09106
             }
           })
         } else {
