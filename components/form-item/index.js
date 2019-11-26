@@ -14,7 +14,10 @@ Component({
     },
     label:{
       type: String
-    }
+    },
+    width: {
+      type: String
+    },
   },
 
   /**

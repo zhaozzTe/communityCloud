@@ -6,30 +6,40 @@
       <view class="authen-header">
         <image src="/images/smrz.png"></image>
       </view>
-      <form class="authen-info">
+      <form class="authen-info"  bindsubmit="formSubmit">
         <view class="authen-info-title">
           <com-title title="填写实名认证信息"></com-title>
         </view>
         <!-- <view style="color:red" class="iconfont icongender"></view> -->
         <form-item fontClassName="iconfont {{sexFontName}}"  label="性别:">
-          <picker bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{sexArr}}">
+          <picker bindchange="bindPickerChange" range-key="name" value="{{index}}" name="gender" range="{{sexArr}}">
             <view class="picker">
               {{sexArr[index].name}}
             </view>
           </picker>
         </form-item>
         <form-item fontClassName="iconfont {{nameFontName}}" label="姓名:">
-          <input class="weui-input" placeholder="请输入您的姓名"/>
+          <input class="weui-input" name="name" placeholder="请输入您的姓名"/>
+        </form-item>
+        <form-item fontClassName="iconfont {{nameFontName}}" label="身份证:">
+          <input name="idCard" class="weui-input" placeholder="请输入您的身份证"/>
         </form-item>
         <form-item fontClassName="iconfont {{locationFontName}}" label="常住地址:">
-          <input class="weui-input" placeholder="请输入市/县/镇(村)"/>
+          <input value="{{initaddress}}" class="weui-input"/>
+        </form-item>
+        <form-item   fontClassName="iconfont {{locationFontName}}">
+         <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox" wx:for="{{address}}" wx:key='index'>
+              <checkbox name="address" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+          </checkbox-group>
         </form-item>
         <form-item fontClassName="iconfont {{phoneFontName}}" label="手机号码:">
-          <input fontClassName="iconfont {{sexFontName}}" bindblur="telInput" type="number" maxlength='11' placeholder="请输入您的手机号码"/>
+          <input name="mobile" fontClassName="iconfont {{sexFontName}}" bindblur="telInput" type="number" maxlength='11' placeholder="请输入您的手机号码"/>
         </form-item>
         <form-item fontClassName="iconfont {{yzmFontName}}" label="验证码:">
           <view class="yzm">
-            <input class="weui-input"  type="number" placeholder="请输入验证码"/>
+            <input name="yzm" class="weui-input"  type="number" placeholder="请输入验证码"/>
             <view  class="get-yzm" bindtap="getYZM" maxlength='6'>获取验证码</view>
           </view>
         </form-item>
@@ -39,7 +49,7 @@
           </label>
         </view>
         <view style="margin:40rpx 0  40rpx 0">
-          <button bindtap="submit"  type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
+          <button  formType="submit"  type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">确定</button>
         </view>
       </form>
     </view>

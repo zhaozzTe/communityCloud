@@ -2,6 +2,6 @@
 <view class="form-item">
   <!-- <icon class="icon" type="success"/>-->
   <view  class="{{fontClassName}} item-icon"></view> 
-  <text class="label">{{label}}</text>
+  <text class="label" style="width:{{width}}">{{label}}</text>
   <slot></slot>
 </view>

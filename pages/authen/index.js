@@ -14,6 +14,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    initaddress:'宁波市镇海区庄市街道同心湖社区',
+    address: [
+      // { name: '0', value: '宁波市镇海区庄市街道同心湖社区',checked: 'true' },
+      { name: '合生国际城', value: '合生国际城',  },
+      { name: '拉菲庄园', value: '拉菲庄园' },
+    ],
     sexFontName:'icongender',
     nameFontName:'iconname',
     locationFontName:'iconlocation',
@@ -24,7 +30,7 @@ Page({
     tel:'',
     sexArr:[
       {
-        id:0,
+        id:2,
         name:'请选择'
       },
       {
@@ -32,7 +38,7 @@ Page({
         name:'男'
       },
       {
-        id:2,
+        id:0,
         name:'女'
       },
     ]
@@ -79,8 +85,16 @@ Page({
       })
   
   },
-
-  submit() {
+  checkboxChange(e) {
+    console.log(88888, e.detail.value)
+    this.setData({
+      addressv: e.detail.value
+    })
+  },
+  formSubmit(e) {
+    let params = e.detail.value;
+    params.address = this.data.addressv.toString();
+    console.log(99999, params)
     wx.navigateTo({
       url: '/pages/index/index',
     })
