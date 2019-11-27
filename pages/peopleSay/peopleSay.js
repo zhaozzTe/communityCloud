@@ -10,7 +10,7 @@ Page({
       url: '/pages/peopleSay-rule/peopleSay-rule'
     }, {
         imgUrl: '/images/tab2.png',
-        meunText: '楼宇说事',
+        meunText: '网格说事',
         url: '/pages/peopleSay-story/peopleSay-story'
       },
       {

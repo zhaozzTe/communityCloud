@@ -22,7 +22,8 @@ Page({
       meunText: '志愿招募'
     }, {
       imgUrl: '/images/tab5.png',
-      meunText: '社工应答'
+      meunText: '社工应答',
+      url: '/pages/social-worker/social-worker'
     },
     ],
     infos: [{

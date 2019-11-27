@@ -1,5 +1,5 @@
 <view class="mysay-success">
-  <image src="/images/smrz.png" class="success-img"></image>
+  <image src="/images/authen.svg" class="success-img"></image>
   <view class="mysay-success-img">
    <icon type="success" size="20" color="green"/>
     您的议题已发布成功！

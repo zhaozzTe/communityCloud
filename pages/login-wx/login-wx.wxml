@@ -1,9 +1,8 @@
-<!--pages/login-wx/login-wx.wxml-->
-<view class='page_login'>
-  <view class='login_area'>
-    <button class='wx_login' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信手机号登录</button>
-
-     <!-- <button class='wx_login' open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">微信手机号登录</button> -->
-    <!-- <view class='pages/login-wx/login-wx' bindtap='otherLogin'>其他手机号登录</view> -->
+<view class="mysay-success">
+  <image src="/images/login.svg" class="success-img"></image>
+  <view class="login-text">
+    已实名认证的用户可使用一键登录
+如未实名认证，将跳转至实名认证页面
   </view>
+   <button size="big" class='mysay-success-back' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">一键登录</button>
 </view>

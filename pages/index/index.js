@@ -29,7 +29,7 @@ Page({
       {
         src: '/images/fczs.png',
         label: '风采展示',
-        url: '/pages/compage/compage'
+        url: '/pages/elegant-hall/elegant-hall'
       },
     ],
     entryList:[
