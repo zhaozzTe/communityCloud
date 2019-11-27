@@ -8,7 +8,7 @@ var http = function (data) {
   var _header = {}
   let promise = new Promise(async function (resolve, reject) {
     wx.showNavigationBarLoading();
-    let method = data.method.toLowerCase() || 'GET'
+    let method = data.method&&data.method.toLowerCase() || 'GET'
     let isLoginReq = data.url.toLowerCase().includes('LOGIN');// 登录请求
     wx.request({
       url: data.url,
@@ -20,33 +20,36 @@ var http = function (data) {
         "Authorization": wx.getStorageSync('token'),
       },
       success: function (res) {
-        console.log(res)
+        wx.hideNavigationBarLoading()
+        // console.log(res)
         let { data, statusCode} = res;
         if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
           resolve(data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
           wx.removeStorageSync('token')
+          wx.redirectTo({ url: '/pages/index/index' })
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
             title: '请您先实名认证',
-            icon: 'warn',
+            icon: 'none',
             duration: 2000
           })
-          wx.redirectTo({ url: '/pages/authen/index' })
+          if (!Utils.getCurrentPageUrl().includes('/pages/authen/index')) wx.redirectTo({ url: '/pages/authen/index' })
         } else {
           console.log('--- error ---');
           wx.showToast({
             title: data.msg||'连接错误',
-            icon: 'warn',
+            icon: 'none',
             duration: 2000
           })
           reject(data || "");
         }
       },
       fail: function (res) {
+        wx.hideNavigationBarLoading()
         console.log(99,res)
       },
-      complete: function (res) {}
+      complete: function (res) { wx.hideNavigationBarLoading()}
     });
   });
   return promise;

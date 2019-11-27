@@ -1,7 +1,9 @@
 <!--components/form-item/index.wxml-->
 <view class="form-item">
   <!-- <icon class="icon" type="success"/>-->
-  <view  class="{{fontClassName}} item-icon"></view> 
-  <text class="label" style="width:{{width}}">{{label}}</text>
+  <view class="form-item-label">
+    <view  class="{{fontClassName}} item-icon"></view> 
+    <text class="label" style="width:{{width}}">{{label}}</text>
+  </view>
   <slot></slot>
 </view>

@@ -8,6 +8,7 @@
  */
 let that =getApp()
 import WxTools from "../../utils/wxTools.js";
+import { getAddress, submitCertificate, getMobileCode } from '../../server/authen.js'
 Page({
 
   /**
@@ -20,17 +21,21 @@ Page({
       { name: '合生国际城', value: '合生国际城',  },
       { name: '拉菲庄园', value: '拉菲庄园' },
     ],
+    addressv:'',
     sexFontName:'icongender',
     nameFontName:'iconname',
     locationFontName:'iconlocation',
     phoneFontName:'iconcellnumber',
     yzmFontName: 'iconverification-code',
-    index:0,
+    index:"",
     isCheck:0,
     tel:'',
+    idCard:'',
+    hasGet:false,
+    yzmText:'获取验证码',
     sexArr:[
       {
-        id:2,
+        id:"",
         name:'请选择'
       },
       {
@@ -55,7 +60,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getAddress()
   },
 
   /**
@@ -66,19 +71,56 @@ Page({
       tel: e.detail.value
     })
   },
+  idInput: function (e) {
+    this.setData({
+      idCard: e.detail.value
+    })
+  },
   onShow: function () {
     WxTools.userInfo();
   },
-  getYZM(){
+  async getYZM(){
     let telreg=/^[1][3,4,5,7,8][0-9]{9}$/; 
     if(telreg.test(this.data.tel) === false){  
       that.Toast('请输入正确的手机号')
         return  false;  
     } 
+    let params={
+      mobile: this.data.tel
+    }
+    let res = await getMobileCode(params)
+    const { data, code } = res
+    if(code==0){
+      if (this.data.hasGet) return
+      this.setData({ hasGet: true })
+      let time = 60;
+      let timer = setInterval(() => {
+        if (time == 1) {
+          this.setData({ hasGet: false })
+          clearInterval(timer);
+        }
+        time--;
+        if (time == 0) {
+          this.setData({ yzmText: '获取验证码' })
+        } else {
+          this.setData({ yzmText: `重新发送(${time})` })
+        }
+      }, 1000)
+    }
+  },
+  async getAddress(){
+    let res = await getAddress()
+    const {data,code}=res
+    if(code==0&&data){
+      this.setData(
+        {
+          address: data
+        }
+      )
+    }
   },
   bindPickerChange(e)
   {
-    console.log(e.detail.value)  
     this.setData(
       {
         index: e.detail.value
@@ -86,18 +128,42 @@ Page({
   
   },
   checkboxChange(e) {
-    console.log(88888, e.detail.value)
     this.setData({
       addressv: e.detail.value
     })
   },
-  formSubmit(e) {
+  readChange(e) {
+    this.setData({
+      isCheck: e.detail.value[0]||0
+    })
+  },
+  async formSubmit(e) {
+    let telreg = /^[1][3,4,5,7,8][0-9]{9}$/; 
+    let reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
     let params = e.detail.value;
     params.address = this.data.addressv.toString();
-    console.log(99999, params)
-    wx.navigateTo({
-      url: '/pages/index/index',
-    })
+    if (!WxTools.validate(params)){
+      that.Toast('请填写完整')
+      return false;  
+    }
+    if (this.cardNum && reg.test(params.idCard) === false) {
+      that.Toast('请输入合法的身份证号码')
+      return false;
+    }
+    if (telreg.test(params.mobile) === false) {
+      that.Toast('请输入正确的手机号')
+      return false;
+    }  
+    if (!this.data.isCheck){
+      that.Toast('请阅读并同意实名认证协议')
+      return false;  
+    }
+    let res = await submitCertificate(params)
+    if(res&&res.code==0){
+      wx.redirectTo({
+        url: '/pages/index/index',
+      })
+    }
   },
 
     

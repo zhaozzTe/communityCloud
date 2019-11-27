@@ -7,6 +7,10 @@
   border-bottom: 1px solid #eee;
   font-size: 28rpx;
 }
+.form-item .form-item-label{
+display: flex;
+width: 180rpx;
+}
 .form-item .item-icon{
    width: 28rpx;
   height: 28rpx;

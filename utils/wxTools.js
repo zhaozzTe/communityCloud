@@ -53,7 +53,13 @@ const userInfo = () => {
     }
   });
 }
-
+/*获取当前页url*/
+function getCurrentPageUrl() {
+  var pages = getCurrentPages()    //获取加载的页面
+  var currentPage = pages[pages.length - 1]    //获取当前页面的对象
+  var url = currentPage.route    //当前页面url
+  return url
+}
 /**
  * 跳转到下一页
  * 
@@ -74,9 +80,20 @@ const navigateBackTo = (stack, pageUrl) => {
     });
   }
 }
-
+function validate(obj={}){
+  let r = true
+  for(let item in obj){
+    if (obj[item] === '' || obj[item] === null || obj[item] === undefined){
+      r= false
+      break
+    }
+  }
+  return r
+}
 export default {
   location, // 定位 
   userInfo, // 用户信息
   navigateBackTo, // 返回到指定页面
+  getCurrentPageUrl,
+  validate
 }
