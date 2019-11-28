@@ -28,8 +28,9 @@ var http = function (data) {
         if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
           resolve(data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
-          // wx.removeStorageSync('token')
-          reLogin(data)
+          wx.removeStorageSync('token')
+          wx.redirectTo({ url: '/pages/index/index' })
+          // reLogin(data)
           wx.redirectTo({ url: '/pages/index/index' })
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
@@ -151,7 +152,7 @@ var myUploadFile = function (data) {
  * 重新登录 清除用户信息
  */
 var reLogin = function (data) {
-  getApp().clearUserInfo();
+  // getApp().clearUserInfo();
   wx.login({
     success(res) {
       if (res.code) {
