@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/authen/index",
     "pages/index/index",
+    "pages/authen/index",
     "pages/logs/logs",
     "pages/publishHall/publishHall",
     "pages/publichHall-liveService/publichHall-liveService",
