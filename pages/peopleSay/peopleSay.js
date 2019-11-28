@@ -43,7 +43,7 @@ Page({
     ],
 
     adviceBoxs: [{
-      titleText: '楼宇说事',
+      titleText: '网格说事',
       isHasMore: true,
       advices: [{
         title: '关于高空抛物处罚的意见征集',
@@ -58,7 +58,7 @@ Page({
       ],
     },
       {
-        titleText: '楼宇说事',
+        titleText: '网格说事',
         isHasMore: true,
         advices: [{
           title: '垃圾分类工作意见征集',
