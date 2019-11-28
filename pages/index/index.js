@@ -114,6 +114,7 @@ Page({
   async getQrCodes(){
     try{
       let res = await getQrCodes()
+      console.log('二维码接口',res)
     }catch(e){}
   },
   getUserInfo: function(e) {
