@@ -21,6 +21,7 @@ var http = function (data) {
         "Authorization": wx.getStorageSync('token'),
       },
       success: function (res) {
+        console.log('接口', res)
         wx.hideNavigationBarLoading()
         // console.log(res)
         let { data, statusCode} = res;
@@ -49,7 +50,7 @@ var http = function (data) {
       },
       fail: function (res) {
         wx.hideNavigationBarLoading()
-        console.log(99,res)
+        console.log('接口fail',res)
       },
       complete: function (res) { wx.hideNavigationBarLoading()}
     });
