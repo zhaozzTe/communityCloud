@@ -7,16 +7,16 @@ Page({
     meuns: [{
       imgUrl: '/images/tab1.png',
       meunText: '展示规则',
-      url: '/pages/peopleSay-rule/peopleSay-rule'
+      url: '/pages/elegant-rule/elegant-rule'
     }, {
       imgUrl: '/images/tab2.png',
         meunText: '团建信息',
-      url: '/pages/peopleSay-story/peopleSay-story'
+        url: '/pages/elegant-tj-info/elegant-tj-info'
     },
     {
       imgUrl: '/images/tab3.png',
       meunText: '活动展示',
-      url: '/pages/house-story/house-story'
+      url: '/pages/elegant-hdzs/elegant-hdzs'
     },
     {
       imgUrl: '/images/tab4.png',

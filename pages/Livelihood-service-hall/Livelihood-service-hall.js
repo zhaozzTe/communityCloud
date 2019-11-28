@@ -7,11 +7,11 @@ Page({
     meuns: [{
       imgUrl: '/images/tab1.png',
       meunText: '服务规则',
-      url: '/pages/peopleSay-rule/peopleSay-rule'
+      url: '/pages/Livelihood-service-rule/Livelihood-service-rule'
     }, {
       imgUrl: '/images/tab2.png',
         meunText: '服务团队',
-      url: '/pages/peopleSay-story/peopleSay-story'
+        url: '/pages/Livelihood-service-tream/Livelihood-service-tream'
     },
     {
       imgUrl: '/images/tab3.png',

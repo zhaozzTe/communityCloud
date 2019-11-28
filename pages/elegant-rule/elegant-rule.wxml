@@ -1,0 +1,24 @@
+<view class="liveService">
+  <view class="container">
+    <view class="header">
+      <view class="bgblock defaultBg">
+        <view class="live-search">
+          <icon wx:if="{{!searchV}}" class="search-icon" type="search"></icon>
+          <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
+         
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="liveService-banner">
+    <view class="liveService-banner-text">
+    风采展示的规则说明，各类风采展示的正确流程及规则阐述，便于居民风采展示
+    </view>
+  </view>
+   <view class="publishHall-content">
+    <view  wx:for="{{infos}}" wx:for-item="item" wx:key="index">
+        <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
+        <EntryItem data="{{item.entData}}"/>
+    </view>
+  </view>
+</view>
