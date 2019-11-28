@@ -31,7 +31,7 @@ var http = function (data) {
           wx.removeStorageSync('token')
           wx.redirectTo({ url: '/pages/index/index' })
           // reLogin(data)
-          wx.redirectTo({ url: '/pages/index/index' })
+          // wx.redirectTo({ url: '/pages/index/index' })
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
             title: '请您先实名认证',
