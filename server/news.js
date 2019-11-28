@@ -1,4 +1,4 @@
 let { http } = require('../utils/fetch.js');
-export const getAddress = params => http({ url: 'http://one-tech.cn:88/zh/api/v1/certificate/getAddress', params, method: 'post' });//获取小区列表
-export const submitCertificate = params => http({ url: 'http://one-tech.cn:88/zh/api/v1/certificate/submitCertificate', params, method: 'post' });//提交实名认证请求
-export const getMobileCode = params => http({ url: `http://one-tech.cn:88/zh/api/v1/certificate/getMobileCode/${params.mobile}`, params: {} });//获取手机号验证码,手机号拼接在url中
+export const getNewsPage = params => http({ url: 'http://one-tech.cn:88/zh/api/v1/news/getNewsPage', params, method: 'post' });//获取新闻列表
+export const getNewsSummary = params => http({ url: `http://one-tech.cn:88/zh/api/v1/news/getNewsSummary/${params.newsType}`, params: {} });//获取板块新闻概览,每个子栏目最多返回2条数据
+export const getNewsDetail = params => http({ url: `http://one-tech.cn:88/zh/api/v1/news/getNewsDetail/${params.id}`, params: {} });//获取新闻详情

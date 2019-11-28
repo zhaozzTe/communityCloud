@@ -1,5 +1,6 @@
 import Config from "./config.js"
 import Utils from "./util.js"
+import wxTools from "./wxTools.js"
 
 /**
  * post 数据请求
@@ -26,7 +27,8 @@ var http = function (data) {
         if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
           resolve(data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
-          wx.removeStorageSync('token')
+          // wx.removeStorageSync('token')
+          reLogin(data)
           wx.redirectTo({ url: '/pages/index/index' })
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
@@ -34,7 +36,7 @@ var http = function (data) {
             icon: 'none',
             duration: 2000
           })
-          if (!Utils.getCurrentPageUrl().includes('/pages/authen/index')) wx.redirectTo({ url: '/pages/authen/index' })
+          if (!wxTools.getCurrentPageUrl().includes('/pages/authen/index')) wx.redirectTo({ url: '/pages/authen/index' })
         } else {
           console.log('--- error ---');
           wx.showToast({
@@ -147,21 +149,33 @@ var myUploadFile = function (data) {
 /**
  * 重新登录 清除用户信息
  */
-var reLogin = function () {
+var reLogin = function (data) {
   getApp().clearUserInfo();
-  wx.getUserInfo({
-    async success(info) {
-      console.log(1112222, info);
-      let params = {
-        "code": res.code,
-        "encryptedData": e.detail.encryptedData,
-        "iv": e.detail.iv
+  wx.login({
+    success(res) {
+      if (res.code) {
+        wx.getUserInfo({
+          async success(info) {
+            let params = {
+              "code": res.code,
+              "encryptedData": e.detail.encryptedData,
+              "iv": e.detail.iv
+            }
+            try{
+              let res = await http({ url: 'http://one-tech.cn:88/zh/api/v1/wx/wxAppLogin', params, method: 'post' })
+              if (res.data && res.data.token) wx.setStorageSync("token", res.data.token)
+              http(data)
+            }catch(e){}
+          },
+          fail(err) {
+          }
+        })
+      } else {
+        console.log('重新授权失败！' + res.errMsg)
       }
-      let res=await http({ url: 'http://one-tech.cn:88/zh/api/v1/wx/wxAppLogin', params, method: 'post' })
-      
     },
-    fail(err) {
-      console.log(33, err);
+    fail(res) {
+      console.log('重新授权失败！' + res.errMsg)
     }
   })
 }

@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
     infos:[{
@@ -36,7 +36,18 @@ Page({
   },
 
   onLoad: function () {
-   
+    console.log(this)
+    this.getNewsSummary()
   },
-
+  methods: {
+    
+  },
+  getNewsSummary: async function(){
+    let params={
+      newsType:'SHEWU_NEWS'
+    }
+    try{
+      let { code, data } = await getNewsSummary(params);
+    }catch(e){}
+  }
 })

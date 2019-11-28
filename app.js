@@ -52,6 +52,7 @@ App({
     });
     wx.login({
       success(res) {
+        console.log('wx.login', res);
         if (res.code) {
           wx.getUserInfo({
             success(info){
