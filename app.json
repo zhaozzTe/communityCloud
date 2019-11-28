@@ -20,6 +20,7 @@
     "pages/social-worker/social-worker",
     "pages/elegant-hall/elegant-hall",
      "pages/login-wx/login-wx",
+      "pages/login-waite/login-waite",
       "pages/compage/compage"
   ],
   "window": {

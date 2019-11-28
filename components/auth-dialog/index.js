@@ -46,7 +46,10 @@ Component({
                 wx.navigateTo({ url: '/pages/authen/index' })
               } else if (res.data.status == 2){
                 wx.redirectTo({ url: '/pages/index/index' })
+              } else if (res.data.status == 1) {
+                wx.redirectTo({ url: '/pages/index/index' })
               }
+
             }catch(e){}
           }
         }
