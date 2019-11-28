@@ -109,7 +109,7 @@ Page({
         }
       })
     }
-    this.getQrCodes()
+    // this.getQrCodes()
   },
   async getQrCodes(){
     try{
