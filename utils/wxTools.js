@@ -1,6 +1,20 @@
 /**
  * 定位
  */
+import { getQrCodes } from '../server/common.js'
+const checkAuth=async ()=>{
+  let auth=false;
+  try {
+    let res = await getQrCodes()
+    if (res.code == 0) {
+      auth = true
+    }
+  } catch (e) {
+    auth = false
+  }finally{
+    return auth
+  }
+}
 const location = () => {
   wx.getLocation({
     type: 'wgs84',
@@ -90,10 +104,25 @@ function validate(obj={}){
   }
   return r
 }
+let _offsetTops=[];
+function canLoad(e) {
+    _offsetTops=[..._offsetTops, e.target.offsetTop]
+  let r = false, len = _offsetTops.length
+  if (_offsetTops.length == 1) return true
+  if (_offsetTops[len - 2] == e.target.offsetTop) {
+    r = false
+  } else {
+    r = true
+    _offsetTops=[]
+  }
+  return r
+}
 export default {
   location, // 定位 
   userInfo, // 用户信息
   navigateBackTo, // 返回到指定页面
   getCurrentPageUrl,
-  validate
+  validate,
+  checkAuth,
+  canLoad
 }

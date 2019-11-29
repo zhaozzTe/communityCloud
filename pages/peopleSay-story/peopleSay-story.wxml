@@ -10,7 +10,7 @@
       </view>
     </view>
     <view class="story-adviceBoxs" >
-      <AdviceSay datas="{{advices}}" />
+      <AdviceSay datas="{{advices}}" bind:load="load" />
     </view>
     <view bindtap="gotoMySay" class="my-say">我要说事</view>
 </view>

@@ -1,5 +1,5 @@
 // components/iconMenu/index.js
-import { getQrCodes } from '../../server/common.js'
+import wxTools from "../../utils/wxTools.js"
 Component({
   /**
    * 组件的属性列表
@@ -30,8 +30,8 @@ Component({
   methods: {
     async gotoPage(e){
       try {
-        let res = await getQrCodes()
-        if (res.code == 0) {
+        let res = await wxTools.checkAuth()
+        if (res) {
           const url = e.currentTarget.dataset.url;
           wx.navigateTo({
             url: url

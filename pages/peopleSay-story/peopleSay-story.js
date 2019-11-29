@@ -107,7 +107,9 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  load(e){
+    console.log(321, e.detail)
+  },
   gotoMySay(){
     console.log(11111)
     wx.navigateTo({

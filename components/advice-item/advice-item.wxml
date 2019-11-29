@@ -1,4 +1,5 @@
-<view class="advice-box">
+<scroll-view class="advice-box" scroll-y="true" style="height: 75vh;" bindscrolltoupper="upper" bindscrolltolower="lower"
+bindscrolltolower="load">
   <view class="advice-item" wx:for="{{datas}}" wx:for-item="item" wx:key='index'>
   <view class="item-left">
     <view class="item-left-title">{{item.title}}</view>
@@ -11,5 +12,5 @@
      参与
     </view>
 </view>
-</view>
+</scroll-view>
 

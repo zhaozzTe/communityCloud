@@ -8,9 +8,12 @@ import wxTools from "./wxTools.js"
 var http = function (data) {
   var _header = {}
   let promise = new Promise(async function (resolve, reject) {
-    wx.showNavigationBarLoading();
+    let loading = data && data.loading
     let method = data.method&&data.method.toLowerCase() || 'GET'
     let isLoginReq = data.url.toLowerCase().includes('LOGIN');// 登录请求
+    if (loading) wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: data.url,
       data: data.params,
@@ -22,7 +25,6 @@ var http = function (data) {
       },
       success: function (res) {
         console.log('接口', res)
-        wx.hideNavigationBarLoading()
         // console.log(res)
         let { data, statusCode} = res;
         if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
@@ -50,42 +52,15 @@ var http = function (data) {
         }
       },
       fail: function (res) {
-        wx.hideNavigationBarLoading()
         console.log('接口fail',res)
       },
-      complete: function (res) { wx.hideNavigationBarLoading()}
+      complete: function (res) {
+        if (loading) wx.hideLoading()
+      }
     });
   });
   return promise;
 }
-
-
-/**
- * get 数据请求
- */
-// var nGet = function (data) {
-//   return new Promise(function (resolve, reject) {
-//     wx.request({
-//       url: data.url,
-//       method: "GET",
-//       header: {
-//         "content-type": 'application/json'
-//       },
-//       success: function (res) { },
-//       fail: function (res) { },
-//       complete: function (res) {
-//         wx.hideLoading();
-//         if (res.errMsg != "request:ok") { // 网络请求超时
-//           _sData = objOutTime;
-//           Utils.showMsg(_sData.message || "系统异常");
-//         } else {
-//           resolve(res.data);
-//         }
-//       }
-//     });
-//   });
-// }
-
 /**
  * 上传文件
  */
@@ -93,6 +68,10 @@ var nUplaod = function (data) {
   var _header = {
   }
   return new Promise(function (resolve, rejec) {
+    let loading = data && data.loading
+    if (loading) wx.showLoading({
+      title: '加载中',
+    })
     wx.uploadFile({
       url: data.url, //仅为示例，非真实的接口地址
       filePath: data.imgPath,
@@ -103,7 +82,6 @@ var nUplaod = function (data) {
       name: 'file',
       formData: data.params,
       complete: function (res) {
-
         wx.hideLoading();
         let _sData = JSON.parse(res.data);
         if (_sData.code != "0") {
@@ -126,6 +104,10 @@ var myUploadFile = function (data) {
     
   }
   let promise = new Promise(function (resolve, reject) {
+    let loading = data && data.loading
+    if (loading) wx.showLoading({
+      title: '加载中',
+    })
     wx.uploadFile({
       url: data.url,
       filePath: data.filePath,
@@ -136,6 +118,7 @@ var myUploadFile = function (data) {
       name: 'img',
       formData: data.formData,
       complete: function (res) {
+        wx.hideLoading();
         if (res.data && res.data.code === 0) { // 成功
           resolve(res);
         } else { // 失败

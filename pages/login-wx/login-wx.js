@@ -1,5 +1,4 @@
 // pages/login-wx/login-wx.js
-import Http from '../../utils/http.js';
 import Config from "../../utils/config.js";
 import WxTools from "../../utils/wxTools.js";
 import { wxAppMobileLogin } from '../../server/common.js'

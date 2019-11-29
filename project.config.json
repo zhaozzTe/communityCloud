@@ -23,7 +23,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.4",
 	"appid": "wx3f197065d350f917",
 	"projectname": "communityCloud",
 	"debugOptions": {

@@ -36,7 +36,9 @@ Page({
   },
 
   onLoad: function () {
-    console.log(this)
+
+  },
+  onShow: function () {
     this.getNewsSummary()
   },
   methods: {

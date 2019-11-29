@@ -109,7 +109,9 @@ Page({
         }
       })
     }
-    // this.getQrCodes()
+  },
+  onShow: function () {
+    this.getQrCodes()
   },
   async getQrCodes(){
     try{
