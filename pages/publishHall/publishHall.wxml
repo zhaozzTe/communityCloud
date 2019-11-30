@@ -14,7 +14,7 @@
         <view  class="menu-item-img">
           <image src="/images/tab2.png"></image>
         </view>
-        <text class="menu-item-text">社区堂务</text>
+        <text class="menu-item-text">社区党务</text>
       </view>
        <view class="menu-box-item">
         <view  class="menu-item-img">

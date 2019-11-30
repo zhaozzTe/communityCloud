@@ -30,7 +30,7 @@
         <form-item label="常住社区:"  fontClassName="iconfont {{locationFontName}}">
          <checkbox-group bindchange="checkboxChange">
             <label class="checkbox" wx:for="{{address}}" wx:key='index'>
-              <checkbox name="address" value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+              <checkbox name="address" value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
             </label>
           </checkbox-group>
         </form-item>

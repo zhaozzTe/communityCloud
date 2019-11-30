@@ -23,17 +23,15 @@ var http = function (data) {
         "content-type": 'application/json',
         "Authorization": wx.getStorageSync('token'),
       },
-      success: function (res) {
+      success: async function (res) {
+        
         console.log('接口', res)
         // console.log(res)
-        let { data, statusCode} = res;
-        if (data.code == 0 || (isLoginReq && data.code == 0 && data.data && (data.data.status == 0 || data.data.status == 2))) { // 成功时的标记
-          resolve(data); // 成功时的回调
+        let { statusCode} = res;
+        if (res.data.code == 0 || (isLoginReq && res.data.code == 0 && res.data.data && (res.data.data.status == 0 || res.data.data.status == 2))) { // 成功时的标记
+          resolve(res.data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
-          wx.removeStorageSync('token')
-          wx.redirectTo({ url: '/pages/index/index' })
-          // reLogin(data)
-          // wx.redirectTo({ url: '/pages/index/index' })
+          reLogin(data)
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
             title: '请您先实名认证',
@@ -42,9 +40,9 @@ var http = function (data) {
           })
           if (!wxTools.getCurrentPageUrl().includes('/pages/authen/index')) wx.redirectTo({ url: '/pages/authen/index' })
         } else {
-          console.log('--- error ---');
+          console.log('--- error ---',res);
           wx.showToast({
-            title: data.msg||'连接错误',
+            title: res.data.data.msg||'连接错误',
             icon: 'none',
             duration: 2000
           })
@@ -134,22 +132,27 @@ var myUploadFile = function (data) {
 /**
  * 重新登录 清除用户信息
  */
-var reLogin = function (data) {
+var reLogin = async function (data) {
+  console.log('reLogin');
+  let req;
   // getApp().clearUserInfo();
-  wx.login({
-    success(res) {
+  await wx.login({
+    async success(res) {
       if (res.code) {
-        wx.getUserInfo({
+        await wx.getUserInfo({
           async success(info) {
+            console.log(info);
+            
             let params = {
               "code": res.code,
-              "encryptedData": e.detail.encryptedData,
-              "iv": e.detail.iv
+              "encryptedData": info.encryptedData,
+              "iv": info.iv
             }
             try{
               let res = await http({ url: 'http://one-tech.cn:88/zh/api/v1/wx/wxAppLogin', params, method: 'post' })
               if (res.data && res.data.token) wx.setStorageSync("token", res.data.token)
-              http(data)
+              // req =await http(data)
+              // console.log(1,req);
             }catch(e){}
           },
           fail(err) {
@@ -163,6 +166,8 @@ var reLogin = function (data) {
       console.log('重新授权失败！' + res.errMsg)
     }
   })
+  // console.log(2,req);
+  // return req
 }
 
 //该数据用于在无网络环境下，模拟报文，不再请求网络

@@ -50,6 +50,7 @@ Page({
     }
     try{
       let { code, data } = await getNewsSummary(params);
+      // code==0&&this.setData({infos:data})
     }catch(e){}
   }
 })

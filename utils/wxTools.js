@@ -1,16 +1,25 @@
 /**
  * 定位
  */
-import { getQrCodes } from '../server/common.js'
+import { getUserStatus } from '../server/common.js'
 const checkAuth=async ()=>{
   let auth=false;
   try {
-    let res = await getQrCodes()
-    if (res.code == 0) {
-      auth = true
+    let {code,data} = await getUserStatus()
+    if (code == 0) {
+      if (data && data.token) wx.setStorageSync("token",data.token)
+      if(data.status==0){//未实名认证,需要引导用户到注册页面
+        wx.navigateTo({ url: '/pages/authen/index' })
+      }else if(data.status==1){//实名认证信息待审核
+        wx.redirectTo({ url: '/pages/login-waite/login-waite' })
+      }else if(data.status==2){//实名认证通过
+        auth = true
+      }else if(data.status==-1){//实名认证未通过
+        wx.navigateTo({ url: '/pages/authen/index' })
+      }
     }
   } catch (e) {
-    auth = false
+
   }finally{
     return auth
   }
