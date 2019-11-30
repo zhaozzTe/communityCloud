@@ -9,7 +9,6 @@
 }
 .menu-box{
   width:710rpx;
-  height: 440rpx;
   background: #fff;
   position: absolute;
   top:20rpx;

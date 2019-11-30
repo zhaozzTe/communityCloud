@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "TitleMore": "/components/title-more/title-more",
+    "EntryItem": "/components/entry-item-z/index"
+  },
+  "navigationBarTitleText": "发布规则"
+}

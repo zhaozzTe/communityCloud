@@ -1,0 +1,12 @@
+<!--pages/detailCom/index.wxml-->
+<view class="detailCom">
+    <image src="{{data.titleImgUrl}}"></image>
+    <view class="ctx">
+        <view class="com-title">{{data.title}}</view>
+        <view class="time">{{data.createTime}}</view>
+        
+        <view class="ctx-com">{{data.content}}</view>
+        
+    </view>
+
+</view>

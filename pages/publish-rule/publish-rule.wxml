@@ -1,0 +1,29 @@
+<view class="liveService">
+  <view class="container">
+    <view class="header">
+      <view class="bgblock defaultBg">
+        <view class="live-search">
+          <icon wx:if="{{!searchV}}" class="search-icon" type="search"></icon>
+          <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
+         
+        </view>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" style="height: 90vh;" bindscrolltolower="lower">
+    <view class="liveService-banner">
+      <image src="{{infos[0].titleImgUrl}}"></image>
+      <view class="liveService-banner-text">
+      居民说事的规则说明，各类说事的正确流程及规则阐述，便于居民快速准确说事
+      </view>
+    </view>
+     <view class="publishHall-content">
+        <TitleMore wx:if="{{infos.length>0}}" title='全部{{infos[0].typeCode_str}}' isHasMore="{{false}}"/>
+        <view class="entry-wrap" style="margin:0 20rpx">
+          <EntryItem wx:for="{{infos}}" wx:for-item="item" wx:key="index" data="{{item}}"
+           url="/pages/detailCom/index" params="{{item}}" navTitle="{{item.typeCode_str}}详情"/>
+        </view>
+    </view>
+    
+  </scroll-view>
+</view>

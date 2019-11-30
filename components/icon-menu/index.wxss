@@ -1,5 +1,9 @@
 /* components/iconMenu/index.wxml.wxss */
-
+.icon-menu-item{
+  width: auto;
+  text-align: center;
+  margin: 20rpx 0;
+}
 .icon-menu-item .images {
   width: 100rpx;
   height: 100rpx;

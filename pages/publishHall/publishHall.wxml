@@ -4,51 +4,18 @@
     <view class="bgblock defaultBg"></view>
     <view class="menu-box">
     <view class="menu-box-content">
-      <view class="menu-box-item">
-        <view  class="menu-item-img">
-          <image src="/images/tab1.png"></image>
-        </view>
-        <text class="menu-item-text">发布规则</text>
+      <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}" params="{{item.params}}" navTitle="{{item.label}}" width="200rpx"></icon-menu>
+      
       </view>
-       <view class="menu-box-item">
-        <view  class="menu-item-img">
-          <image src="/images/tab2.png"></image>
-        </view>
-        <text class="menu-item-text">社区党务</text>
-      </view>
-       <view class="menu-box-item">
-        <view  class="menu-item-img">
-          <image src="/images/tab3.png"></image>
-        </view>
-        <text class="menu-item-text">社区居务</text>
-      </view>
-      </view>
-<view class="menu-box-content">
-       <view class="menu-box-item">
-        <view  class="menu-item-img">
-          <image src="/images/tab1.png"></image>
-        </view>
-        <text class="menu-item-text">社区财务</text>
-      </view>
-       <view class="menu-box-item">
-        <view  class="menu-item-img">
-          <image src="/images/tab2.png"></image>
-        </view>
-        <text class="menu-item-text">社区动态</text>
-      </view>
-       <view class="menu-box-item">
-        <view  class="menu-item-img">
-          <image src="/images/tab3.png"></image>
-        </view>
-        <text class="menu-item-text">科普教育</text>
-      </view>
-       </view>
     </view>
   </view>
   <view class="publishHall-content">
-    <view  wx:for="{{infos}}" wx:for-item="item" wx:key="index">
-        <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
-        <EntryItem data="{{item.entData}}"/>
+    <view wx:for="{{infos}}" wx:for-item="item" wx:key="index" wx:if="{{item.length>0}}">
+        <TitleMore title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
+        <view class="entry-wrap">
+          <EntryItem wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
+           url="/pages/detailCom/index" navTitle="{{ite.typeCode_str}}详情"/>
+        </view>
     </view>
   </view>
 </view>

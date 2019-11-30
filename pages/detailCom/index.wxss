@@ -1,0 +1,21 @@
+/* pages/detailCom/index.wxss */
+.detailCom{
+    margin:20rpx;
+}
+.detailCom image{
+    width: 100%;
+    object-fit: cover;
+}
+.detailCom .ctx{
+    padding:20rpx;
+}
+.detailCom .ctx .time{
+    font-size: 24rpx;
+color: #999999;
+}
+.detailCom .ctx .ctx-com{
+    margin-top:30rpx;
+    font-size: 28rpx;
+color: #3C3C3C;
+word-wrap:break-word
+}

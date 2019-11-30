@@ -4,6 +4,7 @@
     "pages/authen/index",
     "pages/logs/logs",
     "pages/publishHall/publishHall",
+    "pages/publish-rule/publish-rule",
     "pages/publichHall-liveService/publichHall-liveService",
     "pages/publichHal-liveDetail/publichHal-liveDetail",
     "pages/peopleSay/peopleSay",
@@ -24,9 +25,11 @@
     "pages/elegant-rule/elegant-rule",
     "pages/elegant-tj-info/elegant-tj-info",
     "pages/elegant-hdzs/elegant-hdzs",
-     "pages/login-wx/login-wx",
-      "pages/login-waite/login-waite",
-      "pages/compage/compage"
+    "pages/login-wx/login-wx",
+    "pages/login-waite/login-waite",
+    "pages/compage/compage",
+    "pages/detailCom/index",
+    "pages/comNews/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

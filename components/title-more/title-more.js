@@ -3,6 +3,12 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    data:{
+      type:Object
+    },
+    url:{
+      type:String
+    },
     title:{
       type:String
     },
@@ -22,6 +28,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goMorePage(e){
+      console.log(this.data);
+      
+      const url = e.currentTarget.dataset.url;
+      wx.navigateTo({
+        url: url+`?type=${this.data.data.typeCode}`
+      })
+      wx.setNavigationBarTitle({title:this.data.data.typeCode_str})
+    }
   }
 })

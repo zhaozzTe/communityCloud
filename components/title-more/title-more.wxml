@@ -1,4 +1,4 @@
 <view class="title-more">
   <view class="title-more-text">{{title}}</view>
-   <view wx:if="{{isHasMore}}" class="title-more-more" bindlongtap="goMorePage">查看更多 ></view>
+   <view wx:if="{{isHasMore}}" class="title-more-more" bindtap="goMorePage" data-url="{{data.url||url}}">查看更多 ></view>
 </view>

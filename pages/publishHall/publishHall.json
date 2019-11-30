@@ -1,7 +1,8 @@
 {
   "usingComponents": {
+    "icon-menu": "/components/icon-menu/index",
     "TitleMore":"/components/title-more/title-more",
-    "EntryItem":"/components/entry-item/index"
+    "EntryItem":"/components/entry-item-z/index"
   },
   "navigationBarTitleText":"社务发布厅"
 }
