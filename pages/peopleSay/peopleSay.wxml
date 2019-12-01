@@ -26,8 +26,8 @@
       </view>
     </view>
   </view>
-  <view class="adviceBoxs" wx:for="{{adviceBoxs}}" wx:for-item="adviceBox" wx:key='index'>
+  <!-- <view class="adviceBoxs" wx:for="{{adviceBoxs}}" wx:for-item="adviceBox" wx:key='index'>
     <TitleMore title='{{adviceBox.titleText}}' isHasMore="{{adviceBox.isHasMore}}"/>
     <AdviceSay datas="{{adviceBox.advices}}" />
-  </view>
+  </view> -->
 </view>

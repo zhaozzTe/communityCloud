@@ -1,61 +1,50 @@
 // pages/publichHall-liveService/publichHall-liveService.js
+import { getNewsPage } from '../../server/news.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    type:'',
     searchV: '',
-    isHideSearchIcon: false,
-    infos: [{
-      titleText: '社工政策',
-      isHasMore: true,
-      entData: [{
-        image: '/images/flag.png',
-        title: '社区社工政策说明细则',
-        text: '2019年10月20日',
-        url: '/pages/peopleSay-detail/peopleSay-detail'
-      },
-      {
-        image: '/images/sqss.png',
-        title: '社区社工政策详细解读',
-        text: '2019年10月18日',
-        url: '/pages/compage/compage'
-      },
-     ],
-    },
-      {
-        titleText: '社工服务',
-        isHasMore: true,
-        entData: [{
-          image: '/images/flag.png',
-          title: '社工服务规范',
-          text: '2019年10月20日',
-          url: '/pages/peopleSay-detail/peopleSay-detail'
-        },
-        {
-          image: '/images/sqss.png',
-          title: '社工服务时间及注意事项',
-          text: '2019年10月18日',
-          url: '/pages/compage/compage'
-        },
-        ],
-      }
-    ]
+    page:1,
+    finish:false,
+    infos: [],
+    isHideSearchIcon: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({type:options.type})
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(1)
+    this.setData({infos:[],finish:false})
+    this.getNewsPage()
+  },
+  lower(e){
+    if(!this.data.finish) this.getNewsPage(this.data.page+1)
+  },
+  getNewsPage: async function(page=1,isSearch=false){
+    this.setData({page})
+    let params={
+      page:page,
+      pageSize:5,
+      typeCode:this.data.type,
+      keyword:this.data.searchV
+    }
+    try{
+      let { code, data } = await getNewsPage(params);
+      if(isSearch) this.setData({infos:[],finish:false})
+      code==0&&this.setData({infos:[...data,...this.data.infos]})
+      data.length==0&&this.setData({finish:true})
+    }catch(e){}
   },
   getFocus: function (e) {
     this.setData({
@@ -64,9 +53,9 @@ Page({
 
   },
   bindReplaceInput: function (e) {
-    console.log(e.detail.value)
     this.setData({
       searchV: e.detail.value
     })
-  }
+    this.getNewsPage(1,true)
+  },
 })

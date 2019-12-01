@@ -12,7 +12,6 @@
 }
 .menu-box{
   width:710rpx;
-  height: 440rpx;
   background: #fff;
   position: absolute;
   top:20rpx;
@@ -21,7 +20,9 @@
   box-sizing: border-box;
  border-radius: 8rpx;
  box-shadow:  0 0 24rpx 4rpx rgba(0,0,0,0.08);
-
+ display: flex;
+ flex-wrap:wrap;
+ justify-content: space-around;
 }
 .menu-box-content{
   display: flex;

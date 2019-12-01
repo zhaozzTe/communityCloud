@@ -12,7 +12,7 @@
     <view class="all-says-box">
       <view class="all-says-l">全部评论</view>
       <view class="all-says-r">
-       <text class="all-says-num">35</text>条
+       <text class="all-says-num">{{infos.length}}</text>条
       </view>
     </view>
     <scroll-view scroll-y="true" style="height: 60vh;" bindscrolltolower="lower">
@@ -22,6 +22,6 @@
   <view class="story-detail-floot">
     <input class="story-detail-input" bindinput="inputCom" bindconfirm="comment" placeholder="说点什么吧"></input>
     <!-- <image class="input-icon" src="/images/tab2.png"></image> -->
-    <view class="input-icon1" bindtap="comment"></view>
+    <!-- <view class="input-icon1" bindtap="comment"></view> -->
   </view>
 </view>

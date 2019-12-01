@@ -1,78 +1,67 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
-    meuns: [{
-      imgUrl: '/images/tab1.png',
-      meunText: '服务规则',
-      url: '/pages/Livelihood-service-rule/Livelihood-service-rule'
+    menuList: [{
+      src: '/images/tab1.png',
+      label: '服务规则',
+      url: '/pages/comNews/index',
+      // url: '/pages/Livelihood-service-rule/Livelihood-service-rule',
+      params:{
+        type:'FUWU_RULE'
+      }
     }, {
-      imgUrl: '/images/tab2.png',
-        meunText: '服务团队',
-        url: '/pages/Livelihood-service-tream/Livelihood-service-tream'
+      src: '/images/tab2.png',
+        label: '服务团队',
+        url: '/pages/comNews/index',
+        // url: '/pages/Livelihood-service-tream/Livelihood-service-tream',
+        params:{
+          type:'FUWU_TUANDUI'
+        }
     },
     {
-      imgUrl: '/images/tab3.png',
-      meunText: '服务需求'
+      src: '/images/tab3.png',
+      label: '服务需求',
+      // url: '/pages/comNews/index',
+      params:{
+        type:'FUWU_XUQIU'
+      }
     },
     {
-      imgUrl: '/images/tab4.png',
-      meunText: '志愿招募'
+      src: '/images/tab4.png',
+      label: '志愿招募',
+      // url: '/pages/comNews/index',
+      params:{
+        type:'ZHIYUAN_ZHAOMU'
+      }
     }, {
-      imgUrl: '/images/tab5.png',
-      meunText: '社工应答',
-      url: '/pages/social-worker/social-worker'
+      src: '/images/tab5.png',
+      label: '社工应答',
+      // url: '/pages/comNews/index',
+      url: '/pages/social-worker/social-worker',
+      params:{
+        type:'SHEGONG_YINGDA'
+      }
     },
     ],
-    infos: [{
-      titleText: '服务规则',
-      isHasMore: true,
-      entData: [{
-        image: '/images/sqff.png',
-        title: '民生服务发布规则',
-        text: '2019年10月20日'
-      },
-      {
-        image: '/images/sqfw.png',
-        title: '志愿者招募规则及流程说明',
-        text: '2019年10月18日'
-      }],
-    },
-      {
-        titleText: '服务团队',
-        isHasMore: true,
-        entData: [{
-          image: '/images/sqff.png',
-          title: '无偿服务团队列表',
-          text: '2019年10月20日'
-        },
-        {
-          image: '/images/sqfw.png',
-          title: '低偿服务团队列表',
-          text: '2019年10月18日'
-        }],
-      },
-      {
-        titleText: '服务需求',
-        isHasMore: true,
-        entData: [{
-          image: '/images/sqff.png',
-          title: '养老需求登记',
-          text: '2019年10月20日'
-        },
-        {
-          image: '/images/sqfw.png',
-          title: '保洁服务需求登记',
-          text: '2019年10月18日'
-        }],
-      },
-    ],
+    infos: [],
   },
 
   onLoad: function () {
 
   },
-
+  onShow: function () {
+    this.getNewsSummary()
+  },
+  getNewsSummary: async function(){
+    let params={
+      newsType:'MINSHENG_NEWS'
+    }
+    try{
+      let { code, data } = await getNewsSummary(params);
+      code==0&&this.setData({infos:data})
+    }catch(e){}
+  }
 })

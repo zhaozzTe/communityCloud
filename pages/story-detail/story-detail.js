@@ -13,12 +13,6 @@ Page({
     data:{},
     infos:[],
     newsComment:'',
-    info: {
-      name:'赵大挣',
-      time:'刚刚',
-      content: '设定日常的监督管理员，给大家搞监督工作，时间久了，一定可以有效😊',
-      imgUrl: '/images/tab2.png',
-    }
 
   },
 
@@ -62,7 +56,7 @@ Page({
       let {code,data} = await comment(params)
       console.log(code);
       if(code==0){
-        this.commentList()
+        this.commentList(1,true)
       }
     } catch (error) {}
   },
@@ -79,7 +73,7 @@ Page({
       data.forEach(item=>{
         item.createTime=wxTools.classTimeValidate(item.createTime)
       })
-      if(isSearch) this.setData({infos:[]})
+      if(isSearch) this.setData({infos:[],finish:false})
       code==0&&this.setData({infos:[...data,...this.data.infos]})
       data.length==0&&this.setData({finish:true})
     }catch(e){}

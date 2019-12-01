@@ -5,7 +5,7 @@ import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
     meuns:[{
-      iconfont:'iconshuoshiguize',
+      src:'/images/ssgz.png',
       label:'说事规则',
       // url: '/pages/peopleSay-rule/peopleSay-rule',
       url: '/pages/comNews/index',
@@ -13,7 +13,7 @@ Page({
         type:'SHUOSHI_RULE'
       }
     }, {
-      iconfont:'iconlouyushuoshi',
+        src:'/images/lyss.png',
         label: '楼宇说事',
         // url: '/pages/comNews/index',
         url: '/pages/peopleSay-story/peopleSay-story',
@@ -22,7 +22,7 @@ Page({
         }
       },
       {
-        iconfont:'iconxiaoqushuoshi',
+        src:'/images/xqss.png',
         label: '小区说事',
         url: '/pages/house-story/house-story',
         params:{
@@ -30,54 +30,22 @@ Page({
         }
       },
       {
-        iconfont:'iconshequshuoshi1',
+        src:'/images/qyss2.png',
         label: '社区说事',
-        url: '/pages/comNews/index',
+        url: '/pages/house-story/house-story',
         params:{
           type:'SHEQU_SHUOSHI'
         }
       }, {
-        iconfont:'iconquyushuoshi',
+        src:'/images/qyss.png',
         label: '区域说事',
-        url: '/pages/comNews/index',
+        url: '/pages/house-story/house-story',
         params:{
           type:'QUYU_SHUOSHI'
         }
       },
       ],
     infos: [],
-
-    adviceBoxs: [{
-      titleText: '网格说事',
-      isHasMore: true,
-      advices: [{
-        title: '关于高空抛物处罚的意见征集',
-        joinPeoples: 156,
-        replyPeoples: 35
-        },
-        {
-          title: '关于楼道流浪猫的问题讨论',
-          joinPeoples: 126,
-          replyPeoples: 37
-        }
-      ],
-    },
-      {
-        titleText: '网格说事',
-        isHasMore: true,
-        advices: [{
-          title: '垃圾分类工作意见征集',
-          joinPeoples: 156,
-          replyPeoples: 35
-        },
-        {
-          title: '关于不文明养犬的问题讨论',
-          joinPeoples: 156,
-          replyPeoples: 30
-        }
-        ],
-      }
-    ],
     
   },
 

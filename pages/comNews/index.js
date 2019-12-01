@@ -40,7 +40,7 @@ Page({
     }
     try{
       let { code, data } = await getNewsPage(params);
-      if(isSearch) this.setData({infos:[]})
+      if(isSearch) this.setData({infos:[],finish:false})
       code==0&&this.setData({infos:[...data,...this.data.infos]})
       data.length==0&&this.setData({finish:true})
     }catch(e){}

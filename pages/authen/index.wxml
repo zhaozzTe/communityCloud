@@ -27,7 +27,7 @@
         <form-item fontClassName="iconfont {{locationFontName}}" label="常住地址:">
           <input value="{{initaddress}}" class="weui-input" style="flex:1"/>
         </form-item>
-        <form-item label="常住社区:"  fontClassName="iconfont {{locationFontName}}">
+        <form-item label="居住小区:"  fontClassName="iconfont {{locationFontName}}">
          <checkbox-group bindchange="checkboxChange">
             <label class="checkbox" wx:for="{{address}}" wx:key='index'>
               <checkbox name="address" value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}

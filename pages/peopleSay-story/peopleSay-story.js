@@ -10,12 +10,7 @@ Page({
     searchV: '',
     page:1,
     finish:false,
-    infos: [{
-        title: '关于高空抛物处罚的意见征集',
-        joinPeoples: 156,
-        replyPeoples: 35,
-        url: '/pages/story-detail/story-detail'
-      }],
+    infos: [],
   },
 
   /**
@@ -52,7 +47,7 @@ Page({
     }
     try{
       let { code, data } = await getNewsPage(params);
-      if(isSearch) this.setData({infos:[]})
+      if(isSearch) this.setData({infos:[],finish:false})
       code==0&&this.setData({infos:[...data,...this.data.infos]})
       data.length==0&&this.setData({finish:true})
     }catch(e){}

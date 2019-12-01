@@ -3,7 +3,8 @@
     "TitleMore": "/components/title-more/title-more",
     "EntryItem": "/components/entry-item/index",
     "HomeMeunIcon": "/components/home-meun-icon/home-meun-icon",
-    "AdviceSay": "/components/advice-item/advice-item"
+    "AdviceSay": "/components/advice-item/advice-item",
+    "AdviceItem": "/components/advice-item-z/advice-item"
   },
   "navigationBarTitleText": "小区说事"
 }
