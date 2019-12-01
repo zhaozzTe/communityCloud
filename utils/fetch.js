@@ -42,7 +42,7 @@ var http = function (data) {
         } else {
           console.log('--- error ---',res);
           wx.showToast({
-            title: res.data.data.msg||'连接错误',
+            title: res.data.msg||'连接错误',
             icon: 'none',
             duration: 2000
           })
@@ -51,6 +51,11 @@ var http = function (data) {
       },
       fail: function (res) {
         console.log('接口fail',res)
+        wx.showToast({
+          title: res.errMsg||'网络不通',
+          icon: 'none',
+          duration: 2000
+        })
       },
       complete: function (res) {
         if (loading) wx.hideLoading()

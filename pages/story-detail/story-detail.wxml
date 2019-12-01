@@ -1,29 +1,27 @@
 <view class="story-detail">
   <view class="detail-banner">
-      <image></image>
+      <image src="{{data.titleImgUrl}}"></image>
   </view>
   <view class="detail-content">
     <view class="detail-content-title">
     <text class="stoty-ht">话题</text>
-      垃圾分类工作的意见采集
+      {{data.title}}
     </view>
-    <view class="detail-content-text">如何推进日常社区生活垃圾的分类管理？如何让推进集
-        贸市场有机垃圾的分类处置？请大家各抒己见，为社区
-        垃圾分类工作，贡献自己的聪明才智！
-    </view>
+    <rich-text class='detail-content-text' nodes="{{data.content}}"></rich-text>
+
     <view class="all-says-box">
       <view class="all-says-l">全部评论</view>
       <view class="all-says-r">
        <text class="all-says-num">35</text>条
       </view>
     </view>
-    <SayDetail info='{{info}}'/>
-     <SayDetail info='{{info}}'/>
-      <SayDetail info='{{info}}'/>
+    <scroll-view scroll-y="true" style="height: 60vh;" bindscrolltolower="lower">
+      <SayDetail wx:for="{{infos}}" wx:key="{{index}}" info='{{item}}'/>
+    </scroll-view>
   </view>
   <view class="story-detail-floot">
-    <input class="story-detail-input" placeholder="说点什么吧"></input>
+    <input class="story-detail-input" bindinput="inputCom" bindconfirm="comment" placeholder="说点什么吧"></input>
     <!-- <image class="input-icon" src="/images/tab2.png"></image> -->
-    <view class="input-icon1"></view>
+    <view class="input-icon1" bindtap="comment"></view>
   </view>
 </view>

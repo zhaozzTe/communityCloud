@@ -1,4 +1,4 @@
-<scroll-view class="advice-box" scroll-y="true" style="height: 75vh;" bindscrolltoupper="upper" bindscrolltolower="lower"
+<scroll-view class="advice-box" scroll-y="true" style="max-height: 75vh;" bindscrolltoupper="upper" bindscrolltolower="lower"
 bindscrolltolower="load">
   <view class="advice-item" wx:for="{{datas}}" wx:for-item="item" wx:key='index'>
   <view class="item-left">

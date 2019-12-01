@@ -4,7 +4,8 @@
     <view class="bgblock defaultBg"></view>
     <view class="menu-box">
     <view class="menu-box-content">
-      <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}" params="{{item.params}}" navTitle="{{item.label}}" width="200rpx"></icon-menu>
+      <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}" params="{{item.params}}"
+       navTitle="{{item.label}}" width="200rpx"></icon-menu>
       
       </view>
     </view>

@@ -1,9 +1,11 @@
 {
   "usingComponents": {
+    "icon-menu": "/components/icon-menu/index",
     "TitleMore": "/components/title-more/title-more",
-    "EntryItem": "/components/entry-item/index",
+    "EntryItem": "/components/entry-item-z/index",
     "HomeMeunIcon": "/components/home-meun-icon/home-meun-icon",
-    "AdviceSay": "/components/advice-item/advice-item"
+    "AdviceSay": "/components/advice-item/advice-item",
+    "AdviceItem": "/components/advice-item-z/advice-item"
   },
   "navigationBarTitleText": "居民说事厅"
 }

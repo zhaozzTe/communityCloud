@@ -1,0 +1,15 @@
+<view class="advice-box">
+  <view class="advice-item">
+    <view class="item-left">
+      <view class="item-left-title">{{data.title}}</view>
+      <view class="item-left-people">
+        已参与人数： <text class="item-left-nums">{{data.attendNum}}</text>
+        回复意见数：<text class="item-left-nums">{{data.commentNum}}</text>
+      </view>
+    </view>
+    <view bindtap="join" data-url="{{url}}" class="item-right">
+       参与
+      </view>
+  </view>
+</view>
+

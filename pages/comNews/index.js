@@ -9,7 +9,8 @@ Page({
     searchV: '',
     page:1,
     isHideSearchIcon: false,
-    infos: []
+    infos: [],
+    finish:false
   },
 
   /**
@@ -23,11 +24,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.setData({infos:[]})
+    this.setData({infos:[],finish:false})
     this.getNewsPage()
   },
   lower(e){
-    this.getNewsPage(this.data.page+1)
+    if(!this.data.finish) this.getNewsPage(this.data.page+1)
   },
   getNewsPage: async function(page=1,isSearch=false){
     this.setData({page})
@@ -41,6 +42,7 @@ Page({
       let { code, data } = await getNewsPage(params);
       if(isSearch) this.setData({infos:[]})
       code==0&&this.setData({infos:[...data,...this.data.infos]})
+      data.length==0&&this.setData({finish:true})
     }catch(e){}
   },
   getFocus: function (e) {
@@ -50,7 +52,6 @@ Page({
 
   },
   bindReplaceInput: function (e) {
-    console.log(e.detail.value)
     this.setData({
       searchV: e.detail.value
     })

@@ -1,46 +1,51 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
     meuns:[{
-      imgUrl:'/images/tab1.png',
-      meunText:'说事规则',
-      url: '/pages/peopleSay-rule/peopleSay-rule'
+      iconfont:'iconshuoshiguize',
+      label:'说事规则',
+      // url: '/pages/peopleSay-rule/peopleSay-rule',
+      url: '/pages/comNews/index',
+      params:{
+        type:'SHUOSHI_RULE'
+      }
     }, {
-        imgUrl: '/images/tab2.png',
-        meunText: '网格说事',
-        url: '/pages/peopleSay-story/peopleSay-story'
+      iconfont:'iconlouyushuoshi',
+        label: '楼宇说事',
+        // url: '/pages/comNews/index',
+        url: '/pages/peopleSay-story/peopleSay-story',
+        params:{
+          type:'LOUYU_SHUOSHI'
+        }
       },
       {
-        imgUrl: '/images/tab3.png',
-        meunText: '小区说事',
-        url: '/pages/house-story/house-story'
+        iconfont:'iconxiaoqushuoshi',
+        label: '小区说事',
+        url: '/pages/house-story/house-story',
+        params:{
+          type:'XIAOQU_SHUOSHI'
+        }
       },
       {
-        imgUrl: '/images/tab4.png',
-        meunText: '社区说事'
+        iconfont:'iconshequshuoshi1',
+        label: '社区说事',
+        url: '/pages/comNews/index',
+        params:{
+          type:'SHEQU_SHUOSHI'
+        }
       }, {
-        imgUrl: '/images/tab5.png',
-        meunText: '区域说事'
+        iconfont:'iconquyushuoshi',
+        label: '区域说事',
+        url: '/pages/comNews/index',
+        params:{
+          type:'QUYU_SHUOSHI'
+        }
       },
       ],
-    infos: [{
-      titleText: '说事规则',
-      isHasMore: true,
-      entData: [{
-        image: '/images/sqff.png',
-        title: '说事平台发布规则及流程',
-        text: '2019年10月20日'
-      },
-      {
-        image: '/images/sqfw.png',
-        title: '协商议题发布流程',
-        text: '2019年10月18日'
-      }],
-    },
-    ],
+    infos: [],
 
     adviceBoxs: [{
       titleText: '网格说事',
@@ -79,5 +84,16 @@ Page({
   onLoad: function () {
 
   },
-
+  onShow: function () {
+    this.getNewsSummary()
+  },
+  getNewsSummary: async function(){
+    let params={
+      newsType:'JUMIN_NEWS'
+    }
+    try{
+      let { code, data } = await getNewsSummary(params);
+      code==0&&this.setData({infos:data})
+    }catch(e){}
+  }
 })

@@ -5,8 +5,8 @@
         <view class="com-title">{{data.title}}</view>
         <view class="time">{{data.createTime}}</view>
         
-        <view class="ctx-com">{{data.content}}</view>
-        
+        <!-- <view class="ctx-com">{{data.content}}</view> -->
+        <rich-text class='ctx-com' nodes="{{data.content}}"></rich-text>
     </view>
 
 </view>

@@ -3,13 +3,27 @@
   <view class="header">
     <view class="bgblock defaultBg"></view>
     <view class="menu-box">
-      <HomeMeunIcon meuns="{{meuns}}"/>
+      <!-- <HomeMeunIcon meuns="{{meuns}}"/> -->
+      <icon-menu wx:for="{{meuns}}" wx:key="{{index}}" data="{{item}}" params="{{item.params}}"
+       navTitle="{{item.label}}" width="200rpx"></icon-menu>
     </view>
   </view>
   <view class="publishHall-content">
-    <view  wx:for="{{infos}}" wx:for-item="item" wx:key='index'>
+    <!-- <view  wx:for="{{infos}}" wx:for-item="item" wx:key='index'>
         <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
         <EntryItem data="{{item.entData}}"/>
+    </view> -->
+    <view wx:for="{{infos}}" wx:for-item="item" wx:key="index">
+      <view wx:if="{{item.length>0}}">
+        <TitleMore wx:if="{{item[0].typeCode!='LOUYU_SHUOSHI'}}" title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
+        <TitleMore wx:if="{{item[0].typeCode=='LOUYU_SHUOSHI'}}" title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/peopleSay-story/peopleSay-story" data="{{item[0]}}"/>
+        <view class="entry-wrap-z">
+          <AdviceItem wx:if="{{item[0].typeCode=='LOUYU_SHUOSHI'}}" wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
+           navTitle="{{ite.typeCode_str}}详情"/>
+          <EntryItem wx:if="{{item[0].typeCode!='LOUYU_SHUOSHI'}}" wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
+           url="/pages/detailCom/index" params="{{ite}}" navTitle="{{ite.typeCode_str}}详情"/>
+        </view>
+      </view>
     </view>
   </view>
   <view class="adviceBoxs" wx:for="{{adviceBoxs}}" wx:for-item="adviceBox" wx:key='index'>

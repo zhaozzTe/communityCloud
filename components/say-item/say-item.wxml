@@ -5,14 +5,14 @@
   <view class="say-item-r">
     <view class="item-r-top">
       <view class="item-r-top-name">
-        {{info.name}}
+        {{info.createUserName}}
       </view>
       <view class="item-r-top-time">
-       {{info.time}}
+       {{info.createTime}}
       </view>
     </view>
     <view class="item-r-bottom">
-        {{info.content}}
+        {{info.newsComment}}
     </view>
   </view>
 </view>

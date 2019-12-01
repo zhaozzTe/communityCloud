@@ -126,6 +126,37 @@ function canLoad(e) {
   }
   return r
 }
+const classTimeValidate= function (e) {
+  let date = new Date(e);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+  let Y = date.getFullYear()
+  let M = date.getMonth() + 1
+  let D = date.getDate()
+
+  let h = date.getHours();
+  let m = date.getMinutes();
+
+  let date1 = new Date();
+  let Y1 = date1.getFullYear()
+  let M1 = date1.getMonth() + 1
+  let D1 = date1.getDate()
+
+  let h1 = date1.getHours();
+  let m1 = date1.getMinutes();
+  // console.log(D1)
+  if(D==D1){
+  // console.log(123)
+  let temp = h1-h
+  if(temp==0){
+      return '刚刚'
+  }else{
+      return temp + '小时前'
+  }
+  }else if(D1-D==1){
+  return '昨天'
+  }else{
+  return Y + '年' + M + '月' + D + '日' + ' ' + h + ':' + m
+  }
+}
 export default {
   location, // 定位 
   userInfo, // 用户信息
@@ -133,5 +164,6 @@ export default {
   getCurrentPageUrl,
   validate,
   checkAuth,
-  canLoad
+  canLoad,
+  classTimeValidate
 }

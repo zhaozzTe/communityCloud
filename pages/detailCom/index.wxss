@@ -12,9 +12,9 @@
 .detailCom .ctx .time{
     font-size: 24rpx;
 color: #999999;
+margin-bottom:30rpx;
 }
 .detailCom .ctx .ctx-com{
-    margin-top:30rpx;
     font-size: 28rpx;
 color: #3C3C3C;
 word-wrap:break-word
