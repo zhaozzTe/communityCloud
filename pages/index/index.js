@@ -46,7 +46,7 @@ Page({
         titleImgUrl:'/images/flag.png',
         title:'志愿招募',
         text:'文明交通、环境卫生、平安巡逻、垃圾分类',
-        url: '/pages/comNews/index',
+        url: '/pages/join-volunteer/join-volunteer',
         params:{
           type:'ZHIYUAN_ZHAOMU'
         }
