@@ -35,21 +35,21 @@ Component({
         try{
           let res = await wxTools.checkAuth()
           if(res){
-            // let paramsStr=''
-            // if(this.data.params){
-            //   Object.keys(this.data.params).map((item,index)=>{
-            //     if(index==0){
-            //       paramsStr+=`?${item}=${this.data.params[item]}`
-            //     }else{
-            //       paramsStr+=`&${item}=${this.data.params[item]}`
-            //     }
-            //   })
-            // }
-            // console.log(paramsStr);
+            let paramsStr=''
+            if(this.data.params){
+              Object.keys(this.data.params).map((item,index)=>{
+                if(index==0){
+                  paramsStr+=`?${item}=${this.data.params[item]}`
+                }else{
+                  paramsStr+=`&${item}=${this.data.params[item]}`
+                }
+              })
+            }
+            console.log(paramsStr);
             
             const url = e.currentTarget.dataset.url;
             wx.navigateTo({
-              url: url+`?id=${this.data.data.id}`
+              url: url+paramsStr
             })
             
             if(this.data.navTitle){

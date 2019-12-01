@@ -3,7 +3,7 @@
     <image src="{{data.titleImgUrl}}"></image>
     <view class="entry-item-ctx" bindtap="gotoPage" data-url="{{data.url||url}}">
       <text class="entry-item-ctx-title">{{data.title}}</text>
-      <text class="entry-item-ctx-text">{{data.createTime}}</text>
+      <text class="entry-item-ctx-text">{{data.createTime||data.text}}</text>
     </view>
     <text>></text>         
   </view>

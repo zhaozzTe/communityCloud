@@ -29,8 +29,6 @@ Component({
    */
   methods: {
     goMorePage(e){
-      console.log(this.data);
-      
       const url = e.currentTarget.dataset.url;
       wx.navigateTo({
         url: url+`?type=${this.data.data.typeCode}`

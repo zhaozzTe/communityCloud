@@ -34,22 +34,31 @@ Page({
     ],
     entryList:[
       {
-        image:'/images/sqfw.png',
+        titleImgUrl:'/images/sqfw.png',
         title:'社区居务',
         text:'为社区群众，指引社区居民办事流程',
-        url: '/pages/publichHall-liveService/publichHall-liveService'
+        url: '/pages/comNews/index',
+        params:{
+          type:'SHEQU_JUWU'
+        }
       },
       {
-        image:'/images/flag.png',
+        titleImgUrl:'/images/flag.png',
         title:'志愿招募',
         text:'文明交通、环境卫生、平安巡逻、垃圾分类',
-        url: '/pages/compage/compage'
+        url: '/pages/comNews/index',
+        params:{
+          type:'ZHIYUAN_ZHAOMU'
+        }
       },
       {
-        image:'/images/sqss.png',
+        titleImgUrl:'/images/sqss.png',
         title:'社区说事',
         text:'为社区群众提供协商议论的交流区域',
-        url: '/pages/compage/compage'
+        url: '/pages/comNews/index',
+        params:{
+          type:'SHEQU_SHUOSHI'
+        }
       },
     ],
     userInfo: {},

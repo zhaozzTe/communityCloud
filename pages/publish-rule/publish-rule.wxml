@@ -19,7 +19,7 @@
     </view>
      <view class="publishHall-content">
         <TitleMore wx:if="{{infos.length>0}}" title='全部{{infos[0].typeCode_str}}' isHasMore="{{false}}"/>
-        <view class="entry-wrap" style="margin:0 20rpx">
+        <view class="entry-wrap-z" style="margin:0 20rpx">
           <EntryItem wx:for="{{infos}}" wx:for-item="item" wx:key="index" data="{{item}}"
            url="/pages/detailCom/index" params="{{item}}" navTitle="{{item.typeCode_str}}详情"/>
         </view>

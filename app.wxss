@@ -26,8 +26,7 @@ background: #fff;
 .mr20{
   margin: 0 20rpx;
 }
-.entry-wrap{
-  padding:0 30rpx;
+.entry-wrap-z{
   background: #fff;
   box-shadow: 0 0 24rpx 4rpx rgba(0,0,0,0.08);
   border-radius: 8rpx;
