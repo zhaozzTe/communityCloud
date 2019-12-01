@@ -5,7 +5,7 @@
             <text class="form-item-xx">*</text> 议题名称:
         </view>
         <view>
-            <textarea placeholder-class="placeStyle"  auto-height placeholder="请输入议题名称"/>
+            <textarea name="placeStyle" placeholder-class="placeStyle"  auto-height placeholder="请输入议题名称"/>
         </view>
       </view>
       <view class="form-item">
@@ -32,6 +32,6 @@
            </view>
         </view>
       </view>
-      <view bindtap="submit" class="btn">提交</view>
+      <view formType="submit"  class="btn">提交</view>
   </form>
 </view>

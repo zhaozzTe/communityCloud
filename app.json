@@ -29,7 +29,9 @@
     "pages/login-waite/login-waite",
     "pages/compage/compage",
     "pages/detailCom/index",
-    "pages/comNews/index"
+    "pages/comNews/index",
+    "pages/server-sumbit/server-sumbit",
+    "pages/join-volunteer/join-volunteer"
   ],
   "window": {
     "backgroundTextStyle": "light",

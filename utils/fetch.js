@@ -20,7 +20,7 @@ var http = function (data) {
       method: method,
       dataType: "json",
       header: {
-        "content-type": 'application/json',
+        "content-type": data.contentType || 'application/json',
         "Authorization": wx.getStorageSync('token'),
       },
       success: async function (res) {

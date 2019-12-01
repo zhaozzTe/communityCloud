@@ -1,4 +1,4 @@
-// pages/my-say/my-say.js
+// pages/join-volunteer/join-volunteer.js
 Page({
 
   /**
@@ -51,16 +51,16 @@ Page({
   },
 
   /**
-   * 页面上拉触底事件的处理函数   
+   * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
-  formSubmit(e){
-    console.log(121321,e.detail.value)
-    wx.navigateTo({
-      url: '/pages/mySay-success/mySay-success',
-    })
-  }
 
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

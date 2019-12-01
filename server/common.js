@@ -3,3 +3,8 @@ export const wxAppLogin = params => http({ url: 'http://one-tech.cn:88/zh/api/v1
 export const wxAppMobileLogin = params => http({ url:'http://one-tech.cn:88/zh/api/v1/wx/wxAppMobileLogin', params, method:'post'});//移动端小程序登录接口
 export const getUserStatus = params => http({ url: `http://one-tech.cn:88/zh/api/v1/certificate/getUserCertificateStatus`, params: {} });//获取实名认证状态
 export const getQrCodes = params => http({ url: `http://one-tech.cn:88/zh/api/v1/index/getQrCodes`, params: {} });//获取二维码图片
+//获取服务类别接口
+export const getServerType = params => http({ url: `http://one-tech.cn:88/zh/api/v1/requires/getAddress`, params: {}, method: 'post' });//获取服务类别接口
+export const addServer = params => http({ url: `http://one-tech.cn:88/zh/api/v1/requires/add`,  params, method: 'post' });//添加服务需求
+///上传图片
+export const uploadimg = params => http({ url: `http://one-tech.cn:88/zh/api/v1/requires/upload/image`, contentType: 'multipart/form-data', params, method: 'post'});

@@ -1,0 +1,97 @@
+<view class="my-say">
+  <form bindsubmit="formSubmit">
+      <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text> 服务类别:
+        </view>
+         <picker bindchange="bindPickerChange" range-key="name" value="{{servertypes[index].id}}" name="typeCode" range="{{servertypes}}">
+            <view class="picker" wx:if="{{index}}" >
+              {{servertypes[index].name}}
+            </view>
+            <view class="placehold" wx:else>
+          请选择服务类型
+        </view>
+          </picker>
+        
+      </view>
+      <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text> 服务名称:
+        </view>
+        <view>
+            <textarea name="name" class="server-desc"  placeholder-class="placeStyle"  auto-height placeholder="请输入服务名称"/>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text>  服务详细内容:
+        </view>
+        <view>
+            <textarea name="desc" class="server-desc" placeholder-class="placeStyle"  auto-height placeholder="请输入议题详细内容，100字以内"/>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text> 服务时间:
+        </view>
+        <view class="fuqtime">
+           <radio-group name="type" class="radio-group" bindchange="radioChange">
+                <radio class="radio" wx:for-items="{{times}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                    <text>{{item.value}}</text>
+                </radio>
+            </radio-group>
+        </view>
+        </view>
+         <view class="form-item">
+        <view class="form-item-name">
+            <text class="form-item-xx">*</text> 指定时间:
+        </view>
+        <view>
+            <picker  name="startTime"   mode="date" value="{{startime}}"  bindchange="bindTimeChange">
+             <view wx:if="{{startime}}">
+               {{startime}}
+              </view>
+              <view class="inittime"  wx:else>
+             清选择开始时间
+              </view>
+            </picker>
+             <view>
+             至
+              </view>
+           <picker name="endTime" mode="date" value="{{endtime}}"  bindchange="bindTimeChangeend">
+              <view  wx:if="{{endtime}}">
+              {{endtime}}
+              </view>
+              <view class="inittime"  wx:else>
+               清选择结束时间
+              </view>
+            </picker>
+      </view>
+      </view>
+       <view class="form-item">
+        <view class="form-item-name">
+            上传图片 (最多3张):
+        </view>
+        <view class="form-upFile">
+           <view class="upFile-img upFile-img-box" >
+              <image bindtap="updateimg" data-uptype='1' class="upFile-img" src="/images/upfile.png" wx:if="{{!uploadfile1[0]}}"></image>
+              <image class="upFile-img updateimg" src="{{uploadfile1[0]}}" wx:else></image>
+              <view  wx:if="{{uploadfile1[0]}}" bindtap="delImg" data-uptype='1' class="icon-close">x</view>
+           </view>
+           <view class="upFile-img upFile-img-box">
+              <image bindtap="updateimg" data-uptype='2' class="upFile-img" src="/images/upfile.png" wx:if="{{!uploadfile2[0]}}"></image>
+              <image class="upFile-img updateimg" src="{{uploadfile2[0]}}" wx:else></image>
+              <view  wx:if="{{uploadfile2[0]}}" bindtap="delImg" data-uptype='2' class="icon-close">x</view>
+           </view>
+           <view class="upFile-img upFile-img-box">
+              <image bindtap="updateimg" data-uptype='3' class="upFile-img" src="/images/upfile.png" wx:if="{{!uploadfile3[0]}}"></image>
+              <image class="upFile-img updateimg" src="{{uploadfile3[0]}}" wx:else></image>
+              <view  wx:if="{{uploadfile3[0]}}" bindtap="delImg" data-uptype='3' class="icon-close">x</view>
+           </view>
+        </view>
+      </view>
+      <!-- <view   class="btn">提交 -->
+       <button formType="submit" type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">提交登记</button>
+      <!-- </view> -->
+  </form>
+</view>

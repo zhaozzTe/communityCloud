@@ -1,0 +1,36 @@
+<view>
+   <view class="container">
+    <view class="header">
+      <view class="bgblock defaultBg">
+        <view class="live-search">
+          <icon wx:if="{{!searchV}}" class="search-icon" type="search"></icon>
+          <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
+        </view>
+      </view>
+    </view>
+    <view class="volunteer-type">
+    <view class="volunteer-type-top">
+        <view class="type-teb-top teb-top-l">
+        <image class="type-top-icon" src="/images/kbmchecked.png"></image>
+        <!-- <image class="type-top-icon" src="/images/kbmnochecked.png"></image> -->
+            可报名
+        </view>
+        <view class="type-teb-top">
+            <!-- <image class="type-top-icon" src="/images/nojoinchecked.png"></image> -->
+            <image class="type-top-icon" src="/images/nojoinnochecked.png"></image>
+             不可报名
+        </view>
+        </view>
+        <view class="volunteer-type-bottom">
+        <view class="type-bottom-teb">
+            全部类型
+            <image class="type-bottom-icon" src="/images/bottom.png"></image>
+        </view>
+        <view class="type-bottom-teb">
+            板块类别
+            <image class="type-bottom-icon" src="/images/bottom.png"></image>
+        </view>
+        </view>
+    </view>
+  </view>
+</view>
