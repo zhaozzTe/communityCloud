@@ -24,7 +24,7 @@ Page({
     {
       src: '/images/tab3.png',
       label: '服务需求',
-      // url: '/pages/comNews/index',
+      url: '/pages/server-sumbit/server-sumbit',
       params:{
         type:'FUWU_XUQIU'
       }
@@ -32,7 +32,7 @@ Page({
     {
       src: '/images/tab4.png',
       label: '志愿招募',
-      // url: '/pages/comNews/index',
+      url: '/pages/join-volunteer/join-volunteer',
       params:{
         type:'ZHIYUAN_ZHAOMU'
       }

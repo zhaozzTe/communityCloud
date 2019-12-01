@@ -1,5 +1,6 @@
 {
     "usingComponents": {
+      "icon-menu": "/components/icon-menu/index",
       "TitleMore": "/components/title-more/title-more",
       "EntryItem": "/components/entry-item/index",
       "HomeMeunIcon": "/components/home-meun-icon/home-meun-icon",
