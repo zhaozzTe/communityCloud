@@ -5,7 +5,7 @@
             <text class="form-item-xx">*</text> 议题名称:
         </view>
         <view>
-            <textarea name="placeStyle" placeholder-class="placeStyle"  auto-height placeholder="请输入议题名称"/>
+            <textarea name="placeStyle" bindinput="titleInput" placeholder-class="placeStyle"  auto-height placeholder="请输入议题名称"/>
         </view>
       </view>
       <view class="form-item">
@@ -13,7 +13,7 @@
             <text class="form-item-xx">*</text>  议题详细内容:
         </view>
         <view>
-            <textarea placeholder-class="placeStyle"  auto-height placeholder="请输入议题详细内容，100字以内"/>
+            <textarea placeholder-class="placeStyle" bindinput="textInput" maxlength="100" auto-height placeholder="请输入议题详细内容，100字以内"/>
         </view>
       </view>
        <view class="form-item">

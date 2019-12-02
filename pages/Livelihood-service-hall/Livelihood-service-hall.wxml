@@ -5,7 +5,7 @@
     <view class="menu-box">
       <!-- <HomeMeunIcon meuns="{{meuns}}"/> -->
       <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}" params="{{item.params}}"
-       navTitle="{{item.label}}" width="200rpx"></icon-menu>
+       navTitle="{{item.label}}" width="200rpx" iconWidth="75rpx" iconHeight="75rpx"></icon-menu>
     </view>
   </view>
   <view class="publishHall-content">

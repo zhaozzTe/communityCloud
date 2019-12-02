@@ -46,16 +46,19 @@
   font-size: 24rpx;
   margin: 24rpx 0 32rpx 0;
 }
-.detail-content-text{
+rich-text{
   color: #666;
   font-size: 28rpx !important;
   line-height: 40rpx;
 }
-.detail-content-text img{
+rich-text img{
   max-width: 100%;
   object-fit: cover;
 }
-.detail-content-text image{
+rich-text p{
+  font-size: 28rpx !important;
+}
+rich-text image{
   max-width: 100%;
   object-fit: cover;
 }

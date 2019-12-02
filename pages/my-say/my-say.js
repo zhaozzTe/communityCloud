@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    title:'',
+    text:''
   },
 
   /**
@@ -55,6 +56,16 @@ Page({
    */
   onReachBottom: function () {
 
+  },
+  titleInput: function (e) {
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  textInput: function (e) {
+    this.setData({
+      text: e.detail.value
+    })
   },
   formSubmit(e){
     console.log(121321,e.detail.value)

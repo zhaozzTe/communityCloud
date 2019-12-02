@@ -19,6 +19,7 @@
   letter-spacing: 0;
   line-height: 28rpx;
   margin-bottom: 20rpx;
+  font-weight: 600;
 }
 .form-item-xx{
   color: #FF2626;

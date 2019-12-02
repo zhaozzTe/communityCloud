@@ -5,7 +5,7 @@ import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
     menuList: [{
-      src: '/images/tab1.png',
+      src: '/images/fwgz.png',
       label: '服务规则',
       url: '/pages/comNews/index',
       // url: '/pages/Livelihood-service-rule/Livelihood-service-rule',
@@ -13,7 +13,7 @@ Page({
         type:'FUWU_RULE'
       }
     }, {
-      src: '/images/tab2.png',
+      src: '/images/fwtd.png',
         label: '服务团队',
         url: '/pages/comNews/index',
         // url: '/pages/Livelihood-service-tream/Livelihood-service-tream',
@@ -22,7 +22,7 @@ Page({
         }
     },
     {
-      src: '/images/tab3.png',
+      src: '/images/fwxq.png',
       label: '服务需求',
       url: '/pages/server-sumbit/server-sumbit',
       params:{
@@ -30,14 +30,14 @@ Page({
       }
     },
     {
-      src: '/images/tab4.png',
+      src: '/images/flag2.png',
       label: '志愿招募',
       url: '/pages/join-volunteer/join-volunteer',
       params:{
         type:'ZHIYUAN_ZHAOMU'
       }
     }, {
-      src: '/images/tab5.png',
+      src: '/images/sgyd.png',
       label: '社工应答',
       // url: '/pages/comNews/index',
       url: '/pages/social-worker/social-worker',
