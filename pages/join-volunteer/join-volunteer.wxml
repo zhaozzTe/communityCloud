@@ -1,36 +1,62 @@
 <view>
-   <view class="container">
+  <view class="container">
     <view class="header">
       <view class="bgblock defaultBg">
         <view class="live-search">
           <icon wx:if="{{!searchV}}" class="search-icon" type="search"></icon>
-          <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
+          <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询" />
         </view>
       </view>
     </view>
     <view class="volunteer-type">
-    <view class="volunteer-type-top">
+      <view class="volunteer-type-top">
         <view class="type-teb-top teb-top-l">
-        <image class="type-top-icon" src="/images/kbmchecked.png"></image>
-        <!-- <image class="type-top-icon" src="/images/kbmnochecked.png"></image> -->
-            可报名
+          <image class="type-top-icon" src="/images/kbmchecked.png"></image>
+          <!-- <image class="type-top-icon" src="/images/kbmnochecked.png"></image> -->
+          可报名
         </view>
         <view class="type-teb-top">
-            <!-- <image class="type-top-icon" src="/images/nojoinchecked.png"></image> -->
-            <image class="type-top-icon" src="/images/nojoinnochecked.png"></image>
-             不可报名
+          <!-- <image class="type-top-icon" src="/images/nojoinchecked.png"></image> -->
+          <image class="type-top-icon" src="/images/nojoinnochecked.png"></image>
+          不可报名
         </view>
-        </view>
-        <view class="volunteer-type-bottom">
+      </view>
+      <view class="volunteer-type-bottom">
         <view class="type-bottom-teb">
-            全部类型
-            <image class="type-bottom-icon" src="/images/bottom.png"></image>
+          全部类型
+          <image class="type-bottom-icon" src="/images/bottom.png"></image>
         </view>
         <view class="type-bottom-teb">
-            板块类别
-            <image class="type-bottom-icon" src="/images/bottom.png"></image>
+          板块类别
+          <image class="type-bottom-icon" src="/images/bottom.png"></image>
         </view>
-        </view>
+      </view>
     </view>
   </view>
+  <view class="volunteer-item">
+    <view class="volunteer-item-banner">
+      <image src="/images/success.svg" class="volunteer-item-img"></image>
+      <view class="volunteer-item-icon">
+      <image class="volunteer-item-icon-img" src="/images/bg-lv.png">  </image>
+      <text  class="volunteer-item-icon-datas">65%</text>
+      </view>
+    </view>
+    <view class="volunteer-item-box">
+      <view class="volunteer-item-title">交通文明</view>
+      <view class="volunteer-item-text">加入交通文明志愿者，为我们社区的交通文明监督贡献自己的一臂之力吧🔥</view>
+      <view class="item-line"></view>
+      <view class="volunteer-item-type">
+        类型 :
+        <text class="volunteer-item-name">交通文明</text> 已报名人数 ：
+        <text class="volunteer-item-people">2485</text>
+      </view>
+      <view class="volunteer-item-type">
+        报名截止时间 :
+        <text class="volunteer-item-name">2020年3月31日</text>
+      </view>
+    </view>
+    <view class="volunteer-item-btn">我要报名</view>
+  </view>
+
+
 </view>

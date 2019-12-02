@@ -37,8 +37,28 @@
   height: 176rpx;
   margin-right: 60rpx;
 }
+
 .upFile-img:nth-child(1){
   margin-left: 20rpx;
+}
+.server-desc{
+ width: 100%;
+}
+.upFile-img-box{
+  position: relative;
+}
+.icon-close{
+  width: 40rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  background: #FF2626 ;
+  color: #fff;
+  border-radius:50%;
+  font-size: 30rpx;
+  text-align: center;
+ position: absolute;
+  top: 0;
+  right: -20rpx;
 }
 .btn{
   background: #2ABF77;
@@ -50,4 +70,25 @@
   margin: 40rpx 0  36rpx 0;
   text-align: center;
   line-height: 80rpx;
+}
+.inittime{
+  color: #C0C0C0 ;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+.placehold{
+  color: #C0C0C0 ;
+  font-size: 28rpx;
+  
+}
+.radio{
+ color: #3C3C3C;
+ font-size: 28rpx;
+ margin-right: 20rpx;
+}
+.btnsumit{
+  width:100%;
+  height:100%;
+  margin: 0;
 }

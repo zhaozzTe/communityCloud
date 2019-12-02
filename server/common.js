@@ -8,3 +8,4 @@ export const getServerType = params => http({ url: `http://one-tech.cn:88/zh/api
 export const addServer = params => http({ url: `http://one-tech.cn:88/zh/api/v1/requires/add`,  params, method: 'post' });//添加服务需求
 ///上传图片
 export const uploadimg = params => http({ url: `http://one-tech.cn:88/zh/api/v1/requires/upload/image`, contentType: 'multipart/form-data', params, method: 'post'});
+export const submitnews = params => http({ url: `http://one-tech.cn:88/zh/api/v1/news/submitNews`, params, method: 'post' });//提交楼宇说事议题
