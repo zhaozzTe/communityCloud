@@ -33,6 +33,17 @@ Page({
   async getNewsDetail(){
     try {
       let {code,data} = await getNewsDetail({id:this.data.id})
+      data.content = data.content
+          .replace(/<p([\s\w"=\/\.:;]+)((?:(style="[^"]+")))/ig, '<p')
+          .replace(/<p([\s\w"=\/\.:;]+)((?:(class="[^"]+")))/ig, '<p')
+          .replace(/<p>/ig, '<p class="p_class">')
+
+          .replace(/<img([\s\w"-=\/\.:;]+)((?:(height="[^"]+")))/ig, '<img$1')
+          .replace(/<img([\s\w"-=\/\.:;]+)((?:(width="[^"]+")))/ig, '<img$1')
+          .replace(/<img([\s\w"-=\/\.:;]+)((?:(style="[^"]+")))/ig, '<img$1')
+          .replace(/<img([\s\w"-=\/\.:;]+)((?:(alt="[^"]+")))/ig, '<img$1')
+          .replace(/<img([\s\w"-=\/\.:;]+)/ig, '<img$1 class="pho"')
+          
       code==0&&this.setData({data})
     } catch (error) {}
   },

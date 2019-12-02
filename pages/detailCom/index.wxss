@@ -14,8 +14,19 @@
 color: #999999;
 margin-bottom:30rpx;
 }
-.detailCom .ctx .ctx-com{
+.detailCom .ctx rich-text{
     font-size: 28rpx;
 color: #3C3C3C;
 word-wrap:break-word
+}
+rich-text p{
+    font-size: 28rpx !important;
+  }
+.detailCom .ctx rich-text image{
+    max-width: 100%;
+    object-fit: cover
+}
+.detailCom .ctx rich-text .pho{
+    max-width: 100%;
+    object-fit: cover
 }

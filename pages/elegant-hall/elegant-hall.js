@@ -5,7 +5,7 @@ import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
     menuList: [{
-      src: '/images/tab1.png',
+      src: '/images/ssgz.png',
       label: '展示规则',
       url: '/pages/comNews/index',
       // url: '/pages/elegant-rule/elegant-rule',
@@ -13,7 +13,7 @@ Page({
         type:'ZHANSHI_GUIZE'
       }
     }, {
-      src: '/images/tab2.png',
+      src: '/images/tjxx.png',
         label: '团建信息',
         url: '/pages/comNews/index',
         // url: '/pages/elegant-tj-info/elegant-tj-info',
@@ -22,7 +22,7 @@ Page({
         }
     },
     {
-      src: '/images/tab3.png',
+      src: '/images/hdzs.png',
       label: '活动展示',
       url: '/pages/comNews/index',
       // url: '/pages/elegant-hdzs/elegant-hdzs',
@@ -31,14 +31,14 @@ Page({
       }
     },
     {
-      src: '/images/tab4.png',
+      src: '/images/cyzs.png',
       label: '才艺展示',
       url: '/pages/comNews/index',
       params:{
         type:'CAIYI_ZHANSHI'
       }
     }, {
-      src: '/images/tab5.png',
+      src: '/images/mtfb.png',
       label: '媒体发布',
       url: '/pages/comNews/index',
       params:{

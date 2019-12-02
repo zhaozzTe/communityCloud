@@ -19,7 +19,14 @@ Component({
     navTitle:{
       type:String,
     },
-    
+    iconWidth:{
+      type:String,
+      value:'100rpx'
+    },
+    iconHeight:{
+      type:String,
+      value:'100rpx'
+    },
   },
 
   /**
