@@ -9,3 +9,6 @@ export const addServer = params => http({ url: `http://one-tech.cn:88/zh/api/v1/
 ///上传图片
 export const uploadimg = params => http({ url: `http://one-tech.cn:88/zh/api/v1/requires/upload/image`, contentType: 'multipart/form-data', params, method: 'post'});
 export const submitnews = params => http({ url: `http://one-tech.cn:88/zh/api/v1/news/submitNews`, params, method: 'post' });//提交楼宇说事议题
+export const attend = params => http({ url: `http://one-tech.cn:88/zh/api/v1/attend/attend`, params, method: 'post' });//参与
+export const getCategoryList = params => http({ url: `http://one-tech.cn:88/zh/api/v1/news/getCategoryList`, params, method: 'get' });//获取新闻板块
+

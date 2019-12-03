@@ -83,10 +83,10 @@ Page({
     let params = e.detail.value;
     params.imgs = [...uploadfile1, ...uploadfile2, ...uploadfile3];
     if (!params.title) {
-      this.toast('请选择服务类别');
+      this.toast('请输入议题名称');
       return false;
     } else if (!params.content) {
-      this.toast('请输入服务名称');
+      this.toast('请输入议题详细内容');
       return false;
     } 
     console.log(121321, params)
@@ -102,5 +102,13 @@ Page({
       })
     } catch (e) { }
   },
+
+  toast(title) {
+    wx.showToast({
+      title: title,
+      duration: 2000,
+      icon: 'none'
+    })
+  }
 
 })
