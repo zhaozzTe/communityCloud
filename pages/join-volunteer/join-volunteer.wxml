@@ -22,22 +22,15 @@
         </view>
       </view>
       <view class="volunteer-type-bottom">
-        <view class="type-bottom-teb">
-          全部类型
-          <image class="type-bottom-icon" src="/images/bottom.png"></image>
-        </view>
-       
-        <view class="type-bottom-teb">
-          <picker bindchange="bindPickerChange" range-key="name" value="{{CategoryList[index].id}}" name="typeCode" range="{{CategoryList}}">
-            <view class="picker" wx:if="{{index}}">
-              {{CategoryList[index].name}}
-            </view>
-             <view class="type-bottom-teb" wx:else="{{index}}">
-          板块类别
-          <image class="type-bottom-icon" src="/images/bottom.png"></image>
-        </view>
-            </picker>
-        </view>
+        <picker bindchange="bindPickerChange" range-key="name" value="{{CategoryList[index].id}}" name="typeCode" range="{{CategoryList}}">
+          <view class="picker" wx:if="{{index}}">
+            {{CategoryList[index].name}}
+          </view>
+          <view class="type-bottom-teb" wx:else="{{index}}">
+            板块类别
+            <image class="type-bottom-icon" src="/images/bottom.png"></image>
+          </view>
+        </picker>
       </view>
     </view>
   </view>
@@ -52,11 +45,10 @@
       </view>
       <view class="volunteer-item-box">
         <view class="volunteer-item-title">{{item.category_str}}</view>
-        <view class="volunteer-item-text">{{item.title}}加入交通文明志愿者，为我们社区的交通文明监督贡献自己的一臂之力吧🔥</view>
+        <view class="volunteer-item-text">{{item.title}}</view>
         <view class="item-line"></view>
         <view class="volunteer-item-type">
-          类型 :
-          <text class="volunteer-item-name">{{item.category_str}}</text> 已报名人数 ：
+          已报名人数 ：
           <text class="volunteer-item-people">{{item.attendNum}}</text>
         </view>
         <view class="volunteer-item-type">
