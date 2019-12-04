@@ -1,6 +1,6 @@
 <view class="say-item">
   <view class="say-item-l">
-    <image class="say-item-l-img" src="{{info.imgUrl}}"></image>
+    <image class="say-item-l-img" src="{{info.createUserAvatar}}"></image>
   </view>
   <view class="say-item-r">
     <view class="item-r-top">

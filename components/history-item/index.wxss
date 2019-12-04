@@ -1,0 +1,36 @@
+/* components/history-item/index.wxss */
+.history-item{
+    padding: 40rpx 40rpx 0 40rpx;
+}
+.history-item .history-item-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40rpx;
+    border-bottom: 1px solid #F3F3F3;
+}
+.history-item-left .title{
+    font-size: 32rpx;
+color: #333333;
+font-weight: 600;
+}
+.history-item-left .ctx{
+    display: flex;
+    font-size: 24rpx;
+    margin-top:20rpx;
+    align-items: center;
+}
+.history-item-left .ctx .ctx-type{
+    padding: 10rpx;
+    background: #29BB74;
+border-radius: 2px;
+color: #fff;
+}
+.history-item-left .ctx text{
+    margin-left:20rpx;
+color: #999999;
+letter-spacing: 0;
+}
+.history-item-right{
+    color: #666;
+}

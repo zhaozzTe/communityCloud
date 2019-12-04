@@ -44,7 +44,11 @@ Page({
   onShow: function () {
     this.getServerTypes()
   },
-
+  toHistory(){
+    wx.navigateTo({
+      url: '/pages/service-history/index'
+    })
+  },
   async getServerTypes() {
     
     try {

@@ -31,7 +31,8 @@
     "pages/detailCom/index",
     "pages/comNews/index",
     "pages/server-sumbit/server-sumbit",
-    "pages/join-volunteer/join-volunteer"
+    "pages/join-volunteer/join-volunteer",
+    "pages/service-history/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

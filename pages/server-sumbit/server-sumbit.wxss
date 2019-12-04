@@ -92,3 +92,10 @@
   height:100%;
   margin: 0;
 }
+.toHistory{
+  font-size: 28rpx;
+color: #2ABF77;
+letter-spacing: 0;
+padding-top: 60rpx;
+text-align: center;
+}

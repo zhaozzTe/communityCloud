@@ -1,0 +1,4 @@
+<!--pages/service-history/index.wxml-->
+<scroll-view class="service-history" scroll-y="true" style="height: 90vh;" bindscrolltolower="lower">
+    <historyItem wx:for="{{infos}}" wx:for-item="item" wx:key="index" data="{{item}}"/>
+</scroll-view>

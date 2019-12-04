@@ -15,7 +15,7 @@
        <text class="all-says-num">{{infos.length}}</text>条
       </view>
     </view>
-    <scroll-view scroll-y="true" style="height: 60vh;" bindscrolltolower="lower">
+    <scroll-view scroll-y="true" style="max-height: 60vh;" bindscrolltolower="lower">
       <SayDetail wx:for="{{infos}}" wx:key="{{index}}" info='{{item}}'/>
     </scroll-view>
   </view>

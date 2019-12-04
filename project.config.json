@@ -123,6 +123,13 @@
 					"id": -1,
 					"name": "pages/login-waite/login-waite",
 					"pathName": "pages/login-waite/login-waite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/service-history/index",
+					"pathName": "pages/service-history/index",
 					"scene": null
 				}
 			]

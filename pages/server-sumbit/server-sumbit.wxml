@@ -94,4 +94,5 @@
     <button formType="submit" type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">提交登记</button>
     <!-- </view> -->
   </form>
+  <view class="toHistory" bindtap="toHistory">查看历史登记 ></view>
 </view>

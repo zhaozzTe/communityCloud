@@ -39,7 +39,7 @@
    color: #29BB74;
 }
   .item-r-top-time{
-    width: 100rpx;
+    max-width: 220rpx;
 }
 
   .item-r-bottom{

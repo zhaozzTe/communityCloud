@@ -58,7 +58,7 @@ rich-text img{
 rich-text p{
   font-size: 28rpx !important;
 }
-rich-text image{
+rich-text .pho{
   max-width: 100%;
   object-fit: cover;
 }

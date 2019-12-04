@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "historyItem": "/components/history-item/index"
+  }
+}
