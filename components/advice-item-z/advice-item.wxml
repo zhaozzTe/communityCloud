@@ -1,4 +1,4 @@
-<view class="advice-box">
+<view class="advice-box" bindtap="toDetail" data-url="{{url}}">
   <view class="advice-item">
     <view class="item-left">
       <view class="item-left-title">{{data.title}}</view>

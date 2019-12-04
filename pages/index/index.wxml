@@ -6,7 +6,7 @@
       <view class="menu">
         <view class="menu-title">
           <text class="title">我的社区</text>
-          <text class="defaultColor detail">详情 ></text>
+          <!-- <text class="defaultColor detail">详情 ></text> -->
         </view>
         <view class="menu-con">
           <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}"></icon-menu>

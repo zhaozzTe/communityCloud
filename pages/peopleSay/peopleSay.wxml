@@ -15,12 +15,12 @@
     </view> -->
     <view wx:for="{{infos}}" wx:for-item="item" wx:key="index">
       <view wx:if="{{item.length>0}}">
-        <TitleMore wx:if="{{item[0].typeCode!='LOUYU_SHUOSHI'}}" title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
-        <TitleMore wx:if="{{item[0].typeCode=='LOUYU_SHUOSHI'}}" title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/peopleSay-story/peopleSay-story" data="{{item[0]}}"/>
+        <TitleMore wx:if="{{item[0].typeCode=='SHUOSHI_RULE'}}" title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
+        <TitleMore wx:if="{{item[0].typeCode!='SHUOSHI_RULE'}}" title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/peopleSay-story/peopleSay-story" data="{{item[0]}}"/>
         <view class="entry-wrap-z">
-          <AdviceItem wx:if="{{item[0].typeCode=='LOUYU_SHUOSHI'}}" wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
+          <AdviceItem wx:if="{{item[0].typeCode!='SHUOSHI_RULE'}}" wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
            navTitle="{{ite.typeCode_str}}详情"/>
-          <EntryItem wx:if="{{item[0].typeCode!='LOUYU_SHUOSHI'}}" wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
+          <EntryItem wx:if="{{item[0].typeCode=='SHUOSHI_RULE'}}" wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
            url="/pages/detailCom/index" params="{{ite}}" navTitle="{{ite.typeCode_str}}详情"/>
         </view>
       </view>

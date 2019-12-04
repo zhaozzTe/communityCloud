@@ -20,7 +20,7 @@
     </scroll-view>
   </view>
   <view class="story-detail-floot">
-    <input class="story-detail-input" bindinput="inputCom" bindconfirm="comment" placeholder="说点什么吧"></input>
+    <input class="story-detail-input" bindinput="inputCom" bindconfirm="comment" value="{{newsComment}}" placeholder="说点什么吧"></input>
     <!-- <image class="input-icon" src="/images/tab2.png"></image> -->
     <!-- <view class="input-icon1" bindtap="comment"></view> -->
   </view>

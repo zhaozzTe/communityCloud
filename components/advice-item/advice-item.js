@@ -1,4 +1,5 @@
 import wxTools from "../../utils/wxTools.js"
+import { attend } from '../../server/common.js'
 Component({
   /**
    * 组件的属性列表
@@ -26,12 +27,19 @@ Component({
       let can = wxTools.canLoad(e)
       this.triggerEvent('load', can)//通过triggerEvent将参数传给父组件,是否可以重新下拉加载
     },
-    join(e) {
-      const url = e.currentTarget.dataset.item.url;
-      wx.navigateTo({
-        url,
-      })
-      console.log(e.currentTarget.dataset.item);
+    async join(e) {
+      let params={
+        id:this.data.datas.id
+      }
+      try {
+        let {code}=await attend(params)
+        if(code==0){
+          const url = e.currentTarget.dataset.item.url;
+          wx.navigateTo({
+            url,
+          })
+        }
+      } catch (error) {}
     }
   }
 })

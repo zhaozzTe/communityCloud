@@ -28,6 +28,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    toDetail(e) {
+      const url = e.currentTarget.dataset.url;
+      wx.navigateTo({
+        url:url+`?id=${this.data.data.id}`,
+      })
+      if(this.data.navTitle){
+        wx.setNavigationBarTitle({title:this.data.navTitle})
+
+      }
+    },
     join(e) {
       const url = e.currentTarget.dataset.url;
       wx.navigateTo({

@@ -67,6 +67,7 @@ Page({
       console.log(code);
       if(code==0){
         this.commentList(1,true)
+        this.setData({newsComment:''})
       }
     } catch (error) {}
   },
