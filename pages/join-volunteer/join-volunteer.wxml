@@ -26,37 +26,47 @@
           全部类型
           <image class="type-bottom-icon" src="/images/bottom.png"></image>
         </view>
+       
         <view class="type-bottom-teb">
+          <picker bindchange="bindPickerChange" range-key="name" value="{{CategoryList[index].id}}" name="typeCode" range="{{CategoryList}}">
+            <view class="picker" wx:if="{{index}}">
+              {{CategoryList[index].name}}
+            </view>
+             <view class="type-bottom-teb" wx:else="{{index}}">
           板块类别
           <image class="type-bottom-icon" src="/images/bottom.png"></image>
+        </view>
+            </picker>
         </view>
       </view>
     </view>
   </view>
-  <view class="volunteer-item">
-    <view class="volunteer-item-banner">
-      <image src="/images/success.svg" class="volunteer-item-img"></image>
-      <view class="volunteer-item-icon">
-      <image class="volunteer-item-icon-img" src="/images/bg-lv.png">  </image>
-      <text  class="volunteer-item-icon-datas">65%</text>
+  <scroll-view scroll-y="true" style="height: 90vh;" bindscrolltolower="lower">
+    <view class="volunteer-item" wx:for="{{infos}}" wx:item="item" wx:key="index">
+      <view class="volunteer-item-banner">
+        <image src="{{item.titleImgUrl}}" class="volunteer-item-img"></image>
+        <view class="volunteer-item-icon">
+          <image class="volunteer-item-icon-img" src="/images/bg-lv.png"> </image>
+          <text class="volunteer-item-icon-datas">65%</text>
+        </view>
       </view>
+      <view class="volunteer-item-box">
+        <view class="volunteer-item-title">{{item.category_str}}</view>
+        <view class="volunteer-item-text">{{item.title}}加入交通文明志愿者，为我们社区的交通文明监督贡献自己的一臂之力吧🔥</view>
+        <view class="item-line"></view>
+        <view class="volunteer-item-type">
+          类型 :
+          <text class="volunteer-item-name">{{item.category_str}}</text> 已报名人数 ：
+          <text class="volunteer-item-people">{{item.attendNum}}</text>
+        </view>
+        <view class="volunteer-item-type">
+          报名截止时间 :
+          <text class="volunteer-item-name">{{item.endTime}}</text>
+        </view>
+      </view>
+      <view bindtap="myjoin" data-id="{{item.id}}" class="volunteer-item-btn">我要报名</view>
     </view>
-    <view class="volunteer-item-box">
-      <view class="volunteer-item-title">交通文明</view>
-      <view class="volunteer-item-text">加入交通文明志愿者，为我们社区的交通文明监督贡献自己的一臂之力吧🔥</view>
-      <view class="item-line"></view>
-      <view class="volunteer-item-type">
-        类型 :
-        <text class="volunteer-item-name">交通文明</text> 已报名人数 ：
-        <text class="volunteer-item-people">2485</text>
-      </view>
-      <view class="volunteer-item-type">
-        报名截止时间 :
-        <text class="volunteer-item-name">2020年3月31日</text>
-      </view>
-    </view>
-    <view class="volunteer-item-btn">我要报名</view>
-  </view>
+  </scroll-view>
 
 
 </view>
