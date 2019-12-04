@@ -47,7 +47,8 @@ Page({
       page: page,
       pageSize: 5,
       typeCode: 'ZHIYUAN_ZHAOMU',
-      keyword: this.data.searchV
+      keyword: this.data.searchV,
+      canAttend:true
     }
     try {
       let { code, data } = await getNewsPage(params);
@@ -96,6 +97,13 @@ Page({
       })
       console.log('getCategoryList', res)
     } catch (e) { console.log(9999, e) }
+  },
+
+  bindPickerChange(e) { 
+    this.setData({
+      index: e.detail.value,
+      // typeCode: this.data.servertypes[index].id
+    })
   },
 
 })
