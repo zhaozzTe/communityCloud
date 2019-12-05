@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    step:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.step) this.setData({step:options.step})
   },
 
   /**
@@ -57,8 +57,8 @@ Page({
 
   },
   goback() {
-    wx.redirectTo({
-      url: '/pages/peopleSay/peopleSay',
+    wx.navigateBack({
+      delta: 2
     })
   }
 })

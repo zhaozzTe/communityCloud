@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-import { getQrCodes } from '../../server/common.js'
+import { getQrCodes,getNotices } from '../../server/common.js'
 Page({
   data: {
     text: '社区居民免费体检活动，8月28日起即可开始预约',
@@ -121,11 +121,16 @@ Page({
   },
   onShow: function () {
     this.getQrCodes()
+    this.getNotices()
   },
   async getQrCodes(){
     try{
       let res = await getQrCodes()
-      console.log('二维码接口',res)
+    }catch(e){}
+  },
+  async getNotices(){
+    try{
+      let res = await getNotices()
     }catch(e){}
   },
   getUserInfo: function(e) {

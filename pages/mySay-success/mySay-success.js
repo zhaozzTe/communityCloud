@@ -60,5 +60,8 @@ Page({
     wx.redirectTo({
       url: '/pages/peopleSay/peopleSay',
     })
+    wx.navigateBack({
+      delta: 2
+    })
   }
 })

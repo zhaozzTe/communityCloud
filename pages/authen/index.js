@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-17 10:51:06
- * @LastEditTime: 2019-11-25 23:28:49
+ * @LastEditTime: 2019-12-05 23:54:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \communityCloud\pages\authen\index.js
@@ -15,6 +15,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    hasTap:false,
     initaddress:'宁波市镇海区庄市街道同心湖社区',
     address: [
       // { name: '0', value: '宁波市镇海区庄市街道同心湖社区',checked: 'true' },
@@ -85,27 +86,34 @@ Page({
       that.Toast('请输入正确的手机号')
         return  false;  
     } 
+    if(this.data.hasTap) return
+      this.setData({hasTap:true})
     let params={
       mobile: this.data.tel
     }
     let res = await getMobileCode(params)
-    const { data, code } = res
-    if(code==0){
-      if (this.data.hasGet) return
-      this.setData({ hasGet: true })
-      let time = 60;
-      let timer = setInterval(() => {
-        if (time == 1) {
-          this.setData({ hasGet: false })
-          clearInterval(timer);
-        }
-        time--;
-        if (time == 0) {
-          this.setData({ yzmText: '获取验证码' })
-        } else {
-          this.setData({ yzmText: `重新发送(${time})` })
-        }
-      }, 1000)
+    try {
+      const { data, code } = res
+      if(code==0){
+        if (this.data.hasGet) return
+        this.setData({ hasGet: true })
+        let time = 60;
+        let timer = setInterval(() => {
+          if (time == 1) {
+            this.setData({ hasGet: false })
+            clearInterval(timer);
+          }
+          time--;
+          if (time == 0) {
+            this.setData({ yzmText: '获取验证码' })
+          } else {
+            this.setData({ yzmText: `重新发送(${time})` })
+          }
+        }, 1000)
+      }
+      this.setData({hasTap:false})
+    } catch (error) {
+      this.setData({hasTap:false})
     }
   },
   async getAddress(){
@@ -158,11 +166,18 @@ Page({
       that.Toast('请阅读并同意实名认证协议')
       return false;  
     }
-    let res = await submitCertificate(params)
-    if(res&&res.code==0){
-      wx.redirectTo({
-        url: '/pages/index/index',
-      })
+    if(this.data.hasTap) return
+      this.setData({hasTap:true})
+    try {
+      let res = await submitCertificate(params)
+      if(res&&res.code==0){
+        wx.redirectTo({
+          url: '/pages/index/index',
+        })
+      }
+      this.setData({hasTap:false})
+    } catch (error) {
+      this.setData({hasTap:false})
     }
   },
 

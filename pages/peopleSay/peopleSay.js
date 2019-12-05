@@ -55,6 +55,16 @@ Page({
   onShow: function () {
     this.getNewsSummary()
   },
+  cy(e){
+    let index = e.currentTarget.dataset.index;
+    let inde = e.currentTarget.dataset.inde;
+    let type = e.detail;
+    if(type){
+      let infos=this.data.infos;
+      infos[index][inde].hasAttend=true
+      this.setData({infos})
+    }
+  },
   getNewsSummary: async function(){
     let params={
       newsType:'JUMIN_NEWS'

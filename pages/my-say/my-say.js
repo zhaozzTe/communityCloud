@@ -10,6 +10,7 @@ Page({
     uploadfile1: [],
     uploadfile2: [],
     uploadfile3: [],
+    hasTap:false
   },
 
   /**
@@ -94,13 +95,17 @@ Page({
   },
 
   async submitnews(params) {
+    if(this.data.hasTap) return
+      this.setData({hasTap:true})
     try {
       let res = await submitnews(params);
-      console.log('6666666', res)
+      setTimeout(()=>{
+        this.setData({hasTap:false})
+      },2000)
       wx.navigateTo({
         url: '/pages/mySay-success/mySay-success',
       })
-    } catch (e) { }
+    } catch (e) {this.setData({hasTap:false}) }
   },
 
   toast(title) {

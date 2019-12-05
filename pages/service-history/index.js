@@ -41,7 +41,7 @@ Page({
     this.setData({page})
     let params={
       page:page,
-      pageSize:5,
+      pageSize:8,
       newsId:this.data.id,
       keyword:this.data.searchV
     }

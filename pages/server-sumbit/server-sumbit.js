@@ -131,10 +131,12 @@ Page({
   async addserver(params) {
     try {
       let res = await addServer(params);
-      console.log('6666666', res)
-      wx.navigateTo({
-        url: '/pages/issue-success/issue-success',
-    })
+      if(code==0){
+        wx.navigateTo({
+          url: '/pages/issue-success/issue-success',
+      })
+
+      }
     } catch (e) { }
   },
 

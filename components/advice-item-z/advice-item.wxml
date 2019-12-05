@@ -7,7 +7,7 @@
         回复意见数：<text class="item-left-nums">{{data.commentNum}}</text>
       </view>
     </view>
-    <view bindtap="join" data-url="{{url}}" class="item-right">
+    <view wx:if="{{!data.hasAttend}}" catchtap="join" class="item-right">
        参与
       </view>
   </view>

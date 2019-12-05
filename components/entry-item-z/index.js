@@ -24,7 +24,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    hasTap:false
   },
 
   /**
@@ -32,8 +32,11 @@ Component({
    */
   methods: {
       async gotoPage(e){
+        if(this.data.hasTap) return
+        this.setData({hasTap:true})
         try{
           let res = await wxTools.checkAuth()
+          
           if(res){
             let paramsStr=''
             if(this.data.params){
@@ -51,13 +54,16 @@ Component({
             wx.navigateTo({
               url: url+paramsStr
             })
+            setTimeout(()=>{
+              this.setData({hasTap:false})
+            },2000)
             
             if(this.data.navTitle){
               wx.setNavigationBarTitle({title:this.data.navTitle})
   
             }
           }
-        }catch(e){}
+        }catch(e){this.setData({hasTap:false})}
       }
   }
 })

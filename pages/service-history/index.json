@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "historyItem": "/components/history-item/index"
-  }
+  },
+  "navigationBarTitleText": "服务需求登记历史"
 }
