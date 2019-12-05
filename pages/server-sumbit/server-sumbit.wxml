@@ -55,7 +55,7 @@
             清选择开始时间
           </view>
         </picker>
-        <view>
+        <view class="form-item-z">
           至
         </view>
         <picker name="endTime" mode="date" value="{{endtime}}" bindchange="bindTimeChangeend">

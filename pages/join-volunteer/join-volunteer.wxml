@@ -31,7 +31,7 @@
             板块类别
             <image class="type-bottom-icon" src="/images/bottom.png"></image>
           </view>
-        </picker>
+        </picker>    
       </view>
     </view>
   </view>
@@ -40,7 +40,7 @@
       <image src="{{item.titleImgUrl}}" class="volunteer-item-img"></image>
       <view class="volunteer-item-icon">
         <image class="volunteer-item-icon-img" src="/images/bg-lv.png"> </image>
-        <text class="volunteer-item-icon-datas">65%</text>
+        <text class="volunteer-item-icon-datas">{{ item.attendNum ||item.quota?parseInt(item.attendNum/item.quota/100)+'%':0 }}</text>
       </view>
     </view>
     <view class="volunteer-item-box">
@@ -56,6 +56,6 @@
         <text class="volunteer-item-name">{{item.endTime}}</text>
       </view>
     </view>
-    <view bindtap="myjoin" data-id="{{item.id}}" class="volunteer-item-btn">我要报名</view>
+    <view bindtap="myjoin" data-id="{{item.id}}" class="{{canAttend?'volunteer-item-btn':'volunteer-item-btn no-join'}} ">我要报名</view>
   </view>
 </view>

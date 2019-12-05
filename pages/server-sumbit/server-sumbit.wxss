@@ -99,3 +99,26 @@ letter-spacing: 0;
 padding-top: 60rpx;
 text-align: center;
 }
+.form-item-z{
+  color: #3C3C3C;
+  font-size: 28rpx;
+}
+
+radio .wx-radio-input {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 50%;     /* 圆角 */
+    /* border: 2rpx solid red; */
+}
+
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;     /* 圆角 */
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;       /* 勾大小 */
+    color: #fff;			/* 白色勾  */
+    transform: translate(-50%, -50%) scale(1);
+}
