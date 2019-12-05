@@ -10,21 +10,22 @@
     </view>
     <view class="volunteer-type">
       <view class="volunteer-type-top">
-        <view class="type-teb-top teb-top-l">
-          <image class="type-top-icon" src="/images/kbmchecked.png"></image>
-          <!-- <image class="type-top-icon" src="/images/kbmnochecked.png"></image> -->
+        <view class="type-teb-top teb-top-l" bindtap="canJoin">
+          <image class="type-top-icon" src="/images/kbmchecked.png" wx:if="{{canAttend}}"></image>
+          <image class="type-top-icon" src="/images/kbmnochecked.png" wx:else></image>
           可报名
         </view>
-        <view class="type-teb-top">
-          <!-- <image class="type-top-icon" src="/images/nojoinchecked.png"></image> -->
-          <image class="type-top-icon" src="/images/nojoinnochecked.png"></image>
+        <view class="type-teb-top" bindtap="noCanJoin">
+          <image class="type-top-icon" src="/images/nojoinnochecked.png" wx:if="{{canAttend}}"></image>
+          <image class="type-top-icon" src="/images/nojoinchecked.png" wx:else></image>
           不可报名
         </view>
       </view>
       <view class="volunteer-type-bottom">
         <picker bindchange="bindPickerChange" range-key="name" value="{{CategoryList[index].id}}" name="typeCode" range="{{CategoryList}}">
-          <view class="picker" wx:if="{{index}}">
+          <view class="type-bottom-teb" class="picker" wx:if="{{index}}">
             {{CategoryList[index].name}}
+            <image class="type-bottom-icon" src="/images/bottom.png"></image>
           </view>
           <view class="type-bottom-teb" wx:else="{{index}}">
             板块类别
@@ -34,31 +35,27 @@
       </view>
     </view>
   </view>
-  <scroll-view scroll-y="true" style="height: 90vh;" bindscrolltolower="lower">
-    <view class="volunteer-item" wx:for="{{infos}}" wx:item="item" wx:key="index">
-      <view class="volunteer-item-banner">
-        <image src="{{item.titleImgUrl}}" class="volunteer-item-img"></image>
-        <view class="volunteer-item-icon">
-          <image class="volunteer-item-icon-img" src="/images/bg-lv.png"> </image>
-          <text class="volunteer-item-icon-datas">65%</text>
-        </view>
+  <view class="volunteer-item" wx:for="{{infos}}" wx:item="item" wx:key="index">
+    <view class="volunteer-item-banner">
+      <image src="{{item.titleImgUrl}}" class="volunteer-item-img"></image>
+      <view class="volunteer-item-icon">
+        <image class="volunteer-item-icon-img" src="/images/bg-lv.png"> </image>
+        <text class="volunteer-item-icon-datas">65%</text>
       </view>
-      <view class="volunteer-item-box">
-        <view class="volunteer-item-title">{{item.category_str}}</view>
-        <view class="volunteer-item-text">{{item.title}}</view>
-        <view class="item-line"></view>
-        <view class="volunteer-item-type">
-          已报名人数 ：
-          <text class="volunteer-item-people">{{item.attendNum}}</text>
-        </view>
-        <view class="volunteer-item-type">
-          报名截止时间 :
-          <text class="volunteer-item-name">{{item.endTime}}</text>
-        </view>
-      </view>
-      <view bindtap="myjoin" data-id="{{item.id}}" class="volunteer-item-btn">我要报名</view>
     </view>
-  </scroll-view>
-
-
+    <view class="volunteer-item-box">
+      <view class="volunteer-item-title">{{item.category_str}}</view>
+      <view class="volunteer-item-text">{{item.title}}</view>
+      <view class="item-line"></view>
+      <view class="volunteer-item-type">
+        已报名人数 ：
+        <text class="volunteer-item-people">{{item.attendNum}}</text>
+      </view>
+      <view class="volunteer-item-type">
+        报名截止时间 :
+        <text class="volunteer-item-name">{{item.endTime}}</text>
+      </view>
+    </view>
+    <view bindtap="myjoin" data-id="{{item.id}}" class="volunteer-item-btn">我要报名</view>
+  </view>
 </view>
