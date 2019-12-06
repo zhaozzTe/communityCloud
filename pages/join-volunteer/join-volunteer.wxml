@@ -40,7 +40,7 @@
       <image src="{{item.titleImgUrl}}" class="volunteer-item-img"></image>
       <view class="volunteer-item-icon">
         <image class="volunteer-item-icon-img" src="/images/bg-lv.png"> </image>
-        <text class="volunteer-item-icon-datas">{{ item.attendNum ||item.quota?parseInt(item.attendNum/item.quota/100)+'%':0 }}</text>
+        <text class="volunteer-item-icon-datas">{{ item.attendNum && item.quota?parseInt(item.attendNum/item.quota/100)+'%':'0%' }}</text>
       </view>
     </view>
     <view class="volunteer-item-box">
