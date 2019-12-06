@@ -13,6 +13,7 @@ var http = function (data) {
     let isLoginReq = data.url.toLowerCase().includes('LOGIN');// 登录请求
     if (loading) wx.showLoading({
       title: '加载中',
+      mask:true
     })
     wx.request({
       url: data.url,

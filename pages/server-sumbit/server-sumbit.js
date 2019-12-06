@@ -131,7 +131,7 @@ Page({
   async addserver(params) {
     try {
       let res = await addServer(params);
-      if(code==0){
+      if (res.code==0){
         wx.navigateTo({
           url: '/pages/issue-success/issue-success',
       })

@@ -117,10 +117,12 @@ Page({
   async attend(params) {
     try {
       let res = await attend(params);
-      console.log('6666666', res)
-      wx.navigateTo({
-        url: '/pages/issue-success/issue-success'
-      })
+      if (res.code == 0){
+        wx.navigateTo({
+          url: '/pages/issue-success/issue-success'
+        })
+      }
+     
     } catch (e) {
       console.log(9999, e)
     }
