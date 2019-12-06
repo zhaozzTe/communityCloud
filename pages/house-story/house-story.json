@@ -6,5 +6,5 @@
     "AdviceSay": "/components/advice-item/advice-item",
     "AdviceItem": "/components/advice-item-z/advice-item"
   },
-  "navigationBarTitleText": "小区说事"
+  "navigationBarTitleText": ""
 }

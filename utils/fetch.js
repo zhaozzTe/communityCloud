@@ -1,7 +1,7 @@
 import Config from "./config.js"
 import Utils from "./util.js"
 import wxTools from "./wxTools.js"
-
+const origin='http://txh.one-tech.cn:88/zh'
 /**
  * post 数据请求
  */
@@ -16,7 +16,7 @@ var http = function (data) {
       mask:true
     })
     wx.request({
-      url: data.url,
+      url: `${origin}${data.url}`,
       data: data.params,
       method: method,
       dataType: "json",
@@ -32,7 +32,9 @@ var http = function (data) {
         if (res.data.code == 0 || (isLoginReq && res.data.code == 0 && res.data.data && (res.data.data.status == 0 || res.data.data.status == 2))) { // 成功时的标记
           resolve(res.data); // 成功时的回调
         } else if (statusCode==401){ // 状态失效
-          reLogin(data)
+          await reLogin(data)
+          console.log(wx.getStorageSync('token'));
+          // await http(data)
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
             title: '请您先实名认证',
@@ -77,7 +79,7 @@ var nUplaod = function (data) {
       title: '加载中',
     })
     wx.uploadFile({
-      url: data.url, //仅为示例，非真实的接口地址
+      url: `${origin}${data.url}`, //仅为示例，非真实的接口地址
       filePath: data.imgPath,
       header: {
         'content-type': 'multipart/form-data',
@@ -113,7 +115,7 @@ var myUploadFile = function (data) {
       title: '加载中',
     })
     wx.uploadFile({
-      url: data.url,
+      url: `${origin}${data.url}`,
       filePath: data.filePath,
       header: {
         'content-type': 'multipart/form-data',
@@ -155,7 +157,7 @@ var reLogin = async function (data) {
               "iv": info.iv
             }
             try{
-              let res = await http({ url: 'http://one-tech.cn:88/zh/api/v1/wx/wxAppLogin', params, method: 'post' })
+              let res = await http({ url: `/api/v1/wx/wxAppLogin`, params, method: 'post' })
               if (res.data && res.data.token) wx.setStorageSync("token", res.data.token)
               // req =await http(data)
               // console.log(1,req);

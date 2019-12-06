@@ -75,6 +75,9 @@
   flex-direction: row;
   color: #EE7C3D;
 }
+.marquee_text text{
+  margin-right: 100rpx;
+}
 
 .ad-image {
   width: 40rpx;

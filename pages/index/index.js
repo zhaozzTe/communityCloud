@@ -64,6 +64,8 @@ Page({
     userInfo: {},
     needAuth: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    ewmList:[],
+    noticeList:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -123,14 +125,28 @@ Page({
     this.getQrCodes()
     this.getNotices()
   },
+  //图片点击事件
+  imgYu: function (e) {
+    let src = e.currentTarget.dataset.src;
+    let imgList = [e.currentTarget.dataset.src];//获取data-list
+    //图片预览
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
+  },
   async getQrCodes(){
     try{
-      let res = await getQrCodes()
+      let {code,data} = await getQrCodes()
+      console.log(333,data);
+      
+      if(code==0) this.setData({ewmList:data})
     }catch(e){}
   },
   async getNotices(){
     try{
-      let res = await getNotices()
+      let {code,data} = await getNotices()
+      if(code==0) this.setData({noticeList:data})
     }catch(e){}
   },
   getUserInfo: function(e) {

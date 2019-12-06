@@ -31,7 +31,7 @@ Component({
     goMorePage(e){
       const url = e.currentTarget.dataset.url;
       wx.navigateTo({
-        url: url+`?type=${this.data.data.typeCode}`
+        url: url+`?type=${this.data.data.typeCode}&navTitle=${this.data.data.typeCode_str}`
       })
       wx.setNavigationBarTitle({title:this.data.data.typeCode_str})
     }

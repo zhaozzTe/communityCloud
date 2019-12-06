@@ -14,7 +14,7 @@
     <view class="liveService-banner">
       <image src="{{infos[0].titleImgUrl}}"></image>
       <view class="liveService-banner-text">
-      居民说事的规则说明，各类说事的正确流程及规则阐述，便于居民快速准确说事
+      {{text}}
       </view>
     </view>
      <view class="publishHall-content">

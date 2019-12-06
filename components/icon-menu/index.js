@@ -48,11 +48,15 @@ Component({
         if (res) {
           let paramsStr=''
           if(this.data.params){
-            Object.keys(this.data.params).map((item,index)=>{
+            let params={
+              ...this.data.params,
+              navTitle:this.data.navTitle
+            }
+            Object.keys(params).map((item,index)=>{
               if(index==0){
-                paramsStr+=`?${item}=${this.data.params[item]}`
+                paramsStr+=`?${item}=${params[item]}`
               }else{
-                paramsStr+=`&${item}=${this.data.params[item]}`
+                paramsStr+=`&${item}=${params[item]}`
               }
             })
           }
@@ -66,7 +70,6 @@ Component({
           },2000)
           if(this.data.navTitle){
             wx.setNavigationBarTitle({title:this.data.navTitle})
-
           }
         }
       } catch (e) {this.setData({hasTap:false}) }

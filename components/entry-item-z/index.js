@@ -40,16 +40,18 @@ Component({
           if(res){
             let paramsStr=''
             if(this.data.params){
-              Object.keys(this.data.params).map((item,index)=>{
+              let params={
+                ...this.data.params,
+                navTitle:this.data.navTitle
+              }
+              Object.keys(params).map((item,index)=>{
                 if(index==0){
-                  paramsStr+=`?${item}=${this.data.params[item]}`
+                  paramsStr+=`?${item}=${params[item]}`
                 }else{
-                  paramsStr+=`&${item}=${this.data.params[item]}`
+                  paramsStr+=`&${item}=${params[item]}`
                 }
               })
             }
-            console.log(paramsStr);
-            
             const url = e.currentTarget.dataset.url;
             wx.navigateTo({
               url: url+paramsStr
