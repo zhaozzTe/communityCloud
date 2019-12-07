@@ -1,0 +1,124 @@
+/* pages/my-say/my-say.wxss */
+.my-say{
+  width: 710rpx;
+  margin: 20rpx auto;
+  padding: 0 32rpx 32px 32rpx;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  box-shadow: 0 0 24rpx 4rpx rgba(0,0,0,0.08);
+  border-radius: 8rpx;
+}
+.form-item{
+  padding: 36rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #F3F3F3;
+}
+.form-item-name{
+  font-size: 28rpx;
+  color: #3C3C3C;
+  letter-spacing: 0;
+  line-height: 28rpx;
+  margin-bottom: 20rpx;
+}
+.form-item-xx{
+  color: #FF2626;
+}
+.placeStyle{
+  color:#C0C0C0;
+  font-size: 28rpx;
+}
+.form-upFile{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.upFile-img{
+  width: 176rpx;
+  height: 176rpx;
+  margin-right: 60rpx;
+}
+
+.upFile-img:nth-child(1){
+  margin-left: 20rpx;
+}
+.server-desc{
+ width: 100%;
+}
+.upFile-img-box{
+  position: relative;
+}
+.icon-close{
+  width: 40rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  background: #FF2626 ;
+  color: #fff;
+  border-radius:50%;
+  font-size: 30rpx;
+  text-align: center;
+ position: absolute;
+  top: 0;
+  right: -20rpx;
+}
+.btn{
+  background: #2ABF77;
+  border-radius: 8rpx;
+  width: 646rpx;
+  height: 80rpx;
+  color: #fff;
+  font-size: 36rpx;
+  margin: 40rpx 0  36rpx 0;
+  text-align: center;
+  line-height: 80rpx;
+}
+.inittime{
+  color: #C0C0C0 ;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+.placehold{
+  color: #C0C0C0 ;
+  font-size: 28rpx;
+  
+}
+.radio{
+ color: #3C3C3C;
+ font-size: 28rpx;
+ margin-right: 20rpx;
+}
+.btnsumit{
+  width:100%;
+  height:100%;
+  margin: 0;
+}
+.toHistory{
+  font-size: 28rpx;
+color: #2ABF77;
+letter-spacing: 0;
+padding-top: 60rpx;
+text-align: center;
+}
+.form-item-z{
+  color: #3C3C3C;
+  font-size: 28rpx;
+}
+
+radio .wx-radio-input {
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 50%;     /* 圆角 */
+    /* border: 2rpx solid red; */
+}
+
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;     /* 圆角 */
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;       /* 勾大小 */
+    color: #fff;			/* 白色勾  */
+    transform: translate(-50%, -50%) scale(1);
+}

@@ -8,6 +8,6 @@
                 <text>{{data.createTime}}</text>
             </view>
         </view>
-        <view class="history-item-right">></view>
+        <view bindtap="gotoDetail" data-id='{{data.id}}' class="history-item-right">></view>
     </view>
 </view>

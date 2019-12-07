@@ -32,7 +32,8 @@
     "pages/comNews/index",
     "pages/server-sumbit/server-sumbit",
     "pages/join-volunteer/join-volunteer",
-    "pages/service-history/index"
+    "pages/service-history/index",
+    "pages/service-history-detail/service-history-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

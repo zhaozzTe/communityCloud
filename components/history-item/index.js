@@ -20,6 +20,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    gotoDetail(e) {
+      const id = e.target.dataset.id;
+      wx.navigateTo({
+        url: '/pages/service-history-detail/service-history-detail?id=' +id,
+      })
+    },
 
   }
 })
