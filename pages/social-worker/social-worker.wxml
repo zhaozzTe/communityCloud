@@ -4,7 +4,7 @@
       <view class="bgblock defaultBg">
         <view class="live-search">
           <icon wx:if="{{!searchV}}" class="search-icon" type="search"></icon>
-          <input bindfocus="getFocus" bindinput="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
+          <input bindfocus="getFocus" bindblur="bindReplaceInput" placeholder-class="placeholder-int" placeholder="请输入关键字查询"/>
          
         </view>
       </view>
@@ -19,7 +19,7 @@
     <!-- <TitleMore wx:if="{{infos.length>0}}" title='全部{{infos[0].typeCode_str}}' isHasMore="{{false}}"/> -->
     <view class="entry-wrap-z" style="margin:0 20rpx">
       <EntryItem wx:for="{{infos}}" wx:for-item="item" wx:key="index" data="{{item}}"
-        url="/pages/detailCom/index" params="{{item}}" navTitle="{{item.typeCode_str}}详情"/>
+        url="/pages/story-detail/story-detail" params="{{item}}" navTitle="{{item.typeCode_str}}详情"/>
     </view>
   </view>
 </view>

@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'',
     id:null,
     page:1,
     finish:false,
@@ -20,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({id:options.id})
+    this.setData({id:options.id,navTitle:options.navTitle})
   },
 
   /**
@@ -34,6 +35,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(this.data.navTitle){
+      wx.setNavigationBarTitle({title:this.data.navTitle})
+    }
     this.getNewsDetail()
     this.commentList()
   },
