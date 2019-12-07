@@ -77,6 +77,7 @@ var nUplaod = function (data) {
     let loading = data && data.loading
     if (loading) wx.showLoading({
       title: '加载中',
+      mask:true
     })
     wx.uploadFile({
       url: `${origin}${data.url}`, //仅为示例，非真实的接口地址
@@ -113,6 +114,7 @@ var myUploadFile = function (data) {
     let loading = data && data.loading
     if (loading) wx.showLoading({
       title: '加载中',
+      mask:true
     })
     wx.uploadFile({
       url: `${origin}${data.url}`,

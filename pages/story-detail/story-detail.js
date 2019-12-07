@@ -57,6 +57,7 @@ Page({
     } catch (error) {}
   },
   async comment(){
+    if(!this.data.newsComment.trim()) return
     let params={
       // commentImgs:'',
       newsComment:this.data.newsComment,
