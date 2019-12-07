@@ -21,7 +21,7 @@ Component({
    */
   methods: {
     gotoDetail(e) {
-      const id = e.target.dataset.id;
+      const id = this.data.data.id;
       wx.navigateTo({
         url: '/pages/service-history-detail/service-history-detail?id=' +id,
       })

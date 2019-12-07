@@ -1,5 +1,5 @@
 <!--components/history-item/index.wxml-->
-<view class="history-item">
+<view class="history-item" bindtap="gotoDetail">
     <view class="history-item-con">
         <view class="history-item-left">
             <view class="title">{{data.name}}</view>
@@ -8,6 +8,6 @@
                 <text>{{data.createTime}}</text>
             </view>
         </view>
-        <view bindtap="gotoDetail" data-id='{{data.id}}' class="history-item-right">></view>
+        <view class="history-item-right">></view>
     </view>
 </view>
