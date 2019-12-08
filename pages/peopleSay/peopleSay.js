@@ -14,7 +14,7 @@ Page({
       }
     }, {
         src:'/images/lyss.png',
-        label: '楼宇说事',
+        label: '网格说事',
         // url: '/pages/comNews/index',
         url: '/pages/peopleSay-story/peopleSay-story',
         params:{

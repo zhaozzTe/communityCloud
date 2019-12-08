@@ -12,10 +12,10 @@
   <view class="publishHall-content">
     <view wx:for="{{infos}}" wx:for-item="item" wx:key="index" wx:if="{{item.length>0}}">
         <TitleMore title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
-        <view class="entry-wrap-z">
-          <EntryItem wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
-           url="/pages/detailCom/index" params="{{ite}}" navTitle="{{ite.typeCode_str}}详情"/>
-        </view>
+        <!-- <view class="entry-wrap-z"> -->
+          <EntryItem  data="{{item}}"
+           url="/pages/detailCom/index" params="{{item}}" navTitle="{{item.typeCode_str}}详情"/>
+        <!-- </view> -->
     </view>
     <!-- <view  wx:for="{{infos}}" wx:for-item="item">
         <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>

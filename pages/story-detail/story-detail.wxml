@@ -10,7 +10,7 @@
     <rich-text class='detail-content-text' nodes="{{data.content}}"></rich-text>
 
     <view class="all-says-box">
-      <view class="all-says-l">全部评论</view>
+      <view class="all-says-l">全部应答</view>
       <view class="all-says-r">
        <text class="all-says-num">{{infos.length}}</text>条
       </view>

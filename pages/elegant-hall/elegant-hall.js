@@ -50,10 +50,10 @@ Page({
   },
 
   onLoad: function () {
-
+    this.getNewsSummary()
   },
   onShow: function () {
-    this.getNewsSummary()
+   
   },
   getNewsSummary: async function(){
     let params={
@@ -61,6 +61,7 @@ Page({
     }
     try{
       let { code, data } = await getNewsSummary(params);
+      console.log(55555,data)
       code==0&&this.setData({infos:data})
     }catch(e){}
   }

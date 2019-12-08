@@ -18,16 +18,18 @@ Component({
   },
 
   /**
-   * 组件的方法列表
+   * 组件的方法列表 typeCode_str
    */
   methods: {
       async gotoPage(e){
+        const navtitle = e.currentTarget.dataset.navtitle;
+        const type = e.currentTarget.dataset.type;
         try{
           let res = await wxTools.checkAuth()
           if(res){
             const url = e.currentTarget.dataset.url;
             wx.navigateTo({
-              url: url
+              url: `/pages/comNews/index?navTitle=${navtitle}&type=${type}`
             })
 
           }
