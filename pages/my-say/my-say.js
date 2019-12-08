@@ -82,7 +82,7 @@ Page({
   formSubmit(e) {
     let { uploadfile1, uploadfile2, uploadfile3 } = this.data;
     let params = e.detail.value;
-    params.imgs = [...uploadfile1, ...uploadfile2, ...uploadfile3];
+    params.attachImages = [...uploadfile1, ...uploadfile2, ...uploadfile3];
     if (!params.title) {
       this.toast('请输入议题名称');
       return false;

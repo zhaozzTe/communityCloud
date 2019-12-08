@@ -60,10 +60,6 @@ Component({
               this.setData({hasTap:false})
             },2000)
             
-            if(this.data.navTitle){
-              wx.setNavigationBarTitle({title:this.data.navTitle})
-  
-            }
           }else{
             this.setData({hasTap:false})
           }

@@ -10,7 +10,7 @@ export const addServer = params => http({ url: `/api/v1/requires/add`, loading: 
 export const requiresList = params => http({ url: `/api/v1/requires/requiresList`,  params, method: 'post' });//分页查询历史需求数据
 ///上传图片
 export const uploadimg = params => http({ url: `/api/v1/requires/upload/image`, contentType: 'multipart/form-data', params, method: 'post'});
-export const submitnews = params => http({ url: `/api/v1/news/submitNews`, params, method: 'post', loading:true });//提交楼宇说事议题
+export const submitnews = params => http({ url: `/api/v1/news/submitNews`, params, method: 'post', loading:true });//提交网格说事议题
 export const attend = params => http({ url: `/api/v1/attend/attend`, params, loading: true, method: 'post' });//参与
 export const getCategoryList = params => http({ url: `/api/v1/news/getCategoryList`, params, method: 'get' });//获取新闻板块
 export const getRequiresDetail = params => http({ url: `/api/v1/requires/getRequiresDetail/` + params.id, params, method: 'get' });//获取服务需求详情

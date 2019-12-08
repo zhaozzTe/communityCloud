@@ -2,5 +2,5 @@
   "usingComponents": {
     "SayDetail": "/components/say-item/say-item"
   },
-  "navigationBarTitleText": "楼宇说事详情"
+  "navigationBarTitleText": "网格说事详情"
 }

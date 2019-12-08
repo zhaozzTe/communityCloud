@@ -5,6 +5,6 @@
     您的议题已发布成功！
   </view>
   <view bindtap="goback" class="mysay-success-back">
-    返回到楼宇说事
+    返回到网格说事
   </view> 
 </view>

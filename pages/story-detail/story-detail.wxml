@@ -8,7 +8,11 @@
       {{data.title}}
     </view>
     <rich-text class='detail-content-text' nodes="{{data.content}}"></rich-text>
-
+    <view class="images">
+      <view class="image" wx:for="{{data.attachImages}}" wx:key="index">
+        <image src="{{item}}" />
+      </view>
+    </view>
     <view class="all-says-box">
       <view class="all-says-l">{{navTitle=='社工应答详情'?'全部应答':'全部评论'}}</view>
       <view class="all-says-r">

@@ -47,6 +47,7 @@ Page({
   async getNewsDetail(){
     try {
       let {code,data} = await getNewsDetail({id:this.data.id})
+      if(data.attachImages) data.attachImages= data.attachImages.split(',')
       data.content = data.content
           .replace(/<p([\s\w"=\/\.:;]+)((?:(style="[^"]+")))/ig, '<p')
           .replace(/<p([\s\w"=\/\.:;]+)((?:(class="[^"]+")))/ig, '<p')
@@ -87,7 +88,7 @@ Page({
     try{
       let { code, data } = await commentList(params);
       data.forEach(item=>{
-        item.createTime=wxTools.classTimeValidate(item.createTime)
+        item.createTime=wxTools.classTimeValidate(item.createTime.replace('-','/').replace('-','/'))
       })
       if(isSearch) this.setData({infos:[],finish:false})
       code==0&&this.setData({infos:[...data,...this.data.infos]})

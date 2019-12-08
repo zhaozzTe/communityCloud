@@ -40,6 +40,21 @@
   margin-right: 12rpx;
   text-align: center;
 }
+.detail-content .images{
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.detail-content .images .image{
+  width: 30%;
+  height: 200rpx;
+  margin: 1.5%;
+}
+.detail-content .images .image image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
 
 .detail-content-time{
   color: #999999;
