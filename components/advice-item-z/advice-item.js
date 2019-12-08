@@ -55,7 +55,7 @@ Component({
       if(this.data.hasTap) return
       this.setData({hasTap:true})
       let params={
-        id:this.data.data.id
+        newsId:this.data.data.id
       }
       try {
         let {code}=await attend(params)

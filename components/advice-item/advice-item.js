@@ -29,7 +29,7 @@ Component({
     },
     async join(e) {
       let params={
-        id:this.data.datas.id
+        newsId:this.data.datas.id
       }
       try {
         let {code}=await attend(params)
