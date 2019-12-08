@@ -62,6 +62,7 @@ Page({
     if(type){
       let infos=this.data.infos;
       infos[index][inde].hasAttend=true
+      infos[index][inde].attendNum+=1
       this.setData({infos})
     }
   },

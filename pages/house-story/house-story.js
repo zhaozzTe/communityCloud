@@ -48,6 +48,16 @@ Page({
   lower(e){
     if(!this.data.finish) this.getNewsPage(this.data.page+1)
   },
+  cy(e){
+    let index = e.currentTarget.dataset.index;
+    let type = e.detail;
+    if(type){
+      let infos=this.data.infos;
+      infos[index].hasAttend=true
+      infos[index].attendNum+=1
+      this.setData({infos})
+    }
+  },
   getNewsPage: async function(page=1,isSearch=false){
     this.setData({page})
     let params={

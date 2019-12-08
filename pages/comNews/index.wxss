@@ -21,7 +21,7 @@
     object-fit: cover
   }
   .liveService-banner-text{
-    width: 644rpx;
+    width: 96%;
     font-size: 28rpx;
     color: #fff;
     line-height: 44rpx;
@@ -30,7 +30,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.3);
-  
+    padding: 0 2%;
   }
   .live-search{
     width: 710rpx;

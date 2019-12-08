@@ -13,7 +13,7 @@
         <TitleMore title='{{item.titleText}}' isHasMore="{{item.isHasMore}}"/>
         <EntryItem data="{{item.entData}}"/>
     </view> -->
-    <view wx:for="{{infos}}" wx:for-item="item" wx:key="index" wx:if="{{item.length>0}}">
+    <view wx:for="{{infos}}" wx:for-item="item" wx:key="index" wx:if="{{item.length>0&&item[0].typeCode!='ZHIYUAN_ZHAOMU'}}">
         <TitleMore title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
         <view class="entry-wrap-z">
           <EntryItem wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"

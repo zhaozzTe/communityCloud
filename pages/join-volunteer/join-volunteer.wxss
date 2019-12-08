@@ -175,6 +175,7 @@
   font-size: 40rpx;
   color: #3c3c3c;
   margin-bottom: 20rpx;
+  font-weight: 600;
 }
 
 .volunteer-item-text {
