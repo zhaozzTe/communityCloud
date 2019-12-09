@@ -122,8 +122,11 @@ Page({
     }
   },
   onShow: function () {
-    this.getQrCodes()
-    this.getNotices()
+    if (wx.getStorageSync('token')) {
+      this.getQrCodes()
+      this.getNotices()
+    }
+   
   },
   //图片点击事件
   imgYu: function (e) {
