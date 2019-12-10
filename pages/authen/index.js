@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-11-17 10:51:06
- * @LastEditTime: 2019-12-07 15:48:50
+ * @LastEditTime: 2019-12-10 22:18:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \communityCloud\pages\authen\index.js
@@ -205,6 +205,7 @@ Page({
     let params = e.detail.value;
     let address= this.data.multiArray[2][params.address[2]].id
     params.address = address;
+    params.gender = params.gender*1;
     console.log(2,params);
     
     if (!WxTools.validate(params)){
