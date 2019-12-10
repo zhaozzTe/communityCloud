@@ -103,12 +103,6 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   load(e){
     console.log(321, e.detail)
   },
