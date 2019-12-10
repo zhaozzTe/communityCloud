@@ -172,6 +172,10 @@ Page({
       this.toast('请输入服务详细内容');
       return false;
     }
+    else if (!params.phone) {
+      this.toast('请输入手机号码');
+      return false;
+    } 
     else if (!params.type) {
       this.toast('请选择服务时间');
       return false;
