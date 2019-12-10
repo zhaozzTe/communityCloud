@@ -14,7 +14,7 @@ Page({
   data: {
     islower:false,
     index: null,
-    CategoryList: [],
+    CategoryList: [{ id: "", name: "全部" }],
     type: '',
     searchV: '',
     page: 1,
@@ -124,20 +124,19 @@ Page({
       }
      
     } catch (e) {
-      console.log(9999, e)
     }
   },
 
   //获取板块
   async getCategoryList(params) {
     try {
+      let CategoryList = this.data.CategoryList;
       let res = await getCategoryList(params);
+      CategoryList = [...CategoryList,...res.data]
       this.setData({
-        CategoryList: res.data
+        CategoryList
       })
-      console.log('getCategoryList', res)
     } catch (e) {
-      console.log(9999, e)
     }
   },
 
