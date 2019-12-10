@@ -1,0 +1,10 @@
+<view class="mysay-success">
+  <image src="/images/success.svg" class="success-img"></image>
+  <view class="mysay-success-img">
+   <icon type="success" size="20" color="green"/>
+    您已报名该活动
+  </view>
+  <view bindtap="goback" class="mysay-success-back">
+    返回到民生服务厅
+  </view> 
+</view>

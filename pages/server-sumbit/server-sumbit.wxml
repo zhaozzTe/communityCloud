@@ -32,6 +32,14 @@
     </view>
     <view class="form-item">
       <view class="form-item-name">
+        <text class="form-item-xx">*</text> 联系电话:
+      </view>
+      <view>
+        <input type="number" name="phone" class="server-desc" placeholder-class="placeStyle" auto-height placeholder="请输入联系电话" />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-name">
         <text class="form-item-xx">*</text> 服务时间:
       </view>
       <view class="fuqtime">

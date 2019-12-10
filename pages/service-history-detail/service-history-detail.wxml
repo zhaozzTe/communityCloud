@@ -30,7 +30,7 @@
         <text class="form-item-xx"></text> 服务时间:
       </view>
       <view class="fuqtime">
-        {{detailData.type}}
+        {{times[detailData.type]}}
       </view>
     </view>
     <view class="form-item">

@@ -33,7 +33,8 @@
     "pages/server-sumbit/server-sumbit",
     "pages/join-volunteer/join-volunteer",
     "pages/service-history/index",
-    "pages/service-history-detail/service-history-detail"
+    "pages/service-history-detail/service-history-detail",
+    "pages/zyz-join-success/zyz-join-success"
   ],
   "window": {
     "backgroundTextStyle": "light",

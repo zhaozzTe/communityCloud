@@ -1,11 +1,16 @@
 // pages/detailCom/index.js
 import { getNewsDetail } from '../../server/news.js'
+import {
+  attend,
+  getCategoryList
+} from '../../server/common.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    canAttend: true,
     navTitle:'',
     id:null,
     data:{}
@@ -84,5 +89,26 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  myjoin(e) {
+    if (!this.data.data.hasAttend) {
+      return false;
+    }
+    this.attend({
+      newsId: this.data.id
+    });
+  },
+  async attend(params) {
+    try {
+      let res = await attend(params);
+      if (res.code == 0) {
+        wx.navigateTo({
+          url: '/pages/zyz-join-success/zyz-join-success'
+        })
+      }
+
+    } catch (e) {
+      console.log(9999, e)
+    }
+  },
 })

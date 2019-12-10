@@ -119,7 +119,7 @@ Page({
       let res = await attend(params);
       if (res.code == 0){
         wx.navigateTo({
-          url: '/pages/issue-success/issue-success'
+          url: '/pages/zyz-join-success/zyz-join-success'
         })
       }
      
@@ -184,6 +184,12 @@ Page({
       params,
     })
     this.getNewsPage(params,false);
+  },
+  gotoDetail(e){
+    const info = e.currentTarget.dataset.info;
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/detailCom/index?id=' + info.id + '&navTitle=' + info.typeCode_str+'详情'
+    })
   }
-
 })

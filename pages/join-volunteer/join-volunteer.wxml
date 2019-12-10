@@ -36,7 +36,7 @@
     </view>
   </view>
   <view class="volunteer-item" wx:for="{{infos}}" wx:item="item" wx:key="index">
-    <view class="volunteer-item-banner">
+    <view class="volunteer-item-banner" bindtap="gotoDetail" data-info="{{item}}">
       <image src="{{item.titleImgUrl}}" class="volunteer-item-img"></image>
       <view class="volunteer-item-icon">
         <image class="volunteer-item-icon-img" src="/images/bg-lv.png"> </image>
