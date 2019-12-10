@@ -1,7 +1,7 @@
 import Config from "./config.js"
 import Utils from "./util.js"
 import wxTools from "./wxTools.js"
-const origin='http://txh.one-tech.cn:88/zh'
+const origin='https://one-tech.cn/zh'
 /**
  * post 数据请求
  */
