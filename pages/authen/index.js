@@ -81,16 +81,20 @@ Page({
     this.getStreetList()
   },
   async getYZM(){
+    console.log(1)
+    console.log(666,this.data.tel)
     let telreg=/^[1][3,4,5,7,8][0-9]{9}$/; 
     if(telreg.test(this.data.tel) === false){  
+      console.log(2)
       that.Toast('请输入正确的手机号')
         return  false;  
     } 
-    if(this.data.hasTap) return
-      this.setData({hasTap:true})
+    // if(this.data.hasTap) return
+      // this.setData({hasTap:true})
     let params={
       mobile: this.data.tel
     }
+    console.log(3)
     let res = await getMobileCode(params)
     try {
       const { data, code } = res
@@ -111,9 +115,10 @@ Page({
           }
         }, 1000)
       }
-      this.setData({hasTap:false})
+      // this.setData({hasTap:false})
     } catch (error) {
-      this.setData({hasTap:false})
+      console.log(111,error)
+      // this.setData({hasTap:false})
     }
   },
   bindMultiPickerChange: function (e) {
@@ -224,8 +229,8 @@ Page({
       that.Toast('请阅读并同意实名认证协议')
       return false;  
     }
-    if(this.data.hasTap) return
-      this.setData({hasTap:true})
+    // if(this.data.hasTap) return
+    //   this.setData({hasTap:true})
     try {
       let res = await submitCertificate(params)
       if(res&&res.code==0){
@@ -233,9 +238,9 @@ Page({
           url: '/pages/index/index',
         })
       }
-      this.setData({hasTap:false})
+      // this.setData({hasTap:false})
     } catch (error) {
-      this.setData({hasTap:false})
+      // this.setData({hasTap:false})
     }
   },
 
