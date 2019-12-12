@@ -12,7 +12,7 @@
         </view>
         <!-- <view style="color:red" class="iconfont icongender"></view> -->
         <form-item fontClassName="iconfont {{sexFontName}}"  label="性别:">
-          <picker bindchange="bindPickerChange" range-key="name" value="{{index}}" name="gender" range="{{sexArr}}" style="flex:1">
+          <picker bindchange="bindPickerChange" range-key="name" value="{{sexArr[index*1].id}}" name="gender" range="{{sexArr}}" style="flex:1">
             <view class="picker">
               {{sexArr[index*1].name}}
             </view>
