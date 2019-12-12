@@ -76,6 +76,11 @@ Page({
     const { infos }= this.data;
     try {
      const res = await getNewsPage(params);
+      res.data.forEach((item) => {
+        console.log(1111, Math.ceil(item.attendNum / item.quota)) 
+        item.rate = Math.round((item.attendNum / item.quota*100))
+      })
+      console.log(1111, res.data) 
       islower?this.setData({
         infos: [...infos, ...res.data] 
       }) : this.setData({
@@ -132,7 +137,7 @@ Page({
     try {
       let CategoryList = this.data.CategoryList;
       let res = await getCategoryList(params);
-      CategoryList = [...CategoryList,...res.data]
+      CategoryList = [...CategoryList,...res.data];
       this.setData({
         CategoryList
       })
