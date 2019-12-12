@@ -85,7 +85,7 @@ Page({
   },
 
   myjoin(e) {
-    if (!this.data.data.hasAttend) {
+    if (this.data.data.hasAttend) {
       return false;
     }
     this.attend({
