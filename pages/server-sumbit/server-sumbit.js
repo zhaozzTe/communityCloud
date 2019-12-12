@@ -135,8 +135,9 @@ Page({
         wx.navigateTo({
           url: '/pages/issue-success/issue-success',
       })
-
-      }
+      } else { 
+        this.toast(res.msg);
+      } 
     } catch (e) { }
   },
 
