@@ -46,6 +46,7 @@ Component({
       try {
         this.isHasToken();
         let res = await wxTools.checkAuth()
+        
         if (res) {
           let paramsStr=''
           if(this.data.params){
@@ -63,6 +64,7 @@ Component({
           }
           
           const url = e.currentTarget.dataset.url;
+          console.log(222222, url + paramsStr)
           wx.navigateTo({
             url: url+paramsStr
           })

@@ -2,7 +2,7 @@
   <image src="/images/authen.svg" class="success-img"></image>
   <view class="mysay-success-img">
    <icon type="success" size="20" color="green"/>
-    待审核中
+    实名认证信息正在审核中!
   </view>
   <view bindtap="goback" class="mysay-success-back">
     返回首页

@@ -1,6 +1,6 @@
 <!--components/iconMenu/index.wxml.wxml-->
-<view class="icon-menu-item" data-url="{{data.url}}" style="width:{{width}}">
-  <view bindtap="gotoPage" class="images" style="width:{{iconWidth}};height:{{iconHeight}}">
+<view class="icon-menu-item" style="width:{{width}}">
+  <view bindtap="gotoPage"  data-url="{{data.url}}"  class="images" style="width:{{iconWidth}};height:{{iconHeight}}">
     <image wx:if="{{data.src}}" src="{{data.src}}"></image>
     <view wx:if="{{data.iconfont}}" class="iconfont {{data.iconfont}} item-icon"></view> 
   </view>
