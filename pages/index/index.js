@@ -4,6 +4,7 @@ const app = getApp()
 import { getQrCodes,getNotices } from '../../server/common.js'
 Page({
   data: {
+    isLogin:0,
     text: '社区居民免费体检活动，8月28日起即可开始预约',
     marqueePace: 1,//滚动速度
     marqueeDistance: 0,//初始滚动距离
@@ -74,17 +75,17 @@ Page({
     })
   },
   onLoad: function () {
-    // 页面显示
-    var that = this;
-    if (wx.getStorageSync('token')){
-      that.setData({
-        needAuth: false
+    if (wx.getStorageSync('token')) {
+      this.setData({
+        isLogin: 1
       })
-    }else{
-      that.setData({
-        needAuth: true
+    } else{
+      this.setData({
+        isLogin: 0
       })
     }
+    // 页面显示
+    var that = this;
     var length = that.data.text.length * that.data.size;//文字长度
     var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
     that.setData({
@@ -127,6 +128,17 @@ Page({
       this.getNotices()
     }
    
+  },
+  isHasToken(){
+    if (wx.getStorageSync('token')) {
+      that.setData({
+        needAuth: false
+      })
+    } else {
+      that.setData({
+        needAuth: true
+      })
+    }
   },
   //图片点击事件
   imgYu: function (e) {
@@ -176,5 +188,24 @@ Page({
         that.runMarquee();
       }
     }, that.data.interval);
+  },
+
+  onParentEvent(event){
+    const needAuth = event.detail.needAuth;
+    this.setData({
+      needAuth
+    })
+  },
+  onParentEventOther(event){
+    const needAuth = event.detail.needAuth;
+    this.setData({
+      needAuth
+    })
+  },
+  onParentEventTwo(event){
+    const needAuth = event.detail.needAuth;
+    this.setData({
+      needAuth
+    })
   }
 })

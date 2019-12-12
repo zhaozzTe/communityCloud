@@ -9,7 +9,7 @@
           <!-- <text class="defaultColor detail">详情 ></text> -->
         </view>
         <view class="menu-con">
-          <icon-menu wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}"></icon-menu>
+          <icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}"></icon-menu>
         </view>
         <view class="menu-foot">
           <!-- 跑马灯效果  -->
@@ -28,22 +28,22 @@
         <com-title title="便捷菜单入口"></com-title>
         <view class="entry">
           <!-- <entry-item data="{{entryList}}"></entry-item> -->
-          <entry-item wx:for="{{entryList}}" wx:for-item="item" wx:key="index" data="{{item}}"
-           url="{{item.url}}" navTitle="{{item.title}}" params="{{item.params}}"/>
+          <entry-item bind:parentEvent='onParentEventTwo' wx:for="{{entryList}}" wx:for-item="item" wx:key="index" data="{{item}}" url="{{item.url}}" navTitle="{{item.title}}" params="{{item.params}}" />
         </view>
-        <com-title title="二维码快速入口"></com-title>
-        <view class="ewm-wrap">
-          <view wx:for="{{ewmList}}" wx:for-item="item" wx:key="index" class="ewm-wrap-item">
-            <image bindtap='imgYu' src="{{item.codeUrl}}" data-src="{{item.codeUrl}}"></image>
-            <text class="ewm-wrap-item-text">{{item.codeTitle}}</text>
-            <text>点击大图识别二维码</text>
+        <block wx:if="{{isLogin==1}}">
+          <com-title title="二维码快速入口"></com-title>
+          <view class="ewm-wrap">
+            <view wx:for="{{ewmList}}" wx:for-item="item" wx:key="index" class="ewm-wrap-item">
+              <image bindtap='imgYu' src="{{item.codeUrl}}" data-src="{{item.codeUrl}}"></image>
+              <text class="ewm-wrap-item-text">{{item.codeTitle}}</text>
+              <text>点击大图识别二维码</text>
+            </view>
           </view>
-
-        </view>
+        </block>
       </view>
 
     </view>
 
   </view>
-  <auth-dialog needAuth='{{needAuth}}' ></auth-dialog>
+  <auth-dialog bind:parentEvent='onParentEventOther' needAuth='{{needAuth}}'></auth-dialog>
 </view>

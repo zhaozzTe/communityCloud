@@ -23,6 +23,7 @@ Component({
   methods: {
     //微信登录
     bindgetuserinfo: function (e) {
+      this.triggerEvent('parentEvent', { needAuth: false })
       console.log(e.detail)
       wx.login({
         async success(res) {
