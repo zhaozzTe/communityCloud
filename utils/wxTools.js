@@ -16,6 +16,8 @@ const checkAuth=async ()=>{
         auth = true
       }else if(data.status==-1){//实名认证未通过
         wx.navigateTo({ url: '/pages/authen/index' })
+      }else if(data.status==-2){//未获取手机号
+        wx.navigateTo({ url: '/pages/login-wx/login-wx' })
       }
     }
   } catch (e) {

@@ -25,9 +25,7 @@ var http = function (data) {
         "Authorization": wx.getStorageSync('token'),
       },
       success: async function (res) {
-        
-        console.log('接口', res)
-        // console.log(res)
+        // console.log('接口', res)
         let { statusCode} = res;
         if (res.data.code == 0 || (isLoginReq && res.data.code == 0 && res.data.data && (res.data.data.status == 0 || res.data.data.status == 2))) { // 成功时的标记
           resolve(res.data); // 成功时的回调
