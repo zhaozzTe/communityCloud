@@ -49,6 +49,8 @@ Component({
                 wx.redirectTo({ url: '/pages/index/index' })
               } else if (res.data.status == 1) {
                 wx.redirectTo({ url: '/pages/login-waite/login-waite' })
+              }else if(res.data.status==-2){//未获取手机号
+                wx.navigateTo({ url: '/pages/login-wx/login-wx' })
               }
             }catch(e){}
           }
