@@ -1,7 +1,7 @@
 let { http } = require('../utils/fetch.js');
 export const wxAppLogin = params => http({ url: '/api/v1/wx/wxAppLogin', params, method:'post'});//移动端小程序手机号二次登录接口,返回登录token
 export const wxAppMobileLogin = params => http({ url:'/api/v1/wx/wxAppMobileLogin', params, method:'post'});//移动端小程序登录接口
-export const getUserStatus = params => http({ url: `/api/v1/certificate/getUserCertificateStatus`, params: {} });//获取实名认证状态
+export const getUserStatus = params => http({ url: `/api/v1/certificate/getUserCertificateStatus`, params: {} , loading:true});//获取实名认证状态
 export const getQrCodes = params => http({ url: `/api/v1/index/getQrCodes`, params: {} });//获取二维码图片
 export const getNotices = params => http({ url: `/api/v1/index/getNotices`, params: {} });//获取公告列表
 //获取服务类别接口
