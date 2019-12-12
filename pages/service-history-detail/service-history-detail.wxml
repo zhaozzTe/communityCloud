@@ -27,7 +27,7 @@
     </view>
      <view class="form-item">
       <view class="form-item-name">
-        <text class="form-item-xx">*</text> 联系电话:
+        <text class="form-item-xx"></text> 联系电话:
       </view>
       <view>
          {{detailData.phone}}

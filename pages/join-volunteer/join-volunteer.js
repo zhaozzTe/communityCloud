@@ -22,7 +22,7 @@ Page({
     infos: [],
     finish: false,
     isLastPage: false,
-    pageSize: 5,
+    pageSize: 2,
     canAttend: true,
     keyword: '',
     category: '',
@@ -158,6 +158,7 @@ Page({
 
   //上拉翻页
   onReachBottom: function() {
+    console.log(222222)
     let { params } = this.data;
     params.page = this.data.page + 1;
     // 最后一页了，取消下拉功能
