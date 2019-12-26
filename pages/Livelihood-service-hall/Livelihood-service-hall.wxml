@@ -17,7 +17,7 @@
         <TitleMore title='{{item[0].typeCode_str}}' isHasMore="{{true}}" url="/pages/comNews/index" data="{{item[0]}}"/>
         <view class="entry-wrap-z">
           <EntryItem wx:for="{{item}}" wx:for-item="ite" wx:key="inde" data="{{ite}}"
-           url="/pages/detailCom/index" params="{{ite}}" navTitle="{{ite.typeCode_str}}详情"/>
+           url="{{ite.typeCode_str == '社工应答'?'/pages/story-detail/story-detail':'/pages/detailCom/index'}}" params="{{ite}}" navTitle="{{ite.typeCode_str}}详情"/>
         </view>
     </view>
   </view>
