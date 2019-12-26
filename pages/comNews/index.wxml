@@ -13,9 +13,9 @@
   <scroll-view scroll-y="true" style="height: 90vh;" bindscrolltolower="lower">
     <view class="liveService-banner">
       <image src="{{infos[0].titleImgUrl}}"></image>
-      <view class="liveService-banner-text">
+      <!-- <view class="liveService-banner-text">
       {{text}}
-      </view>
+      </view> -->
     </view>
      <view class="publishHall-content">
         <TitleMore wx:if="{{infos.length>0}}" title='全部{{infos[0].typeCode_str}}' isHasMore="{{false}}"/>

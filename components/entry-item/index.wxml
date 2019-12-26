@@ -3,8 +3,8 @@
   <view class="entry-item" wx:for="{{data}}" wx:key="{{key}}" wx:for-item="item">
     <image src="{{item.titleImgUrl}}"></image>
     <view class="entry-item-ctx" bindtap="gotoPage" data-type="{{item.typeCode}}" data-navTitle="{{item.typeCode_str}}" data-url="{{item.url}}">
-      <text class="entry-item-ctx-title">{{item.typeCode_str}}</text>
-      <text class="entry-item-ctx-text">{{item.title}}</text>
+      <text class="entry-item-ctx-title">{{item.title}}</text>
+      <text class="entry-item-ctx-text">{{item.createTime||item.text}}</text>
     </view>
     <text>></text>         
   </view>
