@@ -62,10 +62,10 @@ Page({
   async getRequiresDetail(params) {
     try {
       let res = await getRequiresDetail(params);
-      console.log(6666, res.data)
+      console.log(6666, res.data.imgUrl.split(","))
       this.setData({
         detailData: res.data,
-        imgs: res.data.imgUrl ? res.data.imgUrl.split(',') :[],
+        imgs: res.data.imgUrl ? res.data.imgUrl.split(",") :[],
       })
     } catch (e) {}
   },

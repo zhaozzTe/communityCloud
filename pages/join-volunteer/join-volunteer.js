@@ -14,7 +14,7 @@ Page({
   data: {
     islower:false,
     index: null,
-    CategoryList: [{ id: "", name: "全部" }],
+    CategoryList: [],
     type: '',
     searchV: '',
     page: 1,
@@ -137,7 +137,8 @@ Page({
     try {
       let CategoryList = this.data.CategoryList;
       let res = await getCategoryList(params);
-      CategoryList = [...CategoryList,...res.data];
+      CategoryList = res.data;
+      CategoryList.unshift({ id: "", name: "全部" })
       this.setData({
         CategoryList
       })

@@ -62,7 +62,7 @@
     </view>
          <view class="form-item">
         <view class="form-upFile">
-          <view wx:for=' {{detailData.imgs}}'  wx:item='item' wx:key='index' class="upFile-img upFile-img-box">
+          <view   wx:for='{{imgs}}' wx:key='item' class="upFile-img upFile-img-box">
             <image class="upFile-img updateimg" src="{{item}}" ></image>
           </view>
         </view>

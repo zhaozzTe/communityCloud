@@ -22,7 +22,7 @@
         </view>
       </view>
       <view class="volunteer-type-bottom">
-        <picker bindchange="bindPickerChange" range-key="name" value="{{CategoryList[index].id}}" name="typeCode" range="{{CategoryList}}">
+        <picker mode='selector' bindchange="bindPickerChange" range-key="name" value="{{CategoryList[index].id}}" name="typeCode" range="{{CategoryList}}">
           <view class="type-bottom-teb" class="picker" wx:if="{{index}}">
             {{CategoryList[index].name}}
             <image class="type-bottom-icon" src="/images/bottom.png"></image>
