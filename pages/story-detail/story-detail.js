@@ -89,6 +89,11 @@ Page({
       let { code, data } = await commentList(params);
       data.forEach(item=>{
         item.createTime=wxTools.classTimeValidate(item.createTime.replace('-','/').replace('-','/'))
+        let addressArr=item.combineAddress.split(' ');
+        if(addressArr.length>3){
+          addressArr[3]='***-***';
+          item.combineAddress=addressArr.join(' ')
+        }
       })
       if(isSearch) this.setData({infos:[],finish:false})
       code==0&&this.setData({infos:[...data,...this.data.infos]})

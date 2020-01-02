@@ -5,7 +5,7 @@
   <view class="say-item-r">
     <view class="item-r-top">
       <view class="item-r-top-name">
-        {{info.combineAddress}}***-***
+        {{info.combineAddress}}
       </view>
       <view class="item-r-top-time">
        {{info.createTime}}
