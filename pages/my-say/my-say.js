@@ -46,7 +46,7 @@ Page({
         const tempFilePaths = res.tempFilePaths
         const tempFile = res.tempFiles;
         wx.uploadFile({
-          url: 'https://one-tech.cn/zh/api/v1/requires/upload/image', //仅为示例，非真实的接口地址
+          url: 'https://ygj.tongxinhushequ.cn/zh/api/v1/requires/upload/image', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           header: {
