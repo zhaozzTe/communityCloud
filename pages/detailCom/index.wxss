@@ -17,7 +17,9 @@ margin-bottom:30rpx;
 .detailCom .ctx rich-text{
     font-size: 28rpx;
 color: #3C3C3C;
-word-wrap:break-word
+word-wrap:break-word;
+text-indent:2em ;
+
 }
 rich-text p{
     font-size: 28rpx !important;
