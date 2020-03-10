@@ -9,7 +9,7 @@
           <!-- <text class="defaultColor detail">详情 ></text> -->
         </view>
         <view class="menu-con">
-          <icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="{{index}}" data="{{item}}"></icon-menu>
+          <icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="index" data="{{item}}"></icon-menu>
         </view>
         <view class="menu-foot">
           <!-- 跑马灯效果  -->
