@@ -11,10 +11,10 @@
     </view>
     <view class="story-adviceBoxs" >
       <!-- <AdviceSay datas="{{advices}}" /> -->
-      <scroll-view scroll-y="true" style="height: 88vh;" bindscrolltolower="lower">
+      <scroll-view scroll-y="true" style="height: 75vh;" bindscrolltolower="lower">
         <AdviceItem wx:for="{{infos}}" wx:for-item="item" wx:key="index" data="{{item}}"
            navTitle="{{item.typeCode_str}}详情" bind:cy="cy" data-index="{{index}}"/>
       </scroll-view>
     </view>
-    <!-- <view bindtap="gotoMySay" class="my-say">我要说事</view> -->
+    <view bindtap="gotoMySay" class="my-say">我要说事</view>
 </view>

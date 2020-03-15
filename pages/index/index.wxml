@@ -3,6 +3,15 @@
   <view class="header">
     <view class="bgblock defaultBg"></view>
     <view class="ctx">
+      <view class="menu banner">
+        <swiper autoplay="{{true}}">
+        <block wx:for="{{bannerList}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item.titleImgUrl}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+      </view>
       <view class="menu">
         <view class="menu-title">
           <text class="title">我的社区</text>
@@ -36,7 +45,7 @@
             <view wx:for="{{ewmList}}" wx:for-item="item" wx:key="index" class="ewm-wrap-item">
               <image bindtap='imgYu' src="{{item.codeUrl}}" data-src="{{item.codeUrl}}"></image>
               <text class="ewm-wrap-item-text">{{item.codeTitle}}</text>
-              <text>点击大图识别二维码</text>
+              <text>保存识别二维码，关注公众号</text>
             </view>
           </view>
         </block>

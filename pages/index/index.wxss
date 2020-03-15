@@ -21,6 +21,11 @@
   border-radius: 4px;
   padding: 20rpx;
 }
+.banner{
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
 .menu .menu-title{
   display: flex;
   justify-content: space-between;

@@ -36,14 +36,15 @@ Page({
         params:{
           type:'SHEQU_SHUOSHI'
         }
-      }, {
-        src:'/images/qyss.png',
-        label: '区域说事',
-        url: '/pages/house-story/house-story',
-        params:{
-          type:'QUYU_SHUOSHI'
-        }
-      },
+      }, 
+      // {
+      //   src:'/images/qyss.png',
+      //   label: '区域说事',
+      //   url: '/pages/house-story/house-story',
+      //   params:{
+      //     type:'QUYU_SHUOSHI'
+      //   }
+      // },
       ],
     infos: [],
     

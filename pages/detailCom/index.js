@@ -1,5 +1,6 @@
 // pages/detailCom/index.js
 import { getNewsDetail } from '../../server/news.js'
+import wxTools from "../../utils/wxTools.js"
 import {
   attend,
   getCategoryList
@@ -85,6 +86,7 @@ Page({
   },
 
   myjoin(e) {
+    if(wxTools.checkVisitor()) return
     if (this.data.data.hasAttend) {
       return false;
     }

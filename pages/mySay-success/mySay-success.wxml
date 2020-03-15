@@ -2,9 +2,9 @@
   <image src="/images/authen.svg" class="success-img"></image>
   <view class="mysay-success-img">
    <icon type="success" size="20" color="green"/>
-    您的议题已发布成功！
+    您的议题已提交审核！
   </view>
   <view bindtap="goback" class="mysay-success-back">
-    返回到网格说事
+    返回
   </view> 
 </view>

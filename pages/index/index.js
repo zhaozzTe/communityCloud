@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 import { getQrCodes,getNotices } from '../../server/common.js'
+import { getNewsPage } from '../../server/news'
 Page({
   data: {
     isLogin:0,
@@ -65,6 +66,7 @@ Page({
     userInfo: {},
     needAuth: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    bannerList:[],
     ewmList:[],
     noticeList:[]
   },
@@ -123,9 +125,11 @@ Page({
     }
   },
   onShow: function () {
+    console.log(666,app.globalData.isVisitor);
     if (wx.getStorageSync('token')) {
-      this.getQrCodes()
-      this.getNotices()
+      !this.data.ewmList.length&&this.getQrCodes()
+      !this.data.noticeList.length&&this.getNotices()
+      !this.data.bannerList.length&&this.getBanner()
     }
    
   },
@@ -150,11 +154,25 @@ Page({
       urls: imgList // 需要预览的图片http链接列表
     })
   },
+  async getBanner(){
+    try{
+      let params={
+        "canAttend": true,
+        "category": "",
+        "keyword": "",
+        "page": 1,
+        "pageSize": 10,
+        "typeCode": "image"
+      }
+      let {code,data} = await getNewsPage(params)
+      console.log(111,data);
+      
+      if(code==0) this.setData({bannerList:data})
+    }catch(e){}
+  },
   async getQrCodes(){
     try{
       let {code,data} = await getQrCodes()
-      console.log(333,data);
-      
       if(code==0) this.setData({ewmList:data})
     }catch(e){}
   },

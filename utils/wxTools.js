@@ -37,6 +37,23 @@ const location = () => {
     },
   });
 }
+const checkVisitor = () => {
+  let isVisitor=getApp().globalData.isVisitor;
+  if(isVisitor){
+    wx.showModal({
+      title: '提示',
+      content: '请您使用真实身份参与功能体验',
+      success (res) {
+        if (res.confirm) {
+          wx.navigateTo({ url: '/pages/login-wx/login-wx' })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  }
+  return isVisitor
+}
 
 /**
  * 查看是否授权,获取微信用户信息
@@ -167,5 +184,6 @@ export default {
   validate,
   checkAuth,
   canLoad,
-  classTimeValidate
+  classTimeValidate,
+  checkVisitor
 }

@@ -1,5 +1,6 @@
 // pages/peopleSay-story/peopleSay-story.js
 import { getNewsPage } from '../../server/news.js'
+import wxTools from "../../utils/wxTools.js"
 Page({
 
   /**
@@ -85,7 +86,12 @@ Page({
     })
     this.getNewsPage(1,true)
   },
-
+  gotoMySay(){
+    if(wxTools.checkVisitor()) return
+    wx.navigateTo({
+      url: `/pages/my-say/my-say?type=${this.data.type}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

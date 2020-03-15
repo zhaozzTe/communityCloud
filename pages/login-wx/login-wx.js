@@ -56,7 +56,10 @@ Page({
               "iv": e.detail.iv
             }
             let res = await wxAppMobileLogin(params)
-            if (res.data && res.data.token) wx.setStorageSync("token", res.data.token)
+            if (res.data && res.data.token){
+              wx.setStorageSync("token", res.data.token)
+              getApp().globalData.isVisitor=false;
+            }
             if (res.data.status == 0) {
               wx.navigateTo({ url: '/pages/authen/index' })
             } else if (res.data.status == -1) {
@@ -87,7 +90,10 @@ Page({
               "iv": e.detail.iv
             }
             let res = await wxAppMobileLogin(params)
-            if (res.data && res.data.token) wx.setStorageSync("token", res.data.token)
+            if (res.data && res.data.token){
+              wx.setStorageSync("token", res.data.token)
+              getApp().globalData.isVisitor=true;
+            }
             res.code==0&&wx.redirectTo({ url: '/pages/index/index' })
           }catch(e){}
         }

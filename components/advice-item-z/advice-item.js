@@ -52,7 +52,7 @@ Component({
       }
     },
     async join(e) {
-      if(this.data.hasTap) return
+      if(this.data.hasTap&&wxTools.checkVisitor()) return
       this.setData({hasTap:true})
       let params={
         newsId:this.data.data.id

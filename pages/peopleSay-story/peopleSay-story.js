@@ -1,5 +1,6 @@
 // pages/peopleSay-story/peopleSay-story.js
 import { getNewsPage } from '../../server/news.js'
+import wxTools from "../../utils/wxTools.js"
 Page({
 
   /**
@@ -107,9 +108,9 @@ Page({
     console.log(321, e.detail)
   },
   gotoMySay(){
-    console.log(11111)
+    if(wxTools.checkVisitor()) return
     wx.navigateTo({
-      url: '/pages/my-say/my-say',
+      url: `/pages/my-say/my-say?type=${this.data.type}`,
     })
   }
 })

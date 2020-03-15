@@ -57,9 +57,9 @@ Page({
 
   },
   goback(){
-    wx.redirectTo({
-      url: '/pages/peopleSay/peopleSay',
-    })
+    // wx.redirectTo({
+    //   url: '/pages/peopleSay/peopleSay',
+    // })
     wx.navigateBack({
       delta: 2
     })

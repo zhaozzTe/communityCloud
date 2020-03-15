@@ -1,4 +1,5 @@
 import { submitnews } from '../../server/common.js'
+import wxTools from "../../utils/wxTools.js"
 Page({
 
   /**
@@ -17,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({type:options.type})
   },
 
   /**
@@ -80,9 +81,11 @@ Page({
     })
   },
   formSubmit(e) {
+    if(wxTools.checkVisitor()) return
     let { uploadfile1, uploadfile2, uploadfile3 } = this.data;
     let params = e.detail.value;
     params.attachImages = [...uploadfile1, ...uploadfile2, ...uploadfile3];
+    params.typeCode=this.data.type
     if (!params.title) {
       this.toast('请输入议题名称');
       return false;

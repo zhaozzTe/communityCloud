@@ -62,6 +62,7 @@ Page({
     } catch (error) {}
   },
   async comment(){
+    if(wxTools.checkVisitor()) return
     if(!this.data.newsComment.trim()) return
     let params={
       // commentImgs:'',
