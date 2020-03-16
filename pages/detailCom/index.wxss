@@ -18,14 +18,14 @@ margin-bottom:30rpx;
     font-size: 28rpx;
 color: #3C3C3C;
 word-wrap:break-word;
-
+text-indent: 1em;
 }
 rich-text p{
     font-size: 28rpx !important;
   }
 .detailCom .ctx rich-text image{
     max-width: 100%;
-    object-fit: cover
+    object-fit: cover;
 }
 .detailCom .ctx rich-text .pho{
     max-width: 100%;
