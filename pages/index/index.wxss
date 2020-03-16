@@ -116,7 +116,7 @@
   margin-bottom:16rpx;
 }
 .header .ewm-wrap .ewm-wrap-item text{
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #999999;
   letter-spacing: 0;
   text-align: center;

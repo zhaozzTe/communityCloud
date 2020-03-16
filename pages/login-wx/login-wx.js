@@ -58,7 +58,7 @@ Page({
             let res = await wxAppMobileLogin(params)
             if (res.data && res.data.token){
               wx.setStorageSync("token", res.data.token)
-              getApp().globalData.isVisitor=false;
+              wx.setStorageSync("isVisitor", 0)
             }
             if (res.data.status == 0) {
               wx.navigateTo({ url: '/pages/authen/index' })
@@ -92,7 +92,7 @@ Page({
             let res = await wxAppMobileLogin(params)
             if (res.data && res.data.token){
               wx.setStorageSync("token", res.data.token)
-              getApp().globalData.isVisitor=true;
+              wx.setStorageSync("isVisitor", 1)
             }
             res.code==0&&wx.redirectTo({ url: '/pages/index/index' })
           }catch(e){}

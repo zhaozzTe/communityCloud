@@ -4,7 +4,7 @@
     <view class="bgblock defaultBg"></view>
     <view class="ctx">
       <view class="menu banner">
-        <swiper autoplay="{{true}}">
+        <swiper autoplay="{{true}}" style='width:100%;height:30vh;'>
         <block wx:for="{{bannerList}}" wx:key="*this">
           <swiper-item>
             <image src="{{item.titleImgUrl}}" style="width:100%;height:100%;object-fit:cover"/>

@@ -125,7 +125,6 @@ Page({
     }
   },
   onShow: function () {
-    console.log(666,app.globalData.isVisitor);
     if (wx.getStorageSync('token')) {
       !this.data.ewmList.length&&this.getQrCodes()
       !this.data.noticeList.length&&this.getNotices()
