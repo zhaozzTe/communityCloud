@@ -5,7 +5,7 @@ import { getUserStatus } from '../server/common.js'
 const checkAuth=async ()=>{
   let auth=false;
   try {
-    if(wx.getStorageSync("isVisitor")*1){
+    if(wx&&wx.getStorageSync("isVisitor")*1){
       auth = true
     }else{
       let {code,data} = await getUserStatus()
@@ -42,7 +42,7 @@ const location = () => {
   });
 }
 const checkVisitor = () => {
-  let isVisitor=wx.getStorageSync("isVisitor")*1;
+  let isVisitor=wx&&wx.getStorageSync("isVisitor")*1;
   if(isVisitor){
     wx.showModal({
       title: '提示',
