@@ -44,10 +44,10 @@ Component({
             this.setData({hasTap:false})
           },2000)
 
-        }else{
-          this.setData({hasTap:false})
         }
       } catch (error) {
+        
+      }finally{
         this.setData({hasTap:false})
       }
     },

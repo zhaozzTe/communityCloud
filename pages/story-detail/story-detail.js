@@ -97,7 +97,7 @@ Page({
         }
       })
       if(isSearch) this.setData({infos:[],finish:false})
-      code==0&&this.setData({infos:[...data,...this.data.infos]})
+      code==0&&this.setData({infos:[...this.data.infos,...data]})
       data.length==0&&this.setData({finish:true})
     }catch(e){}
   },
