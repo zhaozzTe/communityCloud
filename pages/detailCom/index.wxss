@@ -35,7 +35,7 @@ rich-text p{
   width: 646rpx;
   height: 80rpx;
   line-height: 80rpx;
-  background: #2abf77;
+  background: #018DC0;
   font-size: 36rpx;
   color: #fff;
   text-align: center;

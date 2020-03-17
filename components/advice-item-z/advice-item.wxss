@@ -50,6 +50,6 @@
   letter-spacing: 0;
   text-align: center;
   line-height:48rpx;
-  border: 1rpx solid #2ABF77;
+  border: 1rpx solid #018DC0;
   text-align: center;
 }
