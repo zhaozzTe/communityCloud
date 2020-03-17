@@ -127,3 +127,10 @@
   color: #333333;
   letter-spacing: 0;
 }
+.countInfo{
+  display: flex;
+  justify-content: space-around;
+  font-size: 32rpx;
+  color: #aaa;
+  margin: 20rpx;
+}

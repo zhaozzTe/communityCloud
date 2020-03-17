@@ -50,7 +50,16 @@
           </view>
         </block>
       </view>
-
+      <view class="mr20 countInfo">
+        <view class="num">
+          <text>总登录人数：</text>
+          <text>{{countInfo.totalCount}}</text>
+        </view>
+        <view class="num">
+          <text>活跃用户：</text>
+          <text>{{countInfo.activeCount}}</text>
+        </view>
+      </view>
     </view>
 
   </view>

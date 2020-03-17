@@ -4,6 +4,7 @@ export const wxAppMobileLogin = params => http({ url:'/api/v1/wx/wxAppMobileLogi
 export const getUserStatus = params => http({ url: `/api/v1/certificate/getUserCertificateStatus`, params: {} , loading:true});//获取实名认证状态
 export const getQrCodes = params => http({ url: `/api/v1/index/getQrCodes`, params: {} });//获取二维码图片
 export const getNotices = params => http({ url: `/api/v1/index/getNotices`, params: {} });//获取公告列表
+export const getLoginCount = params => http({ url: `/api/v1/wx/getLoginCount`, params: {}, method: 'post' });//获取当前登录用户和活跃用户
 //获取服务类别接口
 export const getServerType = params => http({ url: `/api/v1/requires/getAddress`, params: {}, method: 'post' });//获取服务类别接口
 export const addServer = params => http({ url: `/api/v1/requires/add`, loading: true, params, method: 'post' });//添加服务需求

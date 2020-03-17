@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-import { getQrCodes,getNotices } from '../../server/common.js'
+import { getQrCodes,getNotices,getLoginCount } from '../../server/common.js'
 import { getNewsPage } from '../../server/news'
 Page({
   data: {
@@ -68,7 +68,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     bannerList:[],
     ewmList:[],
-    noticeList:[]
+    noticeList:[],
+    countInfo:undefined
   },
   //事件处理函数
   bindViewTap: function() {
@@ -129,6 +130,7 @@ Page({
       !this.data.ewmList.length&&this.getQrCodes()
       !this.data.noticeList.length&&this.getNotices()
       !this.data.bannerList.length&&this.getBanner()
+      !this.data.countInfo&&this.getLoginCount()
     }
    
   },
@@ -164,9 +166,14 @@ Page({
         "typeCode": "image"
       }
       let {code,data} = await getNewsPage(params)
-      console.log(111,data);
       
       if(code==0) this.setData({bannerList:data})
+    }catch(e){}
+  },
+  async getLoginCount(){
+    try{
+      let {code,data} = await getLoginCount()
+      if(code==0) this.setData({countInfo:data})
     }catch(e){}
   },
   async getQrCodes(){
