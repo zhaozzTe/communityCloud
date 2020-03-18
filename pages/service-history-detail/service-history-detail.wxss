@@ -61,7 +61,7 @@
   right: -20rpx;
 }
 .btn{
-  background: #018DC0;
+  background: #00C5F6;
   border-radius: 8rpx;
   width: 646rpx;
   height: 80rpx;
@@ -94,7 +94,7 @@
 }
 .toHistory{
   font-size: 28rpx;
-color: #018DC0;
+color: #00C5F6;
 letter-spacing: 0;
 padding-top: 60rpx;
 text-align: center;

@@ -75,7 +75,7 @@ border-radius: 4px;
   text-align: center;
   font-size: 36rpx;
   color: #FFFFFF;
-  background: #018DC0;
+  background: #00C5F6;
    margin:  40rpx auto;
    border-radius: 8rpx;
 }

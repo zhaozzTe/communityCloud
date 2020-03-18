@@ -44,7 +44,7 @@
       </view>
       <view class="fuqtime">
         <radio-group name="type" class="radio-group" bindchange="radioChange">
-          <radio class="radio" wx:for-items="{{times}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+          <radio class="radio" wx:for-items="{{times}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}" color="#00C5F6">
             <text>{{item.value}}</text>
           </radio>
         </radio-group>
@@ -99,7 +99,7 @@
       </view>
     </view>
     <!-- <view   class="btn">提交 -->
-    <button formType="submit" type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx">提交登记</button>
+    <button formType="submit" type="primary" size="default" style="width:90%;margin:40rpx 0 0 40rpx;background:#00C5F6">提交登记</button>
     <!-- </view> -->
   </form>
   <view class="toHistory" bindtap="toHistory">查看历史登记 ></view>

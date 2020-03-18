@@ -1,7 +1,7 @@
 <view class="mysay-success">
   <image src="/images/authen.svg" class="success-img"></image>
   <view class="mysay-success-img">
-   <icon type="success" size="20" color="green"/>
+   <icon type="success" size="20" color="#00C5F6"/>
     您的议题已提交审核！
   </view>
   <view bindtap="goback" class="mysay-success-back">

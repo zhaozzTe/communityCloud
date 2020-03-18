@@ -36,7 +36,7 @@
 }
   .item-r-top-name{
    flex: 1;
-   color: #29BB74;
+   color: #00C5F6;
 }
   .item-r-top-time{
     max-width: 220rpx;

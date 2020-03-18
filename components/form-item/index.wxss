@@ -14,7 +14,7 @@ width: 180rpx;
 .form-item .item-icon{
    width: 28rpx;
   height: 28rpx;
-  color: #018DC0;
+  color: #00C5F6;
   margin-right:10rpx;
   font-size:30rpx;
 }

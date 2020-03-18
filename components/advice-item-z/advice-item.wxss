@@ -28,12 +28,12 @@
   letter-spacing: 0;
   line-height: 32rpx;
   margin-bottom: 40rpx;
-  border-left: 8rpx solid #29BB74;
+  border-left: 8rpx solid #00C5F6;
   padding-left: 12rpx;
   box-sizing: border-box;
 }
 .item-left-nums{
-  color: #29BB74;
+  color: #00C5F6;
   font-size: 28rpx;
   letter-spacing: 0;
   line-height: 28rpx;
@@ -46,10 +46,10 @@
 {
   width: 96rpx;
   height: 48rpx;
-  color: #29BB74;
+  color: #00C5F6;
   letter-spacing: 0;
   text-align: center;
   line-height:48rpx;
-  border: 1rpx solid #018DC0;
+  border: 1rpx solid #00C5F6;
   text-align: center;
 }

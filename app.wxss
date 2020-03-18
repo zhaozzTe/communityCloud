@@ -10,10 +10,10 @@ background: #fff;
   
 } 
 .defaultColor{
-  color: #018DC0
+  color: #00C5F6
 }
 .defaultBg{
-  background: #018DC0
+  background: #00C5F6
 }
 .grey{
   background: #bbb !important;

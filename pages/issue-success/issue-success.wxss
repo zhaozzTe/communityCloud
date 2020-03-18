@@ -26,7 +26,7 @@ justify-content: center;
   width: 646rpx;
   height: 80rpx;
   color: #ffff;
-  background: #018DC0;
+  background: #00C5F6;
   border-radius: 8rpx;
   text-align: center;
   line-height: 80rpx;

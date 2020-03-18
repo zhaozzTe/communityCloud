@@ -31,7 +31,7 @@
 }
 .stoty-ht{
   display: inline-block;
-  background: #29BB74;
+  background: #00C5F6;
   color: #fff;
   width: 52rpx;
   height: 32rpx;
@@ -94,7 +94,7 @@ box-sizing: border-box;
   letter-spacing: 0;
   line-height: 28rpx;
   padding-left: 12rpx;
-  border-left: 8rpx solid #29BB74;
+  border-left: 8rpx solid #00C5F6;
   flex: 1;
 }
 .all-says-r{
@@ -102,7 +102,7 @@ box-sizing: border-box;
  width: 65rpx;
 }
 .all-says-num{
- color: #29BB74;
+ color: #00C5F6;
 }
 .story-detail-floot{
   position: fixed;

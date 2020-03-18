@@ -22,7 +22,7 @@ font-weight: 600;
 }
 .history-item-left .ctx .ctx-type{
     padding: 10rpx;
-    background: #29BB74;
+    background: #00C5F6;
 border-radius: 2px;
 color: #fff;
 }

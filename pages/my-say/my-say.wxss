@@ -62,7 +62,7 @@
   right: -20rpx;
 }
 .btn{
-  background: #018DC0;
+  background: #00C5F6;
   border-radius: 8rpx;
   width: 646rpx;
   height: 80rpx;
