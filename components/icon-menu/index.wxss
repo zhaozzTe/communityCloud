@@ -4,6 +4,10 @@
   text-align: center;
   margin: 20rpx 0;
 }
+.icon-menu-item .desc{
+  font-size: 20rpx;
+  color: #999999;
+}
 .icon-menu-item .images {
   width: 100rpx;
   height: 100rpx;

@@ -5,4 +5,5 @@
     <view wx:if="{{data.iconfont}}" class="iconfont {{data.iconfont}} item-icon"></view> 
   </view>
   <text>{{data.label}}</text>
+  <view wx:if="{{data.desc}}" class="desc">{{data.desc}}</view>
 </view>

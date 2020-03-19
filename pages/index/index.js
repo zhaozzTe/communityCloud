@@ -16,27 +16,31 @@ Page({
       {
         src: '/images/sqfw.png',
         label: '社区发布',
-        url: '/pages/publishHall/publishHall'
+        url: '/pages/publishHall/publishHall',
+        desc:'政务公开透明'
       },
       {
         src: '/images/jmss.png',
         label: '居民说事',
-        url: '/pages/peopleSay/peopleSay'
+        url: '/pages/peopleSay/peopleSay',
+        desc:'好建议请留意'
       },
       {
         src: '/images/msfw.png',
         label: '民生服务',
-        url: "/pages/Livelihood-service-hall/Livelihood-service-hall"
+        url: "/pages/Livelihood-service-hall/Livelihood-service-hall",
+        desc:'共创温馨家园'
       },
       {
         src: '/images/fczs.png',
         label: '风采展示',
-        url: '/pages/elegant-hall/elegant-hall'
+        url: '/pages/elegant-hall/elegant-hall',
+        desc:'共享家人治家'
       },
     ],
     entryList:[
       {
-        titleImgUrl:'/images/sqfw.png',
+        titleImgUrl:'/images/sqff.png',
         title:'社区居务',
         text:'为社区群众，指引社区居民办事流程',
         url: '/pages/comNews/index',
