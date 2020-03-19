@@ -15,25 +15,25 @@ Page({
     menuList:[
       {
         src: '/images/sqfw.png',
-        label: '社区发布',
+        label: '社区发布厅',
         url: '/pages/publishHall/publishHall',
         desc:'政务公开透明'
       },
       {
         src: '/images/jmss.png',
-        label: '居民说事',
+        label: '居民说事厅',
         url: '/pages/peopleSay/peopleSay',
         desc:'好建议请留意'
       },
       {
         src: '/images/msfw.png',
-        label: '民生服务',
+        label: '民生服务厅',
         url: "/pages/Livelihood-service-hall/Livelihood-service-hall",
         desc:'共创温馨家园'
       },
       {
         src: '/images/fczs.jpg',
-        label: '风采展示',
+        label: '风采展示厅',
         url: '/pages/elegant-hall/elegant-hall',
         desc:'共享家人治家'
       },
