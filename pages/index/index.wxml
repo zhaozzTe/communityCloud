@@ -25,7 +25,7 @@
 					<image src="/images/lb.png"></image>
 					<view class="example">
 						<view class="marquee_box">
-								<swiper easing-function="{{easeInCubic}}" autoplay="{{true}}" style='width:100%;'>
+								<swiper circular="{{true}}" easing-function="{{easeInCubic}}" autoplay="{{true}}" style='width:100%;'>
 									<block wx:for="{{noticeList}}" wx:key="*this">
 										<swiper-item>
 											<text bindtap="gotoDetail" data-info="{{item}}">{{item.title}}</text>
