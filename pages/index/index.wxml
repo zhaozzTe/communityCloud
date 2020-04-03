@@ -1,67 +1,71 @@
 <!--index.wxml-->
 <view class="container home">
-  <view class="header">
-    <view class="bgblock defaultBg"></view>
-    <view class="ctx">
-      <view class="menu banner">
-        <swiper autoplay="{{true}}" style='width:100%;height:30vh;'>
-        <block wx:for="{{bannerList}}" wx:key="*this">
-          <swiper-item>
-            <image bindtap="gotoDetail" data-info="{{item}}" src="{{item.titleImgUrl}}" style="width:100%;height:100%;object-fit:cover"/>
-          </swiper-item>
-        </block>
-      </swiper>
-      </view>
-      <view class="menu">
-        <view class="menu-title">
-          <text class="title">我的社区</text>
-          <!-- <text class="defaultColor detail">详情 ></text> -->
-        </view>
-        <view class="menu-con">
-          <icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="index" data="{{item}}"></icon-menu>
-        </view>
-        <view class="menu-foot">
-          <!-- 跑马灯效果  -->
-          <image src="/images/lb.png"></image>
-          <view class="example">
-            <view class="marquee_box">
-              <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
-                <text wx:for="{{noticeList}}" wx:for-item="item" wx:key="index">{{item.title}}</text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
+	<view class="header">
+		<view class="bgblock defaultBg"></view>
+		<view class="ctx">
+			<view class="menu banner">
+				<swiper autoplay="{{true}}" style='width:100%;height:30vh;'>
+					<block wx:for="{{bannerList}}" wx:key="*this">
+						<swiper-item>
+							<image  src="{{item.titleImgUrl}}" style="width:100%;height:100%;object-fit:cover" />
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
+			<view class="menu">
+				<view class="menu-title">
+					<text class="title">我的社区</text>
+					<!-- <text class="defaultColor detail">详情 ></text> -->
+				</view>
+				<view class="menu-con">
+					<icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="index" data="{{item}}"></icon-menu>
+				</view>
+				<view class="menu-foot">
+					<!-- 跑马灯效果  -->
+					<image src="/images/lb.png"></image>
+					<view class="example">
+						<view class="marquee_box">
+								<swiper easing-function="{{easeInCubic}}" autoplay="{{true}}" style='width:100%;'>
+									<block wx:for="{{noticeList}}" wx:key="*this">
+										<swiper-item>
+											<text bindtap="gotoDetail" data-info="{{item}}">{{item.title}}</text>
+										</swiper-item>
+									</block>
+								</swiper>
+						</view>
+					</view>
+				</view>
+			</view>
 
-      <view class="mr20">
-        <com-title title="便捷菜单入口"></com-title>
-        <view class="entry">
-          <!-- <entry-item data="{{entryList}}"></entry-item> -->
-          <entry-item bind:parentEvent='onParentEventTwo' wx:for="{{entryList}}" wx:for-item="item" wx:key="index" data="{{item}}" url="{{item.url}}" navTitle="{{item.title}}" params="{{item.params}}" />
-        </view>
-        <block wx:if="{{isLogin==1}}">
-          <com-title title="二维码快速入口"></com-title>
-          <view class="ewm-wrap">
-            <view wx:for="{{ewmList}}" wx:for-item="item" wx:key="index" class="ewm-wrap-item">
-              <image bindtap='imgYu' src="{{item.codeUrl}}" data-src="{{item.codeUrl}}"></image>
-              <text class="ewm-wrap-item-text">{{item.codeTitle}}</text>
-              <text>保存识别二维码，关注公众号</text>
-            </view>
-          </view>
-        </block>
-      </view>
-      <view class="mr20 countInfo">
-        <view class="num">
-          <text>总登录人数：</text>
-          <text>{{countInfo.totalCount}}</text>
-        </view>
-        <view class="num">
-          <text>活跃用户：</text>
-          <text>{{countInfo.activeCount}}</text>
-        </view>
-      </view>
-    </view>
+			<view class="mr20">
+				<com-title title="便捷菜单入口"></com-title>
+				<view class="entry">
+					<!-- <entry-item data="{{entryList}}"></entry-item> -->
+					<entry-item bind:parentEvent='onParentEventTwo' wx:for="{{entryList}}" wx:for-item="item" wx:key="index" data="{{item}}" url="{{item.url}}" navTitle="{{item.title}}" params="{{item.params}}" />
+				</view>
+				<block wx:if="{{isLogin==1}}">
+					<com-title title="二维码快速入口"></com-title>
+					<view class="ewm-wrap">
+						<view wx:for="{{ewmList}}" wx:for-item="item" wx:key="index" class="ewm-wrap-item">
+							<image bindtap='imgYu' src="{{item.codeUrl}}" data-src="{{item.codeUrl}}"></image>
+							<text class="ewm-wrap-item-text">{{item.codeTitle}}</text>
+							<text>保存识别二维码，关注公众号</text>
+						</view>
+					</view>
+				</block>
+			</view>
+			<view class="mr20 countInfo">
+				<view class="num">
+					<text>总登录人数：</text>
+					<text>{{countInfo.totalCount}}</text>
+				</view>
+				<view class="num">
+					<text>活跃用户：</text>
+					<text>{{countInfo.activeCount}}</text>
+				</view>
+			</view>
+		</view>
 
-  </view>
-  <auth-dialog bind:parentEvent='onParentEventOther' needAuth='{{needAuth}}'></auth-dialog>
+	</view>
+	<auth-dialog bind:parentEvent='onParentEventOther' needAuth='{{needAuth}}'></auth-dialog>
 </view>
