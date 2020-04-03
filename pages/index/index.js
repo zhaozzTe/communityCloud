@@ -235,5 +235,11 @@ Page({
     this.setData({
       needAuth
     })
+  },
+  gotoDetail(e){
+    const info = e.currentTarget.dataset.info;
+    wx.navigateTo({
+      url: '/pages/detailCom/index?id=' + info.id + '&navTitle=' + info.typeCode_str+'详情'
+    })
   }
 })
