@@ -1,82 +1,91 @@
 //index.js
 //获取应用实例
 const app = getApp()
-import { getQrCodes,getNotices,getLoginCount } from '../../server/common.js'
+import { getQrCodes, getNotices, getLoginCount } from '../../server/common.js'
 import { getNewsPage } from '../../server/news'
 Page({
   data: {
-    isLogin:0,
+    isLogin: 0,
     text: '社区居民免费体检活动，8月28日起即可开始预约',
     marqueePace: 1,//滚动速度
     marqueeDistance: 0,//初始滚动距离
     size: 14,
     orientation: 'left',//滚动方向
     interval: 30, // 时间间隔
-    menuList:[
+    menuList: [
       {
         src: '/images/sqfw.png',
         label: '社区发布厅',
         url: '/pages/publishHall/publishHall',
-        desc:'政务公开透明'
+        desc: '政务公开透明'
       },
       {
         src: '/images/jmss.png',
         label: '居民说事厅',
         url: '/pages/peopleSay/peopleSay',
-        desc:'好建议请留意'
+        desc: '好建议请留意'
       },
       {
         src: '/images/msfw.png',
         label: '民生服务厅',
         url: "/pages/Livelihood-service-hall/Livelihood-service-hall",
-        desc:'共创温馨家园'
+        desc: '共创温馨家园'
       },
       {
         src: '/images/fczs.jpg',
         label: '风采展示厅',
         url: '/pages/elegant-hall/elegant-hall',
-        desc:'共享家人治家'
+        desc: '共享家人治家'
       },
     ],
-    entryList:[
+    entryList: [
       {
-        titleImgUrl:'/images/sqff.jpg',
-        title:'社区居务',
-        text:'为社区群众，指引社区居民办事流程',
+        titleImgUrl: '/images/sqff.jpg',
+        title: '社区居务',
+        text: '为社区群众，指引社区居民办事流程',
         url: '/pages/comNews/index',
-        params:{
-          type:'SHEQU_JUWU'
+        params: {
+          type: 'SHEQU_JUWU'
         }
       },
       {
-        titleImgUrl:'/images/flag.jpg',
-        title:'志愿招募',
-        text:'文明交通、环境卫生、平安巡逻、垃圾分类',
+        titleImgUrl: '/images/flag.jpg',
+        title: '志愿招募',
+        text: '文明交通、环境卫生、平安巡逻、垃圾分类',
         url: '/pages/join-volunteer/join-volunteer',
-        params:{
-          type:'ZHIYUAN_ZHAOMU'
+        params: {
+          type: 'ZHIYUAN_ZHAOMU'
         }
       },
       {
-        titleImgUrl:'/images/sqss.jpg',
-        title:'社区说事',
-        text:'为社区群众提供协商议论的交流区域',
+        titleImgUrl: '/images/sqss.jpg',
+        title: '社区说事',
+        text: '为社区群众提供协商议论的交流区域',
         url: '/pages/comNews/index',
-        params:{
-          type:'SHEQU_SHUOSHI'
+        params: {
+          type: 'SHEQU_SHUOSHI'
         }
       },
     ],
     userInfo: {},
     needAuth: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    bannerList:[],
-    ewmList:[],
-    noticeList:[],
-    countInfo:undefined
+    bannerList: [],
+    ewmList: [],
+    datalist: [
+
+    ],
+    countInfo: undefined,
+    broadcast_arr: {
+      speed: 2.8, //滚动速度，每秒2.8个字
+      font_size: "16", //字体大小(px)
+      text_color: "#ffffff", //字体颜色
+      back_color: "#269e9e", //背景色
+
+    }
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -86,7 +95,7 @@ Page({
       this.setData({
         isLogin: 1
       })
-    } else{
+    } else {
       this.setData({
         isLogin: 0
       })
@@ -101,16 +110,14 @@ Page({
     });
     that.runMarquee();// 水平一行字滚动完了再按照原来的方向滚动
     if (app.globalData.userInfo) {
-      console.log(444,app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        console.log(res)
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -131,14 +138,14 @@ Page({
   },
   onShow: function () {
     if (wx.getStorageSync('token')) {
-      !this.data.ewmList.length&&this.getQrCodes()
-      !this.data.noticeList.length&&this.getNotices()
-      !this.data.bannerList.length&&this.getBanner()
-      !this.data.countInfo&&this.getLoginCount()
+      !this.data.ewmList.length && this.getQrCodes()
+      this.getNotices()
+      !this.data.bannerList.length && this.getBanner()
+      !this.data.countInfo && this.getLoginCount()
     }
-   
+
   },
-  isHasToken(){
+  isHasToken() {
     if (wx.getStorageSync('token')) {
       that.setData({
         needAuth: false
@@ -159,9 +166,9 @@ Page({
       urls: imgList // 需要预览的图片http链接列表
     })
   },
-  async getBanner(){
-    try{
-      let params={
+  async getBanner() {
+    try {
+      let params = {
         "canAttend": true,
         "category": "",
         "keyword": "",
@@ -169,31 +176,38 @@ Page({
         "pageSize": 10,
         "typeCode": "image"
       }
-      let {code,data} = await getNewsPage(params)
-      
-      if(code==0) this.setData({bannerList:data})
-    }catch(e){}
+      let { code, data } = await getNewsPage(params)
+
+      if (code == 0) this.setData({ bannerList: data })
+    } catch (e) { }
   },
-  async getLoginCount(){
-    try{
-      let {code,data} = await getLoginCount()
-      if(code==0) this.setData({countInfo:data})
-    }catch(e){}
+  async getLoginCount() {
+    try {
+      let { code, data } = await getLoginCount()
+      if (code == 0) this.setData({ countInfo: data })
+    } catch (e) { }
   },
-  async getQrCodes(){
-    try{
-      let {code,data} = await getQrCodes()
-      if(code==0) this.setData({ewmList:data})
-    }catch(e){}
+  async getQrCodes() {
+    try {
+      let { code, data } = await getQrCodes()
+      if (code == 0) this.setData({ ewmList: data })
+    } catch (e) { }
   },
-  async getNotices(){
-    try{
-      let {code,data} = await getNotices()
-      if(code==0) this.setData({noticeList:data})
-    }catch(e){}
+  async getNotices() {
+    try {
+      let { code, data } = await getNotices()
+      if (code == 0) {
+        data.forEach(item => {
+          item.linkurl = '';
+          item.linkname = '';
+          item.starspos = 0;
+        })
+        this.noticescroll(data);
+        // this.setData({ datalist: data })
+      }
+    } catch (e) { }
   },
-  getUserInfo: function(e) {
-    console.log(e)
+  getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -218,28 +232,50 @@ Page({
     }, that.data.interval);
   },
 
-  onParentEvent(event){
+  onParentEvent(event) {
     const needAuth = event.detail.needAuth;
     this.setData({
       needAuth
     })
   },
-  onParentEventOther(event){
+  onParentEventOther(event) {
     const needAuth = event.detail.needAuth;
     this.setData({
       needAuth
     })
   },
-  onParentEventTwo(event){
+  onParentEventTwo(event) {
     const needAuth = event.detail.needAuth;
     this.setData({
       needAuth
     })
   },
-  gotoDetail(e){
+  gotoDetail(e) {
     const info = e.currentTarget.dataset.info;
     wx.navigateTo({
       url: '/pages/detailCom/index?id=' + info.id + '&navTitle=详情'
+    })
+  },
+  noticescroll(data) {
+
+    let ititdata = data,
+      assist = this.data.broadcast_arr,
+      this_width = 0,
+      spacing = 0,
+      speed = (this.data.broadcast_arr.speed * this.data.broadcast_arr.font_size); //m每秒行走的距离
+    for (let i in ititdata) {
+      ititdata[i].starspos = wx.getSystemInfoSync().windowWidth; //以取屏幕宽度为间距
+      this_width += ititdata[i].title.length * this.data.broadcast_arr.font_size;
+      if (i != ititdata.length - 1) {
+        spacing += ititdata[i].starspos
+      }
+    }
+    let total_length = this_width + spacing;//总长
+    assist.time = total_length / speed; /**滚动时间*/
+    assist.width_mal = total_length;
+    this.setData({
+      broadcast_arr: assist,
+      datalist: ititdata
     })
   }
 })
