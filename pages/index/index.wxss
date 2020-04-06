@@ -1,44 +1,4 @@
 /**index.wxss**/
-@keyframes around {
-  from {
-    margin-left: 100%;
-  }
-
-  to {
-    margin-left: var(--marqueeWidth--);
-  }
-}
-
-.marquee_container {
-  padding: 12rpx 0;
-  position: relative;
-  width: 100%;
-  height: 50rpx;
-  font-size: 28rpx;
-}
-
-.marquee_text {
-  display: flex;
-  white-space: nowrap;
-  animation-name: around;
-  animation-duration: var(--speed--);
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  line-height: 50rpx;
-  color: #EE7C3D;
-}
-.pmd-text{
-  margin-right: 100rpx;
-}
-
-.marquee_tit {
-  height: 50rpx;
-  line-height: 50rpx;
-  position: absolute;
-  padding-left: 22rpx;
-  color: #EE7C3D;
-}
-
 .mr20{
   margin: 0 20rpx;
 }
@@ -94,9 +54,10 @@
   width: 30rpx;
   height: 30rpx;
   padding-right: 30rpx;
+  margin-top: 10rpx;
 }
 .menu .menu-foot text{
-  font-size: 28rpx;
+  font-size: 25rpx;
   color: #EE7C3D;
 }
 .example {
@@ -115,7 +76,7 @@
 .marquee_text {
   white-space: nowrap;
   position: absolute;
-  top: 10rpx;
+  top: 0;
   display: flex;
   flex-direction: row;
   color: #EE7C3D;
@@ -173,4 +134,9 @@
   font-size: 32rpx;
   color: #aaa;
   margin: 20rpx;
+}
+swiper-item{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }

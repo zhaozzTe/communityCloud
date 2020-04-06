@@ -20,19 +20,20 @@
 				<view class="menu-con">
 					<icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="index" data="{{item}}"></icon-menu>
 				</view>
-        
 				<view class="menu-foot">
 					<!-- 跑马灯效果  -->
 					<image src="/images/lb.png"></image>
-				<view class="marquee_container">
-        <view class='marquee_text' style='--marqueeWidth--:{{-broadcast_arr.width_mal}}px;--speed--:{{broadcast_arr.time}}s;width:{{broadcast_arr.width_mal}}px;'>
-          <block wx:for="{{datalist}}" wx:key='index'>
-            <view style='margin-left:{{index!=0?item.starspos*2:0}}rpx;' bindtap="gotoDetail" data-info="{{item}}" class="pmd-text">
-              {{item.title}}
-            </view>
-          </block>
-        </view>
-      </view>
+					<view class="example">
+						<view class="marquee_box">
+								<swiper circular="{{true}}" easing-function="{{easeInCubic}}" autoplay="{{true}}" style='width:100%;'>
+									<block wx:for="{{noticeList}}" wx:key="*this">
+										<swiper-item>
+											<text bindtap="gotoDetail" data-info="{{item}}">{{item.title}}</text>
+										</swiper-item>
+									</block>
+								</swiper>
+						</view>
+					</view>
 				</view>
 			</view>
 
