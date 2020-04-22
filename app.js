@@ -2,6 +2,23 @@
 const UpdateManager = wx.getUpdateManager();
 const Def_Key_UserInfo = "Key_UserInfo";
 
+!function(){
+  var PageTmp = Page;
+ 
+  Page =function (pageConfig) {
+    // 设置全局默认分享
+    pageConfig = Object.assign({
+      onShareAppMessage:function (e) {
+        return {
+          title:'社区云管家',
+          path:'/pages/index/index',
+          imageUrl:'/images/logo.jpg',
+        };
+      }
+    },pageConfig);
+    PageTmp(pageConfig);
+  };
+}();
 App({
   globalData: {
     hasUserInfo:true,
@@ -100,7 +117,6 @@ App({
     })
   },
   // ====== 分享 ======
-
   shareTool: function () {
     return {
       title: '',
