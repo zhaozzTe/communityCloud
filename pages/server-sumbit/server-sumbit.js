@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'服务需求登记',
     imgs: [],
     uploadfile: [],
     uploadfile1: [],

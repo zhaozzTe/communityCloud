@@ -15,6 +15,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'实名认证',
     hasTap:false,
     initaddress:'宁波市镇海区庄市街道同心湖社区',
     address:'',

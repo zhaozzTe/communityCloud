@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'团建信息',
     searchV: '',
     isHideSearchIcon: false,
     infos: [{

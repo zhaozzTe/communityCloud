@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'说事规则',
     searchV: '',
     isHideSearchIcon: false,
     infos: [{

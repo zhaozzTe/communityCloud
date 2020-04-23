@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'发布规则',
     type:'',
     searchV: '',
     page:1,

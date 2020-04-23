@@ -4,6 +4,7 @@ const app = getApp()
 import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
+    navTitle:'民生服务厅',
     menuList: [{
       src: '/images/fwgz.png',
       label: '服务规则',

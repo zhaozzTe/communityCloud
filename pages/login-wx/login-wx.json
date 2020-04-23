@@ -1,5 +1,6 @@
 {
   "navigationBarBackgroundColor": "#FFFFFF",
   "navigationBarTextStyle": "black",
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "一键登录"
 }

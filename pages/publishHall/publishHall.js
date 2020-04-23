@@ -4,6 +4,7 @@ const app = getApp()
 import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
+    navTitle:'社务发布厅',
     infos:[],
     menuList:[
       {

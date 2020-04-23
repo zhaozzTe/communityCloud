@@ -4,14 +4,13 @@ const Def_Key_UserInfo = "Key_UserInfo";
 
 !function(){
   var PageTmp = Page;
- 
   Page =function (pageConfig) {
     // 设置全局默认分享
     pageConfig = Object.assign({
       onShareAppMessage:function (e) {
         return {
-          title:'社区云管家',
-          path:'/pages/index/index',
+          title:pageConfig.data.navTitle?pageConfig.data.navTitle :getApp().getgetCurPageUrlOptions('navTitle'),
+          path:getApp().getCurrentPageUrlWithArgs(),
           imageUrl:'/images/logo.jpg',
         };
       }
@@ -124,7 +123,30 @@ App({
       success: function (res) { }
     }
   },
-
+  /*获取当前页带参数的url*/
+getCurrentPageUrlWithArgs:()=>{
+  var pages = getCurrentPages()    //获取加载的页面
+  var currentPage = pages[pages.length-1]    //获取当前页面的对象
+  var url = currentPage.route    //当前页面url
+  var options = currentPage.options    //如果要获取url中所带的参数可以查看options
+  
+  //拼接url的参数
+  var urlWithArgs = url + '?'
+  for(var key in options){
+      var value = options[key]
+      urlWithArgs += key + '=' + value + '&'
+  }
+  urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length-1)
+  
+  return urlWithArgs
+},
+getgetCurPageUrlOptions(key){
+  var pages = getCurrentPages()    //获取加载的页面
+  var currentPage = pages[pages.length-1]    //获取当前页面的对象
+  var url = currentPage.route    //当前页面url
+  var options = currentPage.options    //如果要获取url中所带的参数可以查看options
+  return decodeURI(options[key])
+},
   // ======用户信息======
 
   /**

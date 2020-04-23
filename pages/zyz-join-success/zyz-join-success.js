@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'报名成功',
     step: 1
   },
 

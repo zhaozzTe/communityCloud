@@ -4,6 +4,7 @@ const app = getApp()
 import { getNewsSummary } from '../../server/news.js'
 Page({
   data: {
+    navTitle:'居民说事厅',
     meuns:[{
       src:'/images/ssgz.png',
       label:'说事规则',

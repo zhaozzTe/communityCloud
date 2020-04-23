@@ -5,6 +5,7 @@ import { getQrCodes,getNotices,getLoginCount } from '../../server/common.js'
 import { getNewsPage } from '../../server/news'
 Page({
   data: {
+    navTitle:'社区云管家',
     isLogin:0,
     text: '社区居民免费体检活动，8月28日起即可开始预约',
     marqueePace: 1,//滚动速度

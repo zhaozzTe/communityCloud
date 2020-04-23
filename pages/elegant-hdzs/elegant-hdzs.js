@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'活动展示',
     searchV: '',
     isHideSearchIcon: false,
     infos: [{

@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'社区居务',
     searchV:'',
     isHideSearchIcon:false,
     infos: [{

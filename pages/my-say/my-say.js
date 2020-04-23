@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'我要说事',
     imgs: [],
     uploadfile: [],
     uploadfile1: [],

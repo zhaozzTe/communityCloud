@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'网格说事',
     type:'',
     searchV: '',
     page:1,

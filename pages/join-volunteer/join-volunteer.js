@@ -12,6 +12,7 @@ Page({
    */
   timer: null,
   data: {
+    navTitle:'志愿招募',
     islower:false,
     index: null,
     CategoryList: [],

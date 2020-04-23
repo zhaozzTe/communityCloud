@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navTitle:'服务需求登记历史',
     page:1,
     infos: [],
     finish:false,

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    step:1
+    step:1,
+    navTitle:'发布成功',
   },
 
   /**
