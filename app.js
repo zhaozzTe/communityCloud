@@ -9,7 +9,7 @@ const Def_Key_UserInfo = "Key_UserInfo";
     pageConfig = Object.assign({
       onShareAppMessage:function (e) {
         return {
-          title:pageConfig.data.navTitle?pageConfig.data.navTitle :getApp().getgetCurPageUrlOptions('navTitle'),
+          title:getApp().getgetCurPageUrlOptions('title')!=='undefined'?getApp().getgetCurPageUrlOptions('title'):pageConfig.data.navTitle?pageConfig.data.navTitle :getApp().getgetCurPageUrlOptions('navTitle'),
           path:getApp().getCurrentPageUrlWithArgs(),
           imageUrl:'/images/logo.jpg',
         };

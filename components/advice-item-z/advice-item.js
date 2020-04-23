@@ -38,7 +38,7 @@ Component({
         if(res){
           const url = e.currentTarget.dataset.url;
           wx.navigateTo({
-            url:url+`?id=${this.data.data.id}&navTitle=${this.data.navTitle}`,
+            url:url+`?id=${this.data.data.id}&navTitle=${this.data.navTitle}&title=${this.data.data.title}`,
           })
           setTimeout(()=>{
             this.setData({hasTap:false})

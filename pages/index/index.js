@@ -240,7 +240,7 @@ Page({
   gotoDetail(e){
     const info = e.currentTarget.dataset.info;
     wx.navigateTo({
-      url: '/pages/detailCom/index?id=' + info.id + '&navTitle=详情'
+      url: '/pages/detailCom/index?id=' + info.id + '&navTitle=详情'+ '&title='+info.title
     })
   }
 })
