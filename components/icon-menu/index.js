@@ -64,7 +64,7 @@ Component({
           }
           
           const url = e.currentTarget.dataset.url;
-          console.log(222222, url + paramsStr)
+          // console.log(222222, url + paramsStr)
           wx.navigateTo({
             url: url+paramsStr
           })
