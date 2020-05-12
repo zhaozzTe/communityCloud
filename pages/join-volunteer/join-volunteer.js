@@ -2,8 +2,8 @@ import {
   getNewsPage
 } from '../../server/news.js'
 import {
-  attend,
-  getCategoryList
+  getCategoryList,
+  recruit
 } from '../../server/common.js'
 Page({
 
@@ -122,7 +122,7 @@ Page({
   },
   async attend(params) {
     try {
-      let res = await attend(params);
+      let res = await recruit(params);
       if (res.code == 0){
         wx.navigateTo({
           url: '/pages/zyz-join-success/zyz-join-success'
