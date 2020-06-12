@@ -218,6 +218,7 @@ Page({
 
   onParentEvent(event){
     const needAuth = event.detail.needAuth;
+    console.log(1111111111,needAuth);
     this.setData({
       needAuth
     })
@@ -230,6 +231,8 @@ Page({
   },
   onParentEventTwo(event){
     const needAuth = event.detail.needAuth;
+    console.log(222222222222,needAuth);
+    
     this.setData({
       needAuth
     })

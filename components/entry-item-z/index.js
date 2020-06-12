@@ -35,6 +35,7 @@ Component({
         if(this.data.hasTap) return
         this.setData({hasTap:true})
         try{
+          this.isHasToken();
           let res = await wxTools.checkAuth()
           
           if(res){
@@ -64,6 +65,18 @@ Component({
             this.setData({hasTap:false})
           }
         }catch(e){this.setData({hasTap:false})}
-      }
+      },
+      isHasToken() {
+        if (wx.getStorageSync('token')) {
+          this.triggerEvent('parentEvent', {
+            needAuth: false
+          })
+        } else {
+          this.triggerEvent('parentEvent', {
+            needAuth: true
+          });
+          return false;
+        }
+      },
   }
 })
