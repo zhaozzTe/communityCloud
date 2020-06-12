@@ -32,13 +32,15 @@ var http = function (data) {
           await reLogin(data)
           console.log(wx.getStorageSync('token'));
           // await http(data)
+          reject(data || "");
         } else if (statusCode == 403) { // 未实名
           wx.showToast({
             title: '请您先实名认证',
             icon: 'none',
             duration: 2000
           })
-          if (!wxTools.getCurrentPageUrl().includes('/pages/authen/index')) wx.redirectTo({ url: '/pages/authen/index' })
+          if (!wxTools.getCurrentPageUrl().includes('/pages/authen/index')) wx.redirectTo({ url: '/pages/authen/index' });
+          reject(data || "");
         } else {
           console.log('--- error ---',res);
           wx.showToast({
@@ -55,7 +57,8 @@ var http = function (data) {
           title: res.errMsg||'网络不通',
           icon: 'none',
           duration: 2000
-        })
+        });
+        reject(res || "");
       },
       complete: function (res) {
         if (loading) wx.hideLoading()

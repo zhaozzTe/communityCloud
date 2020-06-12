@@ -20,7 +20,7 @@
 				<view class="menu-con">
 					<icon-menu bind:parentEvent='onParentEvent' wx:for="{{menuList}}" wx:key="index" data="{{item}}"></icon-menu>
 				</view>
-				<view class="menu-foot">
+				<view class="menu-foot" wx:if="{{noticeList.length>0}}">
 					<!-- 跑马灯效果  -->
 					<image src="/images/lb.png"></image>
 					<view class="example">
@@ -43,7 +43,7 @@
 					<!-- <entry-item data="{{entryList}}"></entry-item> -->
 					<entry-item bind:parentEvent='onParentEventTwo' wx:for="{{entryList}}" wx:for-item="item" wx:key="index" data="{{item}}" url="{{item.url}}" navTitle="{{item.title}}" params="{{item.params}}" />
 				</view>
-				<block wx:if="{{isLogin==1}}">
+				<block>
 					<com-title title="二维码快速入口"></com-title>
 					<view class="ewm-wrap">
 						<view wx:for="{{ewmList}}" wx:for-item="item" wx:key="index" class="ewm-wrap-item">

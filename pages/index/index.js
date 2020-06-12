@@ -131,13 +131,10 @@ Page({
     }
   },
   onShow: function () {
-    if (wx.getStorageSync('token')) {
-      !this.data.ewmList.length&&this.getQrCodes()
-      !this.data.noticeList.length&&this.getNotices()
-      !this.data.bannerList.length&&this.getBanner()
-      !this.data.countInfo&&this.getLoginCount()
-    }
-   
+    !this.data.ewmList.length&&this.getQrCodes()
+    !this.data.noticeList.length&&this.getNotices()
+    !this.data.bannerList.length&&this.getBanner()
+    !this.data.countInfo&&this.getLoginCount()
   },
   isHasToken(){
     if (wx.getStorageSync('token')) {
@@ -183,7 +180,7 @@ Page({
   },
   async getQrCodes(){
     try{
-      let {code,data} = await getQrCodes()
+      let {code,data} = await getQrCodes();
       if(code==0) this.setData({ewmList:data})
     }catch(e){}
   },
